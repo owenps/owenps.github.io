@@ -1,5 +1,119 @@
 <!DOCTYPE html>
-<title>Owen Smith</title>
-<head>
-  Hello World
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Nunito"
+    />
+    <link rel="icon" href="./icon.png" />
+    <title>Owen Smith</title>
+  </head>
+  <body>
+    <img id="bg_image" src="herobg-wider.png" />
+    <div class="nav">
+      <ul>
+        <h1 id="name"><b>Owen</b>Smith</h1>
+        <li id="contact">Contact</li>
+        <li id="about">About</li>
+      </ul>
+    </div>
+    <!-- Modal content -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Contact Me</h2>
+        </div>
+        <div class="modal-body">
+          <p>
+            You can best reach me at my
+            <a href="mailto:owen.smith@mail.mcgill.ca">email</a> or connect with
+            me on
+            <a href="https://www.linkedin.com/in/owenpsmith/">LinkedIn</a>
+          </p>
+          <p>
+            I'm always happy to talk about new projects and opportunities.
+            Resume available upon request.
+          </p>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div id="aboutModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>About Me</h2>
+        </div>
+        <div class="modal-body">
+          <p>
+            I am a full time Undergraduate Student at McGill University in
+            Montreal Canada, pursuing a degree in Honours Computer Science with
+            a Minor in Mathematics. My related interests include but are not
+            limited to: Computational Theory, Software Design, Algorithmic Game
+            Theory, and Machine Learning.
+          </p>
+          <p>
+            I have over 5 years of coding experience in languages such as
+            Python, Java, JavaScript, HTML & CSS, Delphi, and Swift. I’m always
+            looking for a better way to do things and solve problems. I am
+            currently based in Toronto but open to remote positions.
+          </p>
+          <br />
+        </div>
+      </div>
+    </div>
+    <script src="modal.js"></script>
+
+    <!-- Caroseuel -->
+    <ul class="caro">
+      <li class="hide">
+        <h2>Chaos Game</h2>
+        <img class="proj-thumbnail" src="chaosgame-tn.png" />
+        <p>
+          A mathmatical paper on fractal objects and a explaination on the proof
+          of the existence of the Sierpinski Triangle in the Chaos Game
+        </p>
+      </li>
+      <li class="prev">
+        <h2>SoundIt</h2>
+        <img class="proj-thumbnail" src="soundit-tn.png" />
+        <p>
+          An iOS application for users to play YouTube audio in the background -
+          lowering their data fees from streaming video content
+        </p>
+      </li>
+      <li class="curr">
+        <h2>Steal Guesser</h2>
+        <img class="proj-thumbnail" src="stealgusser-tn.png" />
+        <p>
+          A real time machine learning model to predict whether a baseball
+          player will "steal" a base
+        </p>
+      </li>
+      <li class="next">
+        <h2>RecipEasy</h2>
+        <img class="proj-thumbnail" src="recipeasy-tn.png" />
+        <p>
+          An iOS application which uses Machine Learning and OCR to scan
+          ingredients and search related recipes.
+        </p>
+      </li>
+      <li class="next new-next">
+        <h2>Dead-Zone Finder</h2>
+        <img class="proj-thumbnail" src="deadzone-tn.png" />
+        <p>
+          A dead-zone is defined as a geographical region where no internet is
+          found. Using Kibana and Elastic Search this Java application analyzes
+          car trips and outputs found dead-zones
+        </p>
+      </li>
+    </ul>
+    <p>&#169; Owen Smith 2020</p>
+  </body>
+  <script src="mycaro.js"></script>
+</html>
