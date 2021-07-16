@@ -5,13 +5,14 @@
     <link>https://owensmith.page/categories/</link>
     <description>Recent content in Categories on Owen Smith</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://owensmith.page/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://owensmith.page/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>https://owensmith.page/categories/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Projects</title>
+      <link>https://owensmith.page/categories/projects/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://owensmith.page/categories/test/</guid>
+      <guid>https://owensmith.page/categories/projects/</guid>
       <description></description>
     </item>
     

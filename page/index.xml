@@ -6,7 +6,18 @@
     <description>Recent content in Pages on Owen Smith</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://owensmith.page/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://owensmith.page/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://owensmith.page/about/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://owensmith.page/about/</guid>
+      <description>My name is Owen Smith, I build software leveraging machine learning and artificial intellegence. I&amp;rsquo;m facinated about how computers learn and how we can leverage their power to solve real world problems.
+I am currently based in Toronto, Canada. I study Computer Science at McGill University in Montreal, Canada and will be graduating at the end of 2021.
+In my spare time, I&amp;rsquo;m always working on side projects or learning about the latest frameworks and technologies.</description>
+    </item>
+    
     <item>
       <title>Archives</title>
       <link>https://owensmith.page/archives/</link>
@@ -14,17 +25,6 @@
       
       <guid>https://owensmith.page/archives/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://owensmith.page/about/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://owensmith.page/about/</guid>
-      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
-Hugo makes use of a variety of open source projects including:
- https://github.</description>
     </item>
     
     <item>
