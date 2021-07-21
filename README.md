@@ -5,3 +5,5 @@
 ![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-54436B?style=for-the-badge&labelColor=black&logo=Bootstrap&logoColor=white) 
 
 Live at [owensmith.page](https://owensmith.page), deployed through GitHub pages.
+
+Theme from [Boostwatch](https://bootswatch.com/)
