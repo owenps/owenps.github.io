@@ -1,5 +1,6 @@
 // will set up an empty page with a navigation and search bar
-document.body.innerHTML = `
+window.addEventListener('DOMContentLoaded', (event) => {
+  document.body.innerHTML = `
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><i class="bi-cpu" role="img" aria-label="logo"></i>
@@ -49,3 +50,4 @@ document.body.innerHTML = `
         </div>
       </nav>
 `;
+});
