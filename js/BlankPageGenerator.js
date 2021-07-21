@@ -11,15 +11,18 @@ document.body.innerHTML = `
           <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Home
+                <a class="nav-link" id="navHome" href="#">Home
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" id="navBlog" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="navResume" href="assets/pdf/OwenSmith_Resume.pdf">Resume</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Socials</a>
+                <a class="nav-link dropdown-toggle" id="navSocials" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Socials</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="https://linkedin.com/in/owenpsmith">
                     <i class="bi-linkedin" role="img" aria-label="LinkedIn"></i>
