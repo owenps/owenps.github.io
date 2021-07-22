@@ -16,7 +16,7 @@ document.body.innerHTML = `
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="navBlog" href="#">Blog</a>
+          <a class="nav-link" id="navBlog" href="blog/index.html">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="navResume" href="assets/pdf/OwenSmith_Resume.pdf">Resume</a>
