@@ -11,7 +11,7 @@ document.body.innerHTML = `
     <div class="collapse navbar-collapse" id="navbarColor03">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" id="navHome" href="#">Home
+          <a class="nav-link" id="navHome" href="#">About
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
