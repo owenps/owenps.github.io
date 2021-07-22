@@ -19,6 +19,9 @@ document.body.innerHTML = `
           <a class="nav-link" id="navBlog" href="blog/index.html">Blog</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" id="navProjects" href="projects/index.html">Projects</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" id="navResume" href="assets/pdf/OwenSmith_Resume.pdf">Resume</a>
         </li>
         <li class="nav-item dropdown">
