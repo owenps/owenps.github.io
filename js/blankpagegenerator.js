@@ -39,12 +39,14 @@ document.body.innerHTML = `
           </div>
         </li>
       </ul>
+      <!--
       <form class="d-flex">
         <input class="form-control me-sm-2" type="text" placeholder="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">
           <i class="bi-search" role="img" aria-label="Search"></i>
         </button>
       </form>
+      --> 
     </div>
   </div>
 </nav>
