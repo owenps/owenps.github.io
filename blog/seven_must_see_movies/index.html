@@ -15,34 +15,28 @@
       <script src="js/blankpagegenerator.js"></script>
       <script> document.getElementById("navBlog").classList.add("active") </script>
       <!-- Content -->
-      <div class="container col-xxl-8 px-4 py-5">
+      <div class="container col-xl-6 px-4 py-5">
         <div id="content"></div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
       <script>
 txt = `
-# 7 **Must See** Movies By Decade
+## 7 **Must See** Movies By Decade
 ---
-## **50s** - 12 Angry Men (1957)
+### **50s** - 12 Angry Men (1957)
 
-<div class="row row-cols-1 row-cols-2 g-4">
-  <div class="col">
-    12 Angry Men is a ourtroom drama full of hall-of-fame performances and sudden twists. The story is about a twelve male jury members who must come to a consensus regarding the death sentence to a 16 year old boy. <br> <br> The movie takes place in one room. From the moment they enter, you get a chance to learn about each individual jury member and how it influences their decision of whether this boy is guilty or innocent. <br> <br> As the movie progresses and the evidence is laid out, as a viewer, you feel like the thirteenth jury member as you try to solve the case yourself. 12 Angry Men is a theatrical masterpiece that will have you captive from the very beginning.
-  </div>
-  <div class="col">
-    <img src="blog/seven_must_see_movies/12-angry-men.jpg" alt="12 Angry Men" width="100%"></img>
-  </div>
-</div>
+12 Angry Men is a ourtroom drama full of hall-of-fame performances and sudden twists. The story is about a twelve male jury members who must come to a consensus regarding the death sentence to a 16 year old boy.
 
+<img src="blog/seven_must_see_movies/12-angry-men.jpg" alt="12 Angry Men" width="100%"></img>
 
+The movie takes place in one room. From the moment they enter, you get a chance to learn about each individual jury member and how it influences their decision of whether this boy is guilty or innocent.
 
-
-
+As the movie progresses and the evidence is laid out, as a viewer, you feel like the thirteenth jury member as you try to solve the case yourself. 12 Angry Men is a theatrical masterpiece that will have you captive from the very beginning.
 
 
 ---
 
-## **60s** - 2001: A Space Odyssey (1968)
+### **60s** - 2001: A Space Odyssey (1968)
 2001: A Space Odyssey is perhaps the most unique film on this short list. The film was inspired by Arthur C. Clarke’s short story “The Sentinel”. The plot surrounds a mysterious artifact that is buried beneath the lunar surface and mankind’s quest to find its origins. 
 
 The film introduces a super computer H.A.L 9000 whose capabilities were based off the predictions/speculations of respected scientist . 2001: A Space Odyssey is one of the first major films to explore general artificial intelligence and computational rationalization and reasoning. 
@@ -52,6 +46,18 @@ The film introduces a super computer H.A.L 9000 whose capabilities were based of
 </div><br>
 
 With hardly any dialog, the film lets the music and visuals do all the talking. There really isn’t much I can say that will prepare you for the rollercoaster that is 2001: A Space Odyssey. The film will leave you speechless, perplexed, and mesmerized. It will be one you remember for the rest of your life, I count on it. 
+
+---
+
+### **70s** - The God Father Part I (1972)
+The God Father Part 1 belongs to the historic movie trilogy adapted from the fiction novel by Mario Puzo. The story covers the trials and tribulations of the infamous Corleone mafia family. The first film focuses on Don Corleone (Marlon Brando), the head of the family and his youngest son Michael (Al Pachino) who is reluctant to follow in his footsteps. 
+
+<div align=center>
+<img src="blog/seven_must_see_movies/the-god-father.jpg" alt="2001: A Space Odyssey" width="100%"></img>
+</div><br>
+
+The story is beautifully crafted and executed just as well. All the intricacies in the story line and the behaviours between characters leaves the film to be one you’ll revisit again. The three hour time stamp for the first film alone is daring, but not a second is wasted. While the third film falls short of the expectations set by the previous two, The God Father trilogy is unparalleled, and it’s on a completely different level of all other crime/dramas out there. For the rest of human history the God Father Part I will be regarded as one of the most influential crime/drams every created. 
+
 `
         document.getElementById('content').innerHTML = marked(txt);
       </script>
