@@ -1,0 +1,16 @@
+.particle-canvas{
+    height: 45vw !important;
+}
+
+.navbar-brand:hover {
+    color: #D9230F !important;
+    transition: 0.4s;
+}
+
+button:hover {
+    transition: 0.3s !important;
+}
+
+.dropdown-item:hover {
+    transition: 0.1s !important;
+}
