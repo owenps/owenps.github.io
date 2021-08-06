@@ -7,7 +7,7 @@
     transition: 0.4s;
 }
 
-button:hover {
+button:hover, a.btn {
     transition: 0.3s !important;
 }
 
