@@ -15,12 +15,6 @@ document.body.innerHTML = `
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" id="navBlog" href="blog/index.html">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="navProjects" href="projects/index.html">Projects</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navSocials" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Socials</a>
           <div class="dropdown-menu">
