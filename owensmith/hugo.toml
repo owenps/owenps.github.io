@@ -1,0 +1,4 @@
+baseURL = 'https://owenps.github.io/'
+languageCode = 'en-us'
+title = 'Owen Smith'
+theme = 'hugo-bearblog'

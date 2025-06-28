@@ -1,10 +1,41 @@
-# Personal Website 
+# owenps.github.io
 
-![HTML Badge](https://img.shields.io/badge/HTML5-FF6767?style=for-the-badge&labelColor=black&logo=HTML5&logoColor=white) 
-![CSS Badge](https://img.shields.io/badge/CSS3-57837B?style=for-the-badge&labelColor=black&logo=CSS3&logoColor=white) 
-![JS Badge](https://img.shields.io/badge/JavaScript-FFD371?style=for-the-badge&labelColor=black&logo=JavaScript&logoColor=white)
-![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-54436B?style=for-the-badge&labelColor=black&logo=Bootstrap&logoColor=white) 
+This is my personal website / blog. Hopefully it is live [here](owenps.github.io).
 
-- Live at [owensmith.page](https://owensmith.page), deployed through GitHub pages.
+Built with ❤︎ using [Hugo](https://gohugo.io/), an ultra light-weight static site generator. Uses the [hugo-bearblog](https://github.com/janraasch/hugo-bearblog) theme.
 
-- Used the [Litera](https://bootswatch.com/litera/) theme from [Boostwatch](https://bootswatch.com/)
+> [!NOTE]  
+> All `hugo` commands must be run from the `owensmith` root directory.
+
+## Development
+
+### Quick Start
+
+To host locally for testing run
+```sh
+hugo server
+```
+
+Which will build a HTTP server running on your local machine. It will auto-build on any local changes you make.
+
+### Adding New Posts
+
+All blogs posts go under `owensmith/content/posts` to add a new draft with
+```sh
+hugo new content content/posts/my-new-post.md
+```
+
+You can build the site with all drafts included using 
+
+```sh
+hugo server -D
+```
+
+When you are ready to deploy the site, be sure any drafts that you want to publish have `draft = false`. Then run
+
+```sh
+hugo
+```
+
+
+
