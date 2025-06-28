@@ -6,4 +6,4 @@ You can find my writing on [/blog](/blog).
 
 For business inquiries you can reach me: owensmith321[at]gmail.com
 
-[LinkedIn](https://www.linkedin.com/in/owenpsmith/) | [GitHub](https://github.com/owenps/owenps.github.io)
+[LinkedIn](https://www.linkedin.com/in/owenpsmith/) | [GitHub](https://github.com/owenps/)

@@ -6,10 +6,10 @@ This is my personal website / blog. Hopefully it is live [here](https://owenps.g
 
 Built with ❤︎ using [Hugo](https://gohugo.io/), an ultra light-weight static site generator. Uses the [hugo-bearblog](https://github.com/janraasch/hugo-bearblog) theme.
 
+## Development
+
 > [!NOTE]  
 > All `hugo` commands must be run from the `owensmith` root directory.
-
-## Development
 
 ### Quick Start
 
