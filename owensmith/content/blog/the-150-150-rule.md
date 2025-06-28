@@ -27,7 +27,7 @@ Smaller CRs are a win for everyone!
 
 For reviewers: it takes much less energy to digest smaller changes and thus less likely to skip over critical defects due to review fatigue. 
 
-For developers: quick turn around time for CRs and higher quality feedback. Features get shipped in incremental stages as opposed to all-or-nothing commits. It even gives you a bump in the number of CRs statistics if you're into that stuff ;).
+For developers: quick turn around time for CRs and higher quality feedback. Features get shipped in incremental stages as opposed to all-or-nothing commits. It even gives you a bump in your CRs statistics if you're into that stuff ;).
 
 We call it a *rule* but it more often referred to as a *guide*, use your best judgement on when to tweak it.
 
