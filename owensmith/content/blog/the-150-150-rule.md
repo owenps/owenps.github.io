@@ -21,7 +21,7 @@ The rule is that **each code review (CR) is at most 150 lines of changes to sour
 1. Submitting at least one 150-150 CR a day.
 1. Completing the code review cycle in a day (publish -> review -> push).
 
-[300 lines of code seems to be the sweet spot](http://viewer.media.bitpipe.com/1253203751_753/1284482743_310/11_Best_Practices_for_Peer_Code_Review.pdf) in what a developer can reliably develop and what a reviewer can confidently review in a short amount of time.
+[300 lines of code seems to be the sweet spot](https://ieeexplore.ieee.org/document/4815279) in what a developer can reliably develop and what a reviewer can confidently review in a short amount of time.
 
 Smaller CRs are a win for everyone!
 
