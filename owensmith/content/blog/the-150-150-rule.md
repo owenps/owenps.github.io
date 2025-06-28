@@ -15,7 +15,7 @@ tags = ['amazon']
 
 The 150-150 CR (a.k.a 'A Code Review A Day') Rule is a development philosophy at Amazon that helps teams ship code faster and at a higher quality.
 
-The **rule is that each code review (CR) is at most 150 lines of changes to source code and 150 lines of changes to test code**. The guidline recommends:
+The rule is that **each code review (CR) is at most 150 lines of changes to source code and 150 lines of changes to test code**. The guidline recommends:
 
 1. Limiting total changes per CR to 150-150 lines or fewer.
 1. Submitting at least one 150-150 CR a day.
