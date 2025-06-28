@@ -2,7 +2,7 @@
 
 [![Deploy to GitHub Pages](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml/badge.svg)](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml)
 
-This is my personal website / blog. Hopefully it is live [here](https://owenps.github.io). 🙏
+This is my personal website / blog. Hopefully it is live [here](https://owenps.github.io) 🙏
 
 Built with ❤︎ using [Hugo](https://gohugo.io/), an ultra light-weight static site generator. Uses the [hugo-bearblog](https://github.com/janraasch/hugo-bearblog) theme.
 
@@ -22,9 +22,14 @@ Which will build a HTTP server running on your local machine. It will auto-build
 
 ### Adding New Posts
 
-All blogs posts go under `owensmith/content/posts` to add a new draft with
+All pages can be found under the `owensmith/content` directory. Create a new draft page with
 ```sh
-hugo new content content/posts/my-new-post.md
+hugo new my-new-page.md
+```
+
+Or to create a new blog post
+```sh
+hugo new blog/my-new-blog.md
 ```
 
 You can build the site with all drafts included using 
