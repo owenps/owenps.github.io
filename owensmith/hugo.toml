@@ -2,3 +2,8 @@ baseURL = 'https://owenps.github.io/'
 languageCode = 'en-us'
 title = 'Owen Smith'
 theme = 'hugo-bearblog'
+
+[params]
+  # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
+  # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
+  favicon = "images/favicon.png"
