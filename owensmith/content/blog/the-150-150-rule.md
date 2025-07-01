@@ -8,7 +8,7 @@ draft = false
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ['amazon']
+tags = ["amazon","devnotes"]
 +++
 
 ## The "Rule"
