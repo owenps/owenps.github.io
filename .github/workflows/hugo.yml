@@ -47,6 +47,24 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      # Setup ChatDemo React App under /chatdemo/
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install React demo dependencies
+        working-directory: ./chatdemo
+        run: pnpm install
+      - name: Build React demo
+        working-directory: ./chatdemo
+        run: pnpm build
+      - name: Copy React demo build to Hugo public
+        run: |
+          mkdir -p ./owensmith/public/chatdemo
+          cp -r ./chatdemo/dist/* ./owensmith/public/chatdemo/
+      # Resume Hugo build and installation
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
