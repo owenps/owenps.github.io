@@ -44,5 +44,15 @@ When you are ready to deploy the site, be sure any drafts that you want to publi
 hugo
 ```
 
+## Update Sub Modules
+
+Sub Modules do not update automatically, to pull down the latest you'll need to run 
+
+```
+git submodule update --remote chatdemo
+```
+
+Check the `.gitmodules` file for the all module names.
+
 
 
