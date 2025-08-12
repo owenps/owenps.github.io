@@ -20,7 +20,7 @@ hugo server
 
 Which will build a HTTP server running on your local machine. It will auto-build on any local changes you make.
 
-### Adding New Posts
+### Adding New Pages
 
 All pages can be found under the `owensmith/content` directory. Create a new draft page with
 ```sh
