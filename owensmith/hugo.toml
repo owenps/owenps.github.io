@@ -12,7 +12,7 @@ theme = 'hugo-bearblog'
 # https://gohugo.io/configuration/markup/#highlight
 [markup]
   [markup.highlight]
-    style = 'friendly'
+    style = 'tokyonight-storm'
     lineNos = true
     lineNumbersInTable = false
     codeFences = true
