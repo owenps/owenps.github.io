@@ -8,6 +8,6 @@ menu = 'main'
 For business inquiries: `owensmith321[at]gmail.com`
 
 **My accounts on other sites**
-- LinkedIn - [linkedin.com/in/owenpsmith](https://www.linkedin.com/in/owenpsmith/)
-- GitHub - [github.com/owenps](https://github.com/owenps/)
-- X - [x.com/owenps_](https://x.com/owenps_/)
+- [linkedin.com/in/owenpsmith](https://www.linkedin.com/in/owenpsmith/)
+- [github.com/owenps](https://github.com/owenps/)
+- [x.com/owenps_](https://x.com/owenps_/)
