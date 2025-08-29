@@ -13,5 +13,5 @@ Here are some of my personal favourites.
 2025
 
 * [[Article] Conventional Comments](https://conventionalcomments.org/)
-* [[Article] Martin Fowler - On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html)
+* [[Article] Martin Fowler - Microservices](https://martinfowler.com/articles/microservices.html)
 * [[Article] Ludwig Abap - On becoming competitive when joining a new company](https://ludwigabap.bearblog.dev/on-becoming-competitive-when-joining-a-new-company/)

@@ -12,3 +12,4 @@ For business inquiries: `owensmith321[at]gmail.com`
 - [linkedin.com/in/owenpsmith](https://www.linkedin.com/in/owenpsmith/)
 - [github.com/owenps](https://github.com/owenps/)
 - [x.com/owenps_](https://x.com/owenps_/)
+- [letterboxd.com/owenps](https://letterboxd.com/owenps/)
