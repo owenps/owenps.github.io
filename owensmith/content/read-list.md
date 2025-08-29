@@ -5,7 +5,7 @@ menu = 'main'
 +++
 
 I spend a lot more time reading than writing.
-There are a lot of incredible people and resources that inspired me everyday. 
+There are a lot of incredible people and resources that inspired me everyday.
 Here are some of my personal favourites.
 
 #### Read List
