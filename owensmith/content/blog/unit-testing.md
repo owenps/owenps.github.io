@@ -19,15 +19,6 @@ Just like asking questions in school, we convert from suspicion and belief into 
 
 When you view code this way, the abstraction of a unit becomes a question, furthering your understanding and knowledge of the system behaviours.
 
-### What kinds of questions should I ask?
-
-In other words: "what tests should I write?", here are a few things to think about.
-
-* Every line of code should be covered by a test. If not, why does that code exist? Do not confuse this for meaning that every line should be validated.
-* Avoid coupling tests unnecessarily with implementation details. Ask yourself, "would a client of this class care about this detail?". If not, the test may be too coupled.
-
-Getting better a writing tests is not about covering more specific details. It's a balance of building a concise set of questions that validate the system's behaviour and reinforce your knowledge.
-
 ### Exercise: which is better?
 
 ```python
@@ -52,7 +43,20 @@ def test_full_name_2():
 ```
 
 The truth is that they answer two different questions about the system.
-One is tightly coupled to the implementation.
-So the better question is "what is the behaviour we wish to validate?".
+
+* Option A: I care about the exact output of `{first}_{last}`
+* Option B: I care that `first` and `last` are included.
+
+Even though Option A is tighly coupled with the implementation, that might be what we care about.
+So the better question is "What is the behaviour we wish to validate?".
 If we just care that both names appear (disregard any flair or prefix / suffix) then Option B would be preferred.
 This way I can update my implementation later and not have to change my tests.
+
+### What kinds of questions should I ask?
+
+In other words: "what tests should I write?", here are a few things to think about.
+
+* Every line of code should be covered by a test. If not, why does that code exist? Do not confuse this for meaning that every line should be validated.
+* Avoid coupling tests unnecessarily with implementation details. Ask yourself, "would a client of this class care about this detail?". If not, the test may be too coupled.
+
+Getting better a writing tests is not about covering more specific details. It's a balance of building a concise set of questions that validate the system's behaviour and reinforce your knowledge.
