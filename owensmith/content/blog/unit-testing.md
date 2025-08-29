@@ -51,4 +51,8 @@ def test_full_name_2():
     assert "Smith" in result
 ```
 
-The truth is that they answer two different questions about the system. One is tightly coupled to the implementation. So the better question is "what is the behaviour we wish to validate?". If we just care that both names appear (disregard any flair or prefix / suffix) then Option B would be preferred.
+The truth is that they answer two different questions about the system.
+One is tightly coupled to the implementation.
+So the better question is "what is the behaviour we wish to validate?".
+If we just care that both names appear (disregard any flair or prefix / suffix) then Option B would be preferred.
+This way I can update my implementation later and not have to change my tests.
