@@ -2,11 +2,6 @@
 title = "On Style Consistency"
 date = "2025-08-11T22:33:32-04:00"
 
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
-
 tags = ["development", "principles"]
 +++
 
