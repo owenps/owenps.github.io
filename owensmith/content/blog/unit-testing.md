@@ -23,7 +23,32 @@ When you view code this way, the abstraction of a unit becomes a question, furth
 
 In other words: "what tests should I write?", here are a few things to think about.
 
-* Every line of code should be covered by a test. If not, why does that code exist?
-* Avoid "Why ..." questions. We test behaviours not implementation details.
+* Every line of code should be covered by a test. If not, why does that code exist? Do not confuse this for meaning that every line should be validated.
+* Avoid coupling tests unnecessarily with implementation details. Ask yourself, "would a client of this class care about this detail?". If not, the test may be too coupled.
 
 Getting better a writing tests is not about covering more specific details. It's a balance of building a concise set of questions that validate the system's behaviour and reinforce your knowledge.
+
+### Exercise: which is better?
+
+```python
+# code under test
+def full_name(first: str, last: str) -> str:
+    return first + "_" + last
+```
+
+Which test is better?
+
+```python
+# Option A
+def test_full_name_1():
+    result = full_name("Owen", "Smith")
+    assert result == "Owen_Smith"
+
+# Option B
+def test_full_name_2():
+    result = full_name("Owen", "Smith")
+    assert "Owen" in result
+    assert "Smith" in result
+```
+
+The truth is that they answer two different questions about the system. One is tightly coupled to the implementation. So the better question is "what is the behaviour we wish to validate?". If we just care that both names appear (disregard any flair or prefix / suffix) then Option B would be preferred.
