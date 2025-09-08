@@ -48,7 +48,8 @@ Every heard of the 1% rule? Try to be 1% better every day, and let the result co
 
 Start small, and get a bit better each day. 1% of 16 hour day is just under 10 minutes. Can you be 10 minutes better than yesterday?
 
-When you're a kid do you question if you should go to school today or not, you just get ready and go, that's just life. Over time these behaviours seem into our subconsiousness, reducing the cognitive friction that it would take before.
+When you're a kid you don't question if you should go to school today, you just get ready and go, that's just life.
+Over time these behaviours seep into our subconsciousness, reducing the cognitive friction that it would take before.
 
 ## Be kind to yourself
 
