@@ -7,7 +7,7 @@ tags = ["booknotes","philosophy"]
 +++
 
 > Sooner or later, we are bound to discover things about ourselves that we don't like. But once we see they're here, we can decide what we want to do with them.
-> 
+>
 > In a similar manner, instead of struggling to erase what are referred to as negative emotions, we can describe the principle like this: while pounding on the piano keys may produce noise, removing them doesn't exactly further the creation of music.
 
 Try to picture a rock sitting in the middle of a stream. The water doesn't try to force its way through the rock, but rather accepts its presence and gracefully glides around it.
@@ -21,11 +21,10 @@ In "The Tao of Pooh", Benjamin Hoff provides a introduction to Taoism through th
 Sometimes referred to as "wood not cut" is the Taoist principle living life in an unforced manner.
 
 > From the state of the Uncarved Block comes the ability to enjoy the simple and plain. Along with that comes the ability todo things spontaneously and have them work, odd as that may appear at times...
-> 
+>
 > When you discard arrogance, complexity, and a few other things that get in the way, sooner or later you will discover that simple childlike, and mysterious secret known to those of the Uncarved Block: Life is Fun.
 
 Pooh is considered the epitome of the "uncarved block". As he lives his life as simple as possible. He lives by the natural flow of how things are, he just "is".
-
 
 ### Cottleston Pie
 
@@ -50,7 +49,7 @@ How do you view a tree with a crooked trunk? Do you view it as a failure because
 
 ### Analysis vs. Awareness
 
-Two men are sitting on a porch: a scholar and a taoist. The scholar hears the birds chirping and thinks *"what kinds of birds are chirping?"*, whereas the Taoist hears the birds and thinks, *"wow, how lovely to hear the birds chirping!"*. 
+Two men are sitting on a porch: a scholar and a taoist. The scholar hears the birds chirping and thinks *"what kinds of birds are chirping?"*, whereas the Taoist hears the birds and thinks, *"wow, how lovely to hear the birds chirping!"*.
 
 ### Nowhere and Nothing
 
@@ -70,10 +69,6 @@ They say there are two kinds of starving people in the world, one with "Little H
 
 It seems as though Taoism is suggesting that the antidote to great hunger is through the great secret: nothing.
 
-It seems a bit too simple for those searching for deep meaning in their life. How do you prescribe nothing to somone struggling with great hunger?
+It seems a bit too simple for those searching for deep meaning in their life. How do you prescribe nothing to someone struggling with great hunger?
 
-But what do you see when you meet someone who is truly fulfilled, enlightened if you will. It is the enjoyment and appreciatation of the everday and the simple moments between every breath. It is that just like the kind-of nothing Taoism prescribes?
-
-
-
-
+But what do you see when you meet someone who is truly fulfilled, enlightened if you will. It is the enjoyment and appreciatation of the everday and the simple moments between every breath. Is that the same kind-of nothing Taoism prescribes?
