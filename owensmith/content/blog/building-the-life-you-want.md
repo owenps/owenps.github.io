@@ -36,7 +36,7 @@ Drastic changes in our habits and schedule like that are overrated.
 
 Every heard of the 1% rule? Try to be 1% better every day, and let the result compound exponentially. But how about 10% every 10 days? Do larger leaps beat daily consistency? What does better after a year?
 
-![1% vs. 10%](../../assets/one-percent-vs-ten-percent.PNG)
+![1% vs. 10%](/images/one-percent-vs-ten-percent.png)
 
 ```python
 # 1% better daily
