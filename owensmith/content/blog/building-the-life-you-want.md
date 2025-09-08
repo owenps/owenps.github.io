@@ -5,7 +5,7 @@ date = "2025-09-07T20:46:24-04:00"
 tags = ["self",]
 +++
 
-Why is it so hard to do the things we want for ourselves.
+Why is it so hard to do the things we want for ourselves?
 
 ## Stop setting goals, set an identity
 
@@ -20,10 +20,10 @@ The habit becomes non-negotionable, because it is part of who you are.
 > "I want to be on my phone for <1hr a day"
 
 vs.
-> "I am someone who is deliberate about their phone usage".
+> "I am someone who is deliberate about their phone usage"
 
-Goals are still great. They are things we write down and check occassionally.
-Our identity is something we carry with us each day.
+Goals are still great. They are a compass, something we check occasionally to ensure we are moving in the right direction.
+Our identity shapes the decisions we make, it is something we carry with us each day.
 
 ## The only bar is consistency, not perfection
 
