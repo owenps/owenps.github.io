@@ -12,6 +12,7 @@ Here are some of my personal favourites.
 
 2025
 
+* [[Guide] Tiger Style](https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md)
 * [[Article] Conventional Comments](https://conventionalcomments.org/)
 * [[Article] Martin Fowler - Microservices](https://martinfowler.com/articles/microservices.html)
 * [[Article] Ludwig Abap - On becoming competitive when joining a new company](https://ludwigabap.bearblog.dev/on-becoming-competitive-when-joining-a-new-company/)
