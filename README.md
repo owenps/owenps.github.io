@@ -2,7 +2,7 @@
 
 [![Deploy to GitHub Pages](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml/badge.svg)](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml)
 
-This is my personal website. Hopefully it is live: [https://owenps.github.io] 🚀
+This is my personal website. Hopefully it is live: https://owenps.github.io
 
 Built with ❤︎ using [Hugo](https://gohugo.io/), an ultra light-weight static site generator. Uses the [hugo-bearblog](https://github.com/janraasch/hugo-bearblog) theme.
 
