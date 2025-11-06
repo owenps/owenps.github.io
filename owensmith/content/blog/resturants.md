@@ -33,5 +33,6 @@ Lily and my ranking of dinner resturants in Toronto.
 1. [Kensei Bar](https://maps.app.goo.gl/dHvhfAMKddeuiBFj6)
 1. [Sounds Good](https://maps.app.goo.gl/EAZ72NxvgxvRYeu98)
 1. [Antler](https://maps.app.goo.gl/n7w6Xd5XdHYjMaGq6)
+1. [Fonda Lola](https://maps.app.goo.gl/QAQS3bQaE2KXf6zx5)
 1. [Scaramouche](https://maps.app.goo.gl/1PQJFiiLBkxbyvpS6)
 1. [Florette](https://maps.app.goo.gl/FpbAQpk62HzB9gbs8)
