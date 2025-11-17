@@ -59,4 +59,4 @@ In other words: "what tests should I write?", here are a few things to think abo
 * Every line of code should be covered by a test. If not, why does that code exist? Do not confuse this for meaning that every line should be validated.
 * Avoid coupling tests unnecessarily with implementation details. Ask yourself, "would a client of this class care about this detail?". If not, the test may be too coupled.
 
-Getting better a writing tests is not about covering more specific details. It's a balance of building a concise set of questions that validate the system's behaviour and reinforce your knowledge.
+Getting better at writing tests is not about covering more specific details. It's a balance of building a concise set of questions that validate the system's behaviour and reinforce your knowledge.
