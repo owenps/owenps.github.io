@@ -8,7 +8,7 @@ theme = 'hugo-bearblog'
   # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
   favicon = "images/favicon.png"
 
-# Configure markup highlighter to match "Bearblog" aesthetics, see 
+# Configure markup highlighter to match "Bearblog" aesthetics, see
 # https://gohugo.io/configuration/markup/#highlight
 [markup]
   [markup.highlight]

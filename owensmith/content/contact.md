@@ -9,6 +9,7 @@ For business inquiries: `owensmith321[at]gmail.com`
 
 #### My accounts on other sites
 
+- [ledge.io/owen](https://ledge.io/owen)
 - [linkedin.com/in/owenpsmith](https://www.linkedin.com/in/owenpsmith/)
 - [github.com/owenps](https://github.com/owenps/)
 - [x.com/owenps_](https://x.com/owenps_/)
