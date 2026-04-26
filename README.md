@@ -8,7 +8,7 @@ Built with ❤︎ using [Hugo](https://gohugo.io/), an ultra light-weight static
 
 ## Development
 
-> [!NOTE]  
+> [!IMPORTANT]  
 > All `hugo` commands must be run from the `owensmith` root directory.
 
 ### Quick Start
@@ -25,16 +25,18 @@ Which will build a HTTP server running on your local machine. It will auto-build
 
 ### Adding New Pages
 
-All pages can be found under the `owensmith/content` directory. Create a new draft page with
+All pages can be found under the `owensmith/content` directory. Blog posts use [page bundles](https://gohugo.io/content-management/page-bundles/) — each post is a folder with an `index.md` inside it.
+
+Create a new blog post:
 
 ```sh
-hugo new my-new-page.md
+hugo new blog/my-new-blog/index.md
 ```
 
-Or to create a new blog post
+Images and other assets go in the same folder as the post's `index.md` and are referenced with a relative path:
 
-```sh
-hugo new blog/my-new-blog.md
+```markdown
+![alt text](my-image.png)
 ```
 
 ## Update Sub Modules
