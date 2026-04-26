@@ -1,7 +1,7 @@
 +++
 title = "The Tao of Pooh"
 date = "2025-06-30T23:20:56-04:00"
-draft = false
+draft = true 
 
 tags = ["booknotes","philosophy"]
 +++

@@ -1,6 +1,7 @@
 +++
 title = "Resturants"
 date = "2025-11-05T17:53:27-05:00"
+draft = true
 
 #
 # description is optional

@@ -1,6 +1,7 @@
 +++
 title = "On Style Consistency"
 date = "2025-08-11T22:33:32-04:00"
+draft = true
 
 tags = ["development", "principles"]
 +++

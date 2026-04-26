@@ -1,6 +1,7 @@
 +++
 title = "On Building the Life You Want"
 date = "2025-09-07T20:46:24-04:00"
+draft = true
 
 tags = ["self",]
 +++
