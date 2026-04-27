@@ -5,6 +5,8 @@ title = 'Contact'
 menu = 'main'
 +++
 
+Always happy to chat and discuss projects.
+
 #### My accounts on other sites
 
 - [ledge.io/owen](https://ledge.io/owen)
