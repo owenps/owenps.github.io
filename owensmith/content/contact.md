@@ -5,12 +5,10 @@ title = 'Contact'
 menu = 'main'
 +++
 
-For business inquiries: `owensmith321[at]gmail.com`
-
 #### My accounts on other sites
 
 - [ledge.io/owen](https://ledge.io/owen)
+- [letterboxd.com/owenps](https://letterboxd.com/owenps/)
 - [linkedin.com/in/owenpsmith](https://www.linkedin.com/in/owenpsmith/)
 - [github.com/owenps](https://github.com/owenps/)
 - [x.com/owenps_](https://x.com/owenps_/)
-- [letterboxd.com/owenps](https://letterboxd.com/owenps/)
