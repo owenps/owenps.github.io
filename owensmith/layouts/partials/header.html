@@ -1,4 +1,7 @@
-<a href="{{ "" | relURL }}" class="title">
-  <h2>{{ .Site.Title }} <img src="{{ "images/mew.gif" | relURL }}" alt="" class="title-sprite"> <button class="theme-toggle" aria-label="Toggle theme"></button></h2>
-</a>
+<div class="title-row">
+  <a href="{{ "" | relURL }}" class="title">
+    <h2>{{ .Site.Title }} <img src="{{ "images/mew.gif" | relURL }}" alt="" class="title-sprite"></h2>
+  </a>
+  <button class="theme-toggle" aria-label="Toggle theme"></button>
+</div>
 <nav>{{- partial "nav.html" . -}}</nav>

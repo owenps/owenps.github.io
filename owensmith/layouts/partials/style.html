@@ -85,8 +85,6 @@
 
   code {
     font-family: monospace;
-    padding: 2px;
-    border-radius: 3px;
   }
 
   blockquote {
@@ -101,6 +99,12 @@
     text-align: center;
   }
 
+  .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .title:hover {
     text-decoration: none;
   }
@@ -109,16 +113,38 @@
     font-size: 1.5em;
   }
 
+  .title h2 {
+    margin: 0;
+  }
+
+
   .inline {
     width: auto !important;
   }
 
   .highlight,
   .code {
-    border-radius: 3px;
+    border-radius: 6px;
     margin-block-start: 1em;
     margin-block-end: 1em;
     overflow-x: auto;
+    font-size: 0.9em;
+  }
+
+  .highlight pre {
+    padding: 1em 1.2em;
+    margin: 0;
+    border-radius: 6px;
+  }
+
+  code {
+    font-size: 0.9em;
+  }
+
+  :not(pre) > code {
+    background-color: rgba(0, 0, 0, 0.06);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
   }
 
   /* blog post list */
