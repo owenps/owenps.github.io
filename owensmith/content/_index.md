@@ -7,3 +7,5 @@ weight = 1
 I'm a Backend Software Engineer building [ledge.io](https://ledge.io/). Previously at Amazon.
 
 Based out of Toronto, Canada.
+
+![GitHub contributions](https://ghchart.rshah.org/3273dc/owenps)
