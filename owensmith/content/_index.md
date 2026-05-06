@@ -8,4 +8,4 @@ I'm a Backend Software Engineer building [ledge.io](https://ledge.io/). Previous
 
 Based out of Toronto, Canada.
 
-![GitHub contributions](https://ghchart.rshah.org/3273dc/owenps)
+<img id="ghchart" alt="GitHub contributions" src="https://ghchart.rshah.org/3273dc/owenps">

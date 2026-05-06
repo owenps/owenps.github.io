@@ -16,6 +16,8 @@ theme = 'hugo-bearblog'
     lineNos = false
     lineNumbersInTable = false
     codeFences = true
+  [markup.goldmark.renderer]
+    unsafe = true
   [markup.goldmark.extensions.passthrough]
     enable = true
     [markup.goldmark.extensions.passthrough.delimiters]

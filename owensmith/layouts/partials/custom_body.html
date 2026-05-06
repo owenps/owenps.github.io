@@ -2,10 +2,17 @@
   (function() {
     var toggle = document.querySelector(".theme-toggle");
     if (!toggle) return;
+    function updateGhchart(theme) {
+      var chart = document.getElementById("ghchart");
+      if (!chart) return;
+      var color = theme === "dark" ? "1a6b8a" : "3273dc";
+      chart.src = "https://ghchart.rshah.org/" + color + "/owenps";
+    }
     function updateIcon() {
       var theme = document.documentElement.getAttribute("data-theme");
       toggle.textContent = theme === "dark" ? "✦" : "✧";
       toggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      updateGhchart(theme);
     }
     updateIcon();
     toggle.addEventListener("click", function() {
