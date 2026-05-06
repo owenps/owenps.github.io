@@ -10,6 +10,11 @@ Here are some of my personal favourites.
 
 #### Read List
 
+2026
+
+- [[Video] 
+Mario Zechner - Building pi in a World of Slop](https://www.youtube.com/watch?v=RjfbvDXpFls)
+
 2025
 
 - [[Article] Logging Sucks](https://loggingsucks.com/)

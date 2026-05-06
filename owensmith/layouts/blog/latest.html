@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{- $posts := where (where site.RegularPages "Section" "blog") "Params.layout" "!=" "latest" -}}
+  {{- $latest := (index ($posts.ByDate.Reverse) 0) -}}
+  <meta http-equiv="refresh" content="0; url={{ $latest.RelPermalink }}">
+  <link rel="canonical" href="{{ $latest.Permalink }}">
+</head>
+<body>
+  <p>Redirecting to <a href="{{ $latest.RelPermalink }}">{{ $latest.Title }}</a>…</p>
+</body>
+</html>
