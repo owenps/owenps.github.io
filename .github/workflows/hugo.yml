@@ -56,7 +56,7 @@ jobs:
         run: npm install -g pnpm
       - name: Install React demo dependencies
         working-directory: ./chatdemo
-        run: pnpm install
+        run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Build React demo
         working-directory: ./chatdemo
         run: pnpm build
