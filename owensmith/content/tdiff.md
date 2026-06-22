@@ -136,8 +136,10 @@ html[data-theme="dark"] .tdiff-card.del .mark {
   color: #d6deeb;
   line-height: 1.05;
   margin: 0;
-  overflow-x: auto;
+  overflow-x: hidden;
   padding: 0.85rem;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 .tdiff-event-log .tool-label {
   border: 1px solid #303844;
@@ -150,7 +152,7 @@ html[data-theme="dark"] .tdiff-card.del .mark {
   display: block;
   opacity: 0;
   transform: translateY(3px);
-  white-space: pre;
+  white-space: pre-wrap;
 }
 .tdiff-event-log .tool-call {
   background: #171d24;
@@ -267,41 +269,41 @@ html[data-theme="dark"] .tdiff-card.del .mark {
   <div class="tdiff-card-grid">
     <div class="tdiff-card add">
       <span class="mark">+ thread</span>
-      <strong>Line/range threads</strong>
-      <p>Pin feedback to exact changed lines in your local diff.</p>
+      <strong>Review threads</strong>
+      <p>Feedback attaches to exact lines/ranges in your local diff.</p>
+    </div>
+    <div class="tdiff-card add">
+      <span class="mark">+ inbox</span>
+      <strong>Agent inbox</strong>
+      <p>Agents discover open review work without copy/paste.</p>
     </div>
     <div class="tdiff-card add">
       <span class="mark">+ reply</span>
-      <strong>Durable conversation</strong>
-      <p>Human and agent replies stay together in one review.</p>
+      <strong>In-thread replies</strong>
+      <p>Human and agent messages stay in one durable thread.</p>
     </div>
     <div class="tdiff-card add">
       <span class="mark">+ approve</span>
-      <strong>Review gate</strong>
-      <p>Approval state is tied to the current diff.</p>
-    </div>
-    <div class="tdiff-card add">
-      <span class="mark">+ events</span>
-      <strong>Agent-readable stream</strong>
-      <p>JSON context and events let agents watch and react.</p>
+      <strong>Approval-aware</strong>
+      <p>Agents can wait for approval before continuing work.</p>
     </div>
     <div class="tdiff-card add">
       <span class="mark">+ sync</span>
-      <strong>GitHub when needed</strong>
-      <p>Sync PR review threads into your local review.</p>
+      <strong>GitHub sync</strong>
+      <p>Pull PR review threads into the same local review.</p>
     </div>
-    <div class="tdiff-card del">
-      <span class="mark">- paste</span>
-      <strong>No browser handoff</strong>
-      <p>No copy/paste diff dumps into chat.</p>
+    <div class="tdiff-card add">
+      <span class="mark">+ events</span>
+      <strong>Event stream</strong>
+      <p>Agents watch review changes and react when state changes.</p>
     </div>
   </div>
   <div class="tdiff-perspective">
     <h3>Agent workflow</h3>
     <p>Agents watch the review stream, inspect JSON context when needed, reply in-thread, and continue after approval.</p>
     <div class="tdiff-harness">
-      <pre class="tdiff-event-log"><span class="event-line tool-call" style="--delay: 0.05s"><span class="tool-label">tool</span>tdiff review watch</span>
-<span class="event-line tool-output thread-created" style="--delay: 0.48s">E178 <span class="event-type">thread.created</span> thread_id=T42 actor=owenps path="internal/review/gate.go" line_start=27 line_end=29 side=new diff_hash=9f2c... body_preview="approval should block on open threads"</span>
+      <pre class="tdiff-event-log"><span class="event-line tool-call" style="--delay: 0.05s"><span class="tool-label">tool</span>tdiff agent inbox --json</span>
+<span class="event-line tool-output" style="--delay: 0.48s">[{"thread_id":"T42","actor":"owenps","path":"internal/review/gate.go","line_start":27,"line_end":29,"body":"approval should block on open threads"}]</span>
 <span class="event-line agent-msg" style="--delay: 0.98s">new review thread T42 from owenps; inspecting context</span>
 <span class="event-line tool-call" style="--delay: 1.42s"><span class="tool-label">tool</span>tdiff thread show T42 --json</span>
 <span class="event-line tool-output" style="--delay: 1.88s">status=open target=internal/review/gate.go:27-29 body="approval should block on open threads"</span>
@@ -316,7 +318,7 @@ html[data-theme="dark"] .tdiff-card.del .mark {
 <span class="event-line agent-msg" style="--delay: 6.68s">approval received; continuing task</span></pre>
       <div class="tdiff-input-bar" aria-label="agent input bar">
         <span class="tdiff-spinner" aria-hidden="true"></span>
-        <span class="tdiff-running-text">tool running: tdiff review watch</span>
+        <span class="tdiff-running-text">tool running: tdiff agent inbox --json</span>
         <span class="tdiff-check" aria-hidden="true">✓</span>
         <span class="tdiff-done-text">review approved</span>
       </div>
