@@ -24,6 +24,29 @@
     });
   })();
 
+  (function() {
+    document.addEventListener("click", function(event) {
+      var button = event.target.closest && event.target.closest(".codeblock-copy");
+      if (!button) return;
+      var block = button.closest(".codeblock");
+      var code = block && block.querySelector("code");
+      if (!code) return;
+      navigator.clipboard.writeText(code.textContent.replace(/\n$/, "")).then(function() {
+        var toast = document.querySelector(".codeblock-toast");
+        if (!toast) {
+          toast = document.createElement("div");
+          toast.className = "codeblock-toast";
+          toast.setAttribute("role", "status");
+          toast.setAttribute("aria-live", "polite");
+          toast.textContent = "copied to clipboard";
+          document.body.appendChild(toast);
+        }
+        toast.classList.add("show");
+        setTimeout(function() { toast.classList.remove("show"); }, 1200);
+      });
+    });
+  })();
+
 </script>
 {{ if .Params.math }}
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous"></script>

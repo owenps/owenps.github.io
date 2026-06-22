@@ -1,0 +1,5 @@
+{{- $result := transform.HighlightCodeBlock . -}}
+<div class="codeblock">
+  {{ $result.Wrapped }}
+  <button class="codeblock-copy" type="button" aria-label="Copy code"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M14 12V2H4V0h12v12h-2zM0 4h12v12H0V4zm2 2v8h8V6H2z"/></svg></button>
+</div>

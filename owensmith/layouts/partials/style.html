@@ -137,6 +137,70 @@
     border-radius: 6px;
   }
 
+  .codeblock {
+    position: relative;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+
+  .codeblock .highlight,
+  .codeblock pre {
+    margin: 0;
+    background-color: #101418 !important;
+  }
+
+  .codeblock pre {
+    border-radius: 6px;
+    overflow-x: auto;
+    padding: 1em 3.2rem 1em 1.2em;
+  }
+
+  .codeblock pre,
+  .codeblock code {
+    background-color: #101418 !important;
+    color: #d6deeb !important;
+  }
+
+  .codeblock-copy {
+    align-items: center;
+    background: transparent;
+    border: 1px solid #303844;
+    border-radius: 4px;
+    color: #d6deeb;
+    display: inline-flex;
+    padding: 0.35rem;
+    position: absolute;
+    right: 0.6rem;
+    top: 0.6rem;
+  }
+
+  .codeblock-copy:hover {
+    background: #171d24;
+  }
+
+  .codeblock-copy svg {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .codeblock-toast {
+    background: #101418;
+    border: 1px solid #303844;
+    border-radius: 6px;
+    bottom: 1rem;
+    color: #d6deeb;
+    opacity: 0;
+    padding: 0.5rem 0.75rem;
+    pointer-events: none;
+    position: fixed;
+    right: 1rem;
+    transition: opacity 0.15s ease;
+    z-index: 10;
+  }
+
+  .codeblock-toast.show {
+    opacity: 1;
+  }
 
   code {
     font-size: 0.9em;
