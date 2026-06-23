@@ -10,6 +10,6 @@ Based out of Toronto, Canada.
 
 #### Side projects
 
-[tdiff](/tdiff)
+- [tdiff](/tdiff) — local diff review for human-agent workflows.
+- [bitpack](https://github.com/owenps/bitpack) — compact arrays for Go.
 
-<img id="ghchart" alt="GitHub contributions" src="https://ghchart.rshah.org/3273dc/owenps">
