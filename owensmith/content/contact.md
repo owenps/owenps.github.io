@@ -9,8 +9,8 @@ Always happy to chat and discuss projects.
 
 #### My accounts on other sites
 
-- <a class="contact-link" href="https://ledge.io/owen"><img class="contact-favicon" src="/images/contact/ledge.jpg" alt="">ledge.io/owen</a>
-- <a class="contact-link" href="https://letterboxd.com/owenps/"><img class="contact-favicon" src="/images/contact/letterboxd.png" alt="">letterboxd.com/owenps</a>
-- <a class="contact-link" href="https://www.linkedin.com/in/owenpsmith/"><img class="contact-favicon" src="/images/contact/linkedin.png" alt="">linkedin.com/in/owenpsmith</a>
-- <a class="contact-link" href="https://github.com/owenps/"><img class="contact-favicon" src="/images/contact/github.png" alt="">github.com/owenps</a>
-- <a class="contact-link" href="https://x.com/owenps_/"><img class="contact-favicon" src="/images/contact/x.png" alt="">x.com/owenps_</a>
+- {{< site-link url="https://ledge.io/owen" icon="ledge.jpg" text="ledge.io/owen" >}}
+- {{< site-link url="https://letterboxd.com/owenps/" icon="letterboxd.png" text="letterboxd.com/owenps" >}}
+- {{< site-link url="https://www.linkedin.com/in/owenpsmith/" icon="linkedin.png" text="linkedin.com/in/owenpsmith" >}}
+- {{< site-link url="https://github.com/owenps/" icon="github.png" text="github.com/owenps" >}}
+- {{< site-link url="https://x.com/owenps_/" icon="x.png" text="x.com/owenps_" >}}
