@@ -9,8 +9,8 @@ Always happy to chat and discuss projects.
 
 #### My accounts on other sites
 
-- [ledge.io/owen](https://ledge.io/owen)
-- [letterboxd.com/owenps](https://letterboxd.com/owenps/)
-- [linkedin.com/in/owenpsmith](https://www.linkedin.com/in/owenpsmith/)
-- [github.com/owenps](https://github.com/owenps/)
-- [x.com/owenps_](https://x.com/owenps_/)
+- <a class="contact-link" href="https://ledge.io/owen"><img class="contact-favicon" src="/images/contact/ledge.jpg" alt="">ledge.io/owen</a>
+- <a class="contact-link" href="https://letterboxd.com/owenps/"><img class="contact-favicon" src="/images/contact/letterboxd.png" alt="">letterboxd.com/owenps</a>
+- <a class="contact-link" href="https://www.linkedin.com/in/owenpsmith/"><img class="contact-favicon" src="/images/contact/linkedin.png" alt="">linkedin.com/in/owenpsmith</a>
+- <a class="contact-link" href="https://github.com/owenps/"><img class="contact-favicon" src="/images/contact/github.png" alt="">github.com/owenps</a>
+- <a class="contact-link" href="https://x.com/owenps_/"><img class="contact-favicon" src="/images/contact/x.png" alt="">x.com/owenps_</a>
