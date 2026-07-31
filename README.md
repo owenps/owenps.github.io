@@ -39,12 +39,10 @@ Images and other assets go in the same folder as the post's `index.md` and are r
 ![alt text](my-image.png)
 ```
 
-## Update Sub Modules
+## Update Submodules
 
-Sub Modules do not update automatically, to pull down the latest you'll need to run
+Submodules do not update automatically. To update the Hugo theme, run:
 
 ```sh
-git submodule update --remote chatdemo
+git submodule update --remote owensmith/themes/hugo-bearblog
 ```
-
-Check the `.gitmodules` file for the all module names.
