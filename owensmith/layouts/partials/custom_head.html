@@ -18,17 +18,70 @@
   }
 
   .theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    padding: 0;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
     color: var(--text-color);
-    transition: opacity 0.2s;
+    cursor: pointer;
+    display: inline-flex;
+    height: 40px;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 0.15s ease;
+    width: 40px;
   }
 
   .theme-toggle:hover {
-    opacity: 0.6;
+    background: color-mix(in srgb, var(--text-color) 9%, transparent);
+  }
+
+  .theme-toggle:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+  }
+
+  .theme-sun-moon {
+    height: 21px;
+    overflow: visible;
+    width: 21px;
+  }
+
+  .theme-sun,
+  .theme-moon {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .theme-sun {
+    color: var(--link-color);
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  .theme-moon {
+    color: #f2e7cf;
+    opacity: 0;
+    transform: rotate(-70deg) scale(0.65);
+  }
+
+  html[data-theme="dark"] .theme-sun {
+    opacity: 0;
+    transform: rotate(70deg) scale(0.65);
+  }
+
+  html[data-theme="dark"] .theme-moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .theme-sun,
+    .theme-moon {
+      transition: none;
+    }
   }
 </style>
 <script>
