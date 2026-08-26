@@ -1,2 +1,4 @@
 {{ with .Site.Params.favicon }}
-<link rel="icon" href="{{ . | relURL }}" />{{ end }}
+<link rel="icon" type="image/png" href="{{ . | relURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">{{ end }}
