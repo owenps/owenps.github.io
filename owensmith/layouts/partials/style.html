@@ -91,8 +91,16 @@
     transition: color 0.16s steps(2, end);
   }
 
-  a:hover {
-    text-decoration: underline;
+  a:not(.title):hover {
+    background-color: var(--heading-color);
+    box-shadow: 0.14em 0 0 var(--heading-color), -0.14em 0 0 var(--heading-color);
+    color: var(--background-color);
+    text-decoration: none;
+  }
+
+  ::selection {
+    background-color: var(--heading-color);
+    color: var(--background-color);
   }
 
   a[href^="http://"]::after,
@@ -208,7 +216,7 @@
 
   .highlight,
   .code {
-    border-radius: 6px;
+    border-radius: 0;
     margin-block-start: 1em;
     margin-block-end: 1em;
     overflow-x: auto;
@@ -218,7 +226,7 @@
   .highlight pre {
     padding: 1em 1.2em;
     margin: 0;
-    border-radius: 6px;
+    border-radius: 0;
   }
 
   .codeblock {
@@ -233,7 +241,7 @@
   }
 
   .codeblock pre {
-    border-radius: 6px;
+    border-radius: 0;
     font-family: var(--font-code);
     overflow-x: auto;
     padding: 1em 1.2em;

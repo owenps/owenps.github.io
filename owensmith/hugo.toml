@@ -1,4 +1,4 @@
-baseURL = 'https://owenps.github.io/'
+baseURL = 'https://owenps.com/'
 languageCode = 'en-us'
 title = 'Owen Smith'
 theme = 'hugo-bearblog'
