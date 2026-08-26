@@ -17,12 +17,42 @@
     --font-secondary: "Geist Pixel Square", monospace;
     --font-code: "DepartureMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --font-scale: 1em;
-    --background-color: #f5f0e8;
-    --heading-color: #2a2420;
-    --text-color: #4a4440;
-    --link-color: #3273dc;
-    --visited-color: #8b6fcb;
-    --blockquote-color: #2a2420;
+    --background-color: #e9e8e1;
+    --heading-color: #20211f;
+    --text-color: #454641;
+    --link-color: #426477;
+    --visited-color: #6c6174;
+    --blockquote-color: #30312e;
+    --paper-mottle-color: rgba(39, 40, 36, 0.08);
+    --paper-texture-blend: multiply;
+    --paper-texture-opacity: 0.55;
+    --portrait-filter: contrast(0.94);
+    --title-sprite-filter: none;
+  }
+
+  html {
+    background-color: var(--background-color);
+    isolation: isolate;
+    min-height: 100%;
+    scrollbar-gutter: stable;
+    transition: background-color 0.16s steps(2, end);
+  }
+
+  html::before {
+    background-image:
+      radial-gradient(ellipse at 12% 18%, var(--paper-mottle-color), transparent 42%),
+      radial-gradient(ellipse at 82% 76%, var(--paper-mottle-color), transparent 46%),
+      url("/images/eink-grain.svg");
+    background-position: center, center, center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%, cover;
+    content: "";
+    inset: 0;
+    mix-blend-mode: var(--paper-texture-blend);
+    opacity: var(--paper-texture-opacity);
+    pointer-events: none;
+    position: fixed;
+    z-index: 0;
   }
 
   body {
@@ -32,11 +62,14 @@
     padding: 20px;
     max-width: var(--width);
     text-align: left;
-    background-color: var(--background-color);
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.5;
     color: var(--text-color);
+    transition: color 0.16s steps(2, end);
   }
 
   h1,
@@ -47,16 +80,29 @@
   h6 {
     font-family: var(--font-main);
     color: var(--heading-color);
+    transition: color 0.16s steps(2, end);
   }
 
   a {
     color: var(--link-color);
     cursor: pointer;
     text-decoration: none;
+    transition: color 0.16s steps(2, end);
   }
 
   a:hover {
     text-decoration: underline;
+  }
+
+  a[href^="http://"]::after,
+  a[href^="https://"]::after {
+    content: "\00a0↗";
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 0.78em;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: 0.08em;
   }
 
   nav a {
@@ -66,6 +112,7 @@
   strong,
   b {
     color: var(--heading-color);
+    transition: color 0.16s steps(2, end);
   }
 
   button {
@@ -106,15 +153,28 @@
     width: 1em;
   }
 
+  .home-portrait {
+    border: 2px solid var(--text-color);
+    box-sizing: border-box;
+    display: block;
+    filter: var(--portrait-filter);
+    height: auto;
+    margin: 1.5em 0;
+    transition: border-color 0.16s steps(2, end), filter 0.16s steps(2, end);
+    width: 20%;
+  }
+
   code {
     font-family: var(--font-code);
   }
 
   blockquote {
-    border-left: 1px solid #999;
+    border-left: 3px solid #999;
     color: var(--blockquote-color);
-    padding-left: 20px;
     font-style: italic;
+    margin-inline: 0;
+    padding-left: 20px;
+    transition: border-color 0.16s steps(2, end), color 0.16s steps(2, end);
   }
 
   footer {
@@ -211,7 +271,7 @@
     position: fixed;
     right: max(1rem, calc((100vw - var(--width)) / 2 - 3.5rem));
     transform: translateY(0.5rem);
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    transition: background-color 0.16s steps(2, end), border-color 0.16s steps(2, end), color 0.16s steps(2, end), opacity 0.15s ease, transform 0.15s ease;
     width: 2.5rem;
     z-index: 10;
   }
@@ -245,8 +305,29 @@
   }
 
   .title-sprite {
-    height: 2em;
-    vertical-align: middle;
     display: inline;
+    filter: var(--title-sprite-filter);
+    height: 2em;
+    opacity: 0.88;
+    vertical-align: middle;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    strong,
+    b,
+    blockquote,
+    .home-portrait,
+    .scroll-to-top {
+      transition: none;
+    }
   }
 </style>

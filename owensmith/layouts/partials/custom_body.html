@@ -3,10 +3,12 @@
   (function() {
     var toggle = document.querySelector(".theme-toggle");
     if (!toggle) return;
+    var root = document.documentElement;
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     function updateGhchart(theme) {
       var chart = document.getElementById("ghchart");
       if (!chart) return;
-      var color = theme === "dark" ? "1a6b8a" : "3273dc";
+      var color = theme === "dark" ? "91aab5" : "426477";
       chart.src = "https://ghchart.rshah.org/" + color + "/owenps";
     }
     function updateIcon() {
@@ -16,12 +18,26 @@
       updateGhchart(theme);
     }
     updateIcon();
-    toggle.addEventListener("click", function() {
-      var current = document.documentElement.getAttribute("data-theme");
-      var next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
+    function applyTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
       updateIcon();
+    }
+    var refreshTimer;
+    toggle.addEventListener("click", function() {
+      var current = root.getAttribute("data-theme");
+      var next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+
+      if (reducedMotion.matches) return;
+
+      root.classList.remove("theme-refreshing");
+      void root.offsetWidth;
+      root.classList.add("theme-refreshing");
+      window.clearTimeout(refreshTimer);
+      refreshTimer = window.setTimeout(function() {
+        root.classList.remove("theme-refreshing");
+      }, 340);
     });
   })();
 
