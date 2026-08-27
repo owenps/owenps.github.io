@@ -6,7 +6,7 @@ weight = 1
 
 <img class="home-portrait" src="/images/owen-smith-italy.jpeg" alt="Owen Smith in Italy" width="288" height="259">
 
-I'm a Backend Software Engineer at {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="ledge.io" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.png" text="Amazon" >}}.
+I'm a Backend Software Engineer at {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.png" text="Amazon" >}}.
 
 Based out of Toronto, Canada.
 
