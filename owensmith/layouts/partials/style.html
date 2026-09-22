@@ -186,6 +186,51 @@
     transition: border-color 0.16s steps(2, end), color 0.16s steps(2, end);
   }
 
+  mark {
+    background-color: color-mix(in srgb, var(--background-color) 65%, #6b91ad);
+    color: var(--heading-color);
+    padding: 0.05em 0.12em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .annotated-mark {
+    /* Cover the underline and line gaps without enlarging the visible highlight. */
+    padding-block: 0.3em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .annotated-mark > mark {
+    cursor: help;
+    text-decoration: underline dotted;
+    text-underline-offset: 0.2em;
+  }
+
+  .annotated-mark > mark:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+  }
+
+  .mark-note {
+    background-color: var(--background-color);
+    border: 1px solid var(--link-color);
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 0.65rem 0.8rem;
+    position: fixed;
+    text-align: left;
+    white-space: pre-wrap;
+    width: min(20rem, calc(100vw - 32px));
+    z-index: 20;
+  }
+
   footer {
     padding: 25px 0;
     text-align: center;

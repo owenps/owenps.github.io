@@ -61,6 +61,68 @@
     update();
   })();
 
+  (function() {
+    var annotations = document.querySelectorAll(".annotated-mark");
+    if (!annotations.length) return;
+    var active;
+
+    function close() {
+      if (!active) return;
+      active.querySelector(".mark-note").hidden = true;
+      active = null;
+    }
+
+    function position() {
+      if (!active) return;
+      var mark = active.querySelector("mark");
+      var note = active.querySelector(".mark-note");
+      var rect = mark.getBoundingClientRect();
+      var left = Math.max(16, Math.min(rect.left, document.documentElement.clientWidth - note.offsetWidth - 16));
+      var top = rect.bottom;
+      if (top + note.offsetHeight > window.innerHeight - 16) {
+        top = rect.top - note.offsetHeight;
+      }
+      top = Math.max(16, Math.min(top, window.innerHeight - note.offsetHeight - 16));
+      note.style.left = left + "px";
+      note.style.top = top + "px";
+    }
+
+    function open(annotation) {
+      if (active !== annotation) close();
+      active = annotation;
+      active.querySelector(".mark-note").hidden = false;
+      position();
+    }
+
+    annotations.forEach(function(annotation) {
+      annotation.addEventListener("pointerenter", function(event) {
+        if (event.pointerType === "mouse") open(annotation);
+      });
+      annotation.addEventListener("pointerleave", function() {
+        if (active === annotation && !annotation.contains(document.activeElement)) close();
+      });
+      annotation.addEventListener("focusin", function() { open(annotation); });
+      annotation.addEventListener("focusout", function(event) {
+        if (active === annotation && !annotation.contains(event.relatedTarget)) close();
+      });
+      annotation.querySelector("mark").addEventListener("click", function(event) {
+        if (!event.target.closest("a")) open(annotation);
+      });
+    });
+
+    document.addEventListener("click", function(event) {
+      if (active && !active.contains(event.target)) close();
+    });
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape" && active) {
+        close();
+        event.preventDefault();
+      }
+    });
+    window.addEventListener("resize", position);
+    window.addEventListener("scroll", position, { passive: true });
+  })();
+
 </script>
 {{ if .Params.math }}
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous"></script>

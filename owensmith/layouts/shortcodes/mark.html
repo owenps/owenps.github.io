@@ -1,0 +1,7 @@
+{{- $text := .Page.RenderString (dict "display" "inline") .Inner -}}
+{{- with .Get "note" -}}
+  {{- $id := printf "mark-note-%s-%d" (md5 $.Page.RelPermalink) $.Ordinal -}}
+  <span class="annotated-mark"><mark class="text-highlight" tabindex="0" aria-describedby="{{ $id }}">{{ $text }}</mark><span class="mark-note" id="{{ $id }}" role="tooltip" hidden>{{ . }}</span></span>
+{{- else -}}
+  <mark class="text-highlight">{{ $text }}</mark>
+{{- end -}}
