@@ -5,7 +5,7 @@ weight = 1
 aliases = []
 +++
 
-I'm {{< hover-card label="Owen" width="209" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, this is my hypertext space on the Internet --- welcome, and thank you for visting.
+I'm {{< hover-card label="Owen" width="190" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, this is my hypertext space on the Internet --- welcome, and thank you for visting.
 
 I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I'm currently based in {{< hover-card label="Toronto" group="true">}}![A rainbow over a Toronto park at sunset](/images/toronto.jpg)
 
