@@ -7,7 +7,13 @@ aliases = []
 
 I'm {{< hover-card label="Owen" width="209" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, this is my hypertext space on the Internet --- welcome, and thank you for visting.
 
-I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I'm currently based in {{< hover-card label="Toronto" >}}![A rainbow over a Toronto park at sunset](/images/toronto.jpg){{< /hover-card >}}, Canada.
+I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I'm currently based in {{< hover-card label="Toronto" group="true">}}![A rainbow over a Toronto park at sunset](/images/toronto.jpg)
+
+---
+
+![lily-owen](/images/toronto-winter.jpg)
+
+{{< /hover-card >}}, Canada.
 
 Coding has always been a creative outlet for me, though working in software has sometimes made that easy to forget. Lately, I’m finding my way back to making things for their own sake.
 
