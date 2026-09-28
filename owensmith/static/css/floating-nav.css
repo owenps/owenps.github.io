@@ -1,4 +1,4 @@
-/* Local-only prototype; the header remains the primary navigation. */
+/* Floating navigation; the header remains the primary navigation. */
 .floating-nav {
   --glass-depth: 44px;
   --floating-edge: clamp(16px, 3vw, 24px);
