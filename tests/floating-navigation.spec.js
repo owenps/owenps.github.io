@@ -80,6 +80,38 @@ test('the full-height icon hover areas are clickable', async ({ page }) => {
   await expect(quick(page)).toBeHidden();
 });
 
+for (const location of ['header', 'floating']) {
+  test(`${location} theme button stays anchored through press and release`, async ({ page }) => {
+    if (location === 'floating') await openNavigation(page);
+    const region = location === 'floating' ? quick(page) : page.getByRole('banner');
+    const theme = region.getByRole('button', { name: 'Dark mode', exact: true });
+    await theme.hover();
+    const resting = await theme.boundingBox();
+    const expectStationary = async () => {
+      // Observe the gesture over multiple frames, not only its settled endpoints.
+      const frames = await theme.evaluate(button => new Promise(resolve => {
+        const samples = [];
+        const start = performance.now();
+        function sample(time) {
+          const { x, y, width, height } = button.getBoundingClientRect();
+          samples.push({ x, y, width, height });
+          if (time - start < 300) requestAnimationFrame(sample);
+          else resolve(samples);
+        }
+        requestAnimationFrame(sample);
+      }));
+      for (const frame of frames) expect(frame).toEqual(resting);
+    };
+    for (const pressed of ['true', 'false']) {
+      await page.mouse.down();
+      await expectStationary();
+      await page.mouse.up();
+      await expectStationary();
+      await expect(theme).toHaveAttribute('aria-pressed', pressed);
+    }
+  });
+}
+
 test('keyboard disclosure, Escape, and outside click dismiss without losing focus', async ({ page, browserName }) => {
   await scrollToReading(page);
   await opener(page).focus();

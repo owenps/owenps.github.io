@@ -10,15 +10,10 @@
   border-radius: 50%;
   touch-action: manipulation;
   user-select: none;
-  transition: transform 150ms ease-out;
 }
 
 .theme-toggle[hidden] {
   display: none;
-}
-
-.theme-toggle:active {
-  transform: scale(0.96);
 }
 
 .theme-toggle svg {
@@ -84,14 +79,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-toggle {
-    transition: none;
-  }
-
-  .theme-toggle:active {
-    transform: none;
-  }
-
   .theme-toggle[data-ready] svg,
   .theme-toggle[data-ready] .theme-toggle__disc,
   .theme-toggle[data-ready] .theme-toggle__bite {

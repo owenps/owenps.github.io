@@ -57,7 +57,7 @@
   border-radius: 999px;
   background: transparent;
   color: var(--text-color);
-  transition: background-color 200ms ease-out, color 200ms ease-out, transform 150ms ease-out;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
 }
 .floating-nav__action:hover {
   background: color-mix(in srgb, var(--text-color) 6%, transparent);
