@@ -19,11 +19,15 @@
 .theme-toggle svg {
   display: block;
   translate: 0 1px;
+}
+
+/* Rotate the artwork, not its viewport: avoid root-SVG layer changes at rest. */
+.theme-toggle__rotation {
   transform: rotate(0deg);
-  transform-origin: center;
   transform-box: view-box;
 }
 
+.theme-toggle__rotation,
 .theme-toggle__disc,
 .theme-toggle__bite,
 .theme-toggle__ray {
@@ -46,7 +50,7 @@
   opacity: 1;
 }
 
-.theme-toggle[aria-pressed="true"] svg {
+.theme-toggle[aria-pressed="true"] .theme-toggle__rotation {
   transform: rotate(-40deg);
 }
 
@@ -67,7 +71,7 @@
 
 /* Enable only after initial state is rendered: no entrance animation.
    CSS transitions also reverse smoothly on rapid repeated clicks. */
-.theme-toggle[data-ready] svg,
+.theme-toggle[data-ready] .theme-toggle__rotation,
 .theme-toggle[data-ready] .theme-toggle__disc,
 .theme-toggle[data-ready] .theme-toggle__bite {
   transition: transform 400ms var(--morph-ease);
@@ -79,7 +83,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-toggle[data-ready] svg,
+  .theme-toggle[data-ready] .theme-toggle__rotation,
   .theme-toggle[data-ready] .theme-toggle__disc,
   .theme-toggle[data-ready] .theme-toggle__bite {
     transition: none;

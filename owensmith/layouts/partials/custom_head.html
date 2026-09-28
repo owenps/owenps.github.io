@@ -190,7 +190,8 @@
 </style>
 <link rel="stylesheet" href="{{ "css/glass.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/header.css" | relURL }}">
-<link rel="stylesheet" href="{{ "css/theme-toggle.css" | relURL }}">
+{{ $themeToggleCSS := resources.FromString "css/theme-toggle.css" (readFile "static/css/theme-toggle.css") | fingerprint }}
+<link rel="stylesheet" href="{{ $themeToggleCSS.RelPermalink }}">
 <script src="{{ "js/theme-toggle.js" | relURL }}"></script>
 <link rel="stylesheet" href="{{ "css/floating-nav.css" | relURL }}">
 <script defer src="{{ "js/floating-nav.js" | relURL }}"></script>
