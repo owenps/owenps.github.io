@@ -1,0 +1,4 @@
+<p class="signature" role="img" aria-label="Owen Smith signature">
+  {{- $svg := readFile "static/images/signature.svg" -}}
+  {{- replace $svg "signature-ink-" (printf "signature-%d-ink-" .Ordinal) | safeHTML -}}
+</p>

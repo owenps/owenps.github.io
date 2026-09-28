@@ -1,0 +1,11 @@
+{{- $page := . -}}
+{{- range .Site.Menus.main -}}
+  {{- $current := $page.IsMenuCurrent "main" . -}}
+  {{- $ancestor := false -}}
+  {{- with .Page -}}
+    {{- if not .IsHome -}}
+      {{- $ancestor = .IsAncestor $page -}}
+    {{- end -}}
+  {{- end -}}
+  <a href="{{ .URL }}"{{ if or $current $ancestor }} class="glass-control" aria-current="{{ if $current }}page{{ else }}location{{ end }}"{{ end }}>{{ .Name }}</a>
+{{- end -}}

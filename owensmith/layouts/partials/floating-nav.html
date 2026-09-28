@@ -1,0 +1,18 @@
+{{/* Local prototype: included only by hugo server. */}}
+<nav class="floating-nav glass-control" aria-label="Quick navigation" data-open="false" data-visible="false" aria-hidden="true" inert hidden>
+  <button class="floating-nav__trigger floating-nav__action" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="floating-nav-items">
+    <span class="floating-nav__icon" aria-hidden="true">
+      <span class="floating-nav__line"></span>
+      <span class="floating-nav__line"></span>
+    </span>
+  </button>
+  <div class="floating-nav__items" id="floating-nav-items" inert aria-hidden="true">
+    <div class="site-nav">{{ partial "nav.html" . }}</div>
+    <div class="floating-nav__theme"></div>
+    <button class="floating-nav__top floating-nav__action" type="button" aria-label="Back to top" title="Back to top">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <path d="M12 19V5m-6 6 6-6 6 6" />
+      </svg>
+    </button>
+  </div>
+</nav>

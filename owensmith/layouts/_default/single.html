@@ -9,7 +9,7 @@
   </i>
 </p>
 {{ end }}{{ end }}
-<content>
+<content{{ if eq .Type "blog" }} class="blog-prose"{{ end }}>
   {{ .Content }}
 </content>
 

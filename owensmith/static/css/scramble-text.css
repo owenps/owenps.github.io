@@ -1,0 +1,29 @@
+scramble-text {
+  display: inline-block;
+  position: relative;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre;
+}
+
+.scramble-text__label {
+  opacity: 0;
+}
+
+.scramble-text__visual {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.scramble-text__cursor {
+  display: inline-block;
+  width: 1ch;
+  height: 0.72em;
+  background: currentColor;
+  vertical-align: baseline;
+}
+
+.scramble-text__ahead {
+  opacity: 0.35;
+}

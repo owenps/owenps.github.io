@@ -2,15 +2,44 @@
 title = "Home"
 menu = "main"
 weight = 1
+aliases = []
 +++
 
-<img class="home-portrait" src="/images/owen-smith-italy.jpeg" alt="Owen Smith in Italy" width="288" height="259">
+I'm {{< hover-card label="Owen" width="209" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, this is my hypertext space on the Internet --- welcome, and thank you for visting.
 
-I'm a Backend Software Engineer at {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.png" text="Amazon" >}}.
+I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I'm currently based in {{< hover-card label="Toronto" >}}![A rainbow over a Toronto park at sunset](/images/toronto.jpg){{< /hover-card >}}, Canada.
 
-Based out of Toronto, Canada.
+Coding has always been a creative outlet for me, though working in software has sometimes made that easy to forget. Lately, I’m finding my way back to making things for their own sake.
 
-#### Side projects
+To spending more time doing things we love, {{< hover-card label="with people we love" group="true" >}}
 
-- [tdiff](/tdiff) — local diff review for human-agent workflows.
-- [bitpack](https://github.com/owenps/bitpack) — compact arrays for Go.
+![lily-owen](/images/lily-2.jpg)
+
+---
+
+![owen-harry](/images/owen-harry.jpg)
+
+---
+
+![owen-joey](/images/owen-joey.png)
+
+
+{{< /hover-card >}}.
+
+{{< signature >}}
+
+### Socials
+
+{{< site-link url="https://github.com/owenps/" icon="github.svg" text="github.com/owenps" >}}
+<br/>
+{{< site-link url="https://x.com/owenps_/" icon="x.svg" text="x.com/owenps_" >}}
+<br/>
+{{< site-link url="https://ledge.io/owen" icon="ledge.jpg" text="ledge.io/owen" >}}
+<br/>
+{{< site-link url="https://www.linkedin.com/in/owenpsmith/" icon="linkedin.svg" text="linkedin.com/in/owenpsmith" >}}
+<br/>
+{{< site-link url="https://letterboxd.com/owenps/" icon="letterboxd.svg" text="letterboxd.com/owenps" >}}
+<br/>
+{{< site-link url="https://www.instagram.com/owen.ps/" icon="instagram.svg" text="instagram.com/owen.ps" >}}
+<br/>
+{{< site-link url="https://www.youtube.com/@ow3nsmith" icon="youtube.svg" text="youtube.com/@ow3nsmith" >}}

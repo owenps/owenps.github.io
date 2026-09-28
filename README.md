@@ -1,4 +1,4 @@
-# owenps.github.io
+# owenps.com
 
 [![Deploy to GitHub Pages](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml/badge.svg)](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml)
 

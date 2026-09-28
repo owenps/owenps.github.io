@@ -1,0 +1,22 @@
+<button class="theme-toggle glass-control" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+    <defs>
+      <mask id="theme-moon-mask" maskUnits="userSpaceOnUse" x="-12" y="-12" width="24" height="24">
+        <rect x="-12" y="-12" width="24" height="24" fill="white" />
+        <circle class="theme-toggle__bite" r="7.5" fill="black" />
+      </mask>
+    </defs>
+    <g transform="translate(12 12)">
+      <g mask="url(#theme-moon-mask)">
+        <circle class="theme-toggle__disc" r="4" fill="currentColor" />
+      </g>
+      <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        {{ range seq 0 7 }}
+        <g transform="rotate({{ mul . 45 }})">
+          <line class="theme-toggle__ray" x1="0" y1="0" x2="2.5" y2="0" vector-effect="non-scaling-stroke" style="--ray-index: {{ . }}" />
+        </g>
+        {{ end }}
+      </g>
+    </g>
+  </svg>
+</button>

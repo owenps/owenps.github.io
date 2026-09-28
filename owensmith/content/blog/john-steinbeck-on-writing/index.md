@@ -5,6 +5,9 @@ draft = false
 tags = ["notes"]
 +++
 
+![Call Me By Your Name Backdrop](call-me-by-your-name.jpg)
+<small><i>Call Me By Your Name (2017)</i></small>
+
 [Source](https://newsroom.artandwriting.org/2011/02/13/advicetobeginningwriters/)
 
 Dear Writer:

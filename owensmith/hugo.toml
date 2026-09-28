@@ -1,6 +1,6 @@
 baseURL = 'https://owenps.com/'
 languageCode = 'en-us'
-title = 'Owen Smith'
+title = 'owenps'
 theme = 'hugo-bearblog'
 capitalizeListTitles = false
 

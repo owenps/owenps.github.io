@@ -1,0 +1,40 @@
+.signature {
+  width: 80px;
+  max-width: 100%;
+  margin: 0.75rem 0 1.5rem;
+  color: var(--heading-color);
+}
+
+.signature svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* The completed mark is the default, including without animation support. */
+@media (prefers-reduced-motion: no-preference) {
+  .signature-stroke {
+    stroke-dasharray: 1;
+    animation: signature-write 900ms ease-in-out both;
+  }
+
+  .signature-stroke--o {
+    animation-delay: 150ms;
+  }
+
+  .signature-stroke--s {
+    animation-delay: 1050ms;
+    animation-duration: 850ms;
+  }
+
+  .signature-stroke--flourish {
+    animation-delay: 1900ms;
+    animation-duration: 500ms;
+  }
+}
+
+@keyframes signature-write {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}

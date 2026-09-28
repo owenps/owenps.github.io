@@ -1,0 +1,86 @@
+.like-button {
+  align-items: center;
+  background: none;
+  border: 0;
+  color: var(--text-color);
+  display: inline-flex;
+  font: inherit;
+  height: 1em;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+
+.like-button:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
+}
+
+.like-icon,
+.like-heart,
+.like-heart svg {
+  display: block;
+  height: 1em;
+  width: 1em;
+}
+
+.like-icon,
+.like-heart {
+  position: relative;
+}
+
+.like-heart path {
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.like-heart svg {
+  overflow: visible;
+  fill-opacity: 0;
+  transition: color 100ms ease-out, fill-opacity 100ms ease-out;
+}
+
+.like-button:hover {
+  color: var(--heading-color);
+}
+
+.like-button[aria-pressed="true"] .like-heart svg {
+  color: var(--heart-color);
+  fill-opacity: 1;
+  transition-duration: 150ms;
+}
+
+.like-effects,
+.like-burst,
+.like-ring {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.like-ring {
+  border: 1.5px solid var(--heart-color);
+  border-radius: 50%;
+}
+
+.like-particle {
+  background: var(--heart-color);
+  border-radius: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .like-heart svg {
+    transition: none;
+  }
+
+  .like-effects {
+    display: none;
+  }
+}

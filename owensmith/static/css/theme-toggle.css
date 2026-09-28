@@ -1,0 +1,104 @@
+.theme-toggle {
+  --morph-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  touch-action: manipulation;
+  user-select: none;
+  transition: transform 150ms ease-out;
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle:active {
+  transform: scale(0.96);
+}
+
+.theme-toggle svg {
+  display: block;
+  translate: 0 1px;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transform-box: view-box;
+}
+
+.theme-toggle__disc,
+.theme-toggle__bite,
+.theme-toggle__ray {
+  transform-origin: 0 0;
+}
+
+.theme-toggle__disc {
+  transform: scale(1);
+}
+
+/* The bite travels on a straight line, five degrees above three o'clock. */
+.theme-toggle__bite {
+  transform: translate(19.923894px, -1.743115px);
+}
+
+.theme-toggle__ray {
+  --ray-delay: calc(60ms + (7 - var(--ray-index)) * 18ms);
+  --fade-duration: 180ms;
+  transform: translateX(7.5px) scaleX(1);
+  opacity: 1;
+}
+
+.theme-toggle[aria-pressed="true"] svg {
+  transform: rotate(-40deg);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__disc {
+  transform: scale(2);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__bite {
+  transform: translate(7.47146px, -0.653668px);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__ray {
+  --ray-delay: calc(var(--ray-index) * 18ms);
+  --fade-duration: 120ms;
+  transform: translateX(3.5px) scaleX(0.6);
+  opacity: 0;
+}
+
+/* Enable only after initial state is rendered: no entrance animation.
+   CSS transitions also reverse smoothly on rapid repeated clicks. */
+.theme-toggle[data-ready] svg,
+.theme-toggle[data-ready] .theme-toggle__disc,
+.theme-toggle[data-ready] .theme-toggle__bite {
+  transition: transform 400ms var(--morph-ease);
+}
+
+.theme-toggle[data-ready] .theme-toggle__ray {
+  transition: transform 400ms var(--morph-ease) var(--ray-delay),
+    opacity var(--fade-duration) var(--morph-ease) var(--ray-delay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+
+  .theme-toggle:active {
+    transform: none;
+  }
+
+  .theme-toggle[data-ready] svg,
+  .theme-toggle[data-ready] .theme-toggle__disc,
+  .theme-toggle[data-ready] .theme-toggle__bite {
+    transition: none;
+  }
+
+  .theme-toggle[data-ready] .theme-toggle__ray {
+    transition: opacity 100ms ease-out;
+  }
+}

@@ -1,0 +1,31 @@
+{{- $label := .Get "label" -}}
+{{- if not $label -}}
+  {{- errorf "hover-card requires a label at %s" .Position -}}
+{{- end -}}
+{{- $cards := slice .Inner -}}
+{{- if eq (printf "%v" (.Get "group")) "true" -}}
+  {{- $cards = split (replace .Inner "\r\n" "\n") "\n---\n" -}}
+{{- end -}}
+{{- $group := gt (len $cards) 1 -}}
+{{- $id := printf "hover-card-%s-%d" (md5 .Page.RelPermalink) .Ordinal -}}
+<span class="hover-card">
+  {{- with .Get "href" -}}
+    <a class="hover-card-trigger" href="{{ . | relURL }}" aria-haspopup="dialog" aria-controls="{{ $id }}" aria-expanded="false">{{ with $.Get "icon" }}<img class="site-icon" src="{{ printf "images/favicons/%s" . | relURL }}" alt="" width="16" height="16"> {{ end }}{{ $label }}</a>
+  {{- else -}}
+    <button class="hover-card-trigger" type="button" aria-haspopup="dialog" aria-controls="{{ $id }}" aria-expanded="false" disabled>{{ with .Get "icon" }}<img class="site-icon" src="{{ printf "images/favicons/%s" . | relURL }}" alt="" width="16" height="16"> {{ end }}{{ $label }}</button>
+  {{- end -}}
+  <template id="{{ $id }}-template">
+    <div id="{{ $id }}" class="hover-card-popover{{ if $group }} hover-card-popover--group{{ end }}" style="--hover-card-width: {{ default 232 (.Get "width") | int }}px; --hover-card-count: {{ len $cards }}" popover="manual" role="dialog" aria-label="{{ $label }} preview" tabindex="-1">
+      <div class="hover-card-surface">
+        <div class="hover-card-body{{ if $group }} hover-card-panels{{ end }}">
+          {{- if $group -}}
+            {{- range $cards -}}
+              <div class="hover-card-panel"><div class="hover-card-body">{{ $.Page.RenderString (dict "display" "block") . }}</div></div>
+            {{- end -}}
+          {{- else -}}
+            {{ .Page.RenderString (dict "display" "block") .Inner }}
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+  </template></span>
