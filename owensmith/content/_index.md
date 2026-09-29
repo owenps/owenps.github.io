@@ -17,7 +17,7 @@ I am currently part of the founding engineering team for {{< site-link url="http
 
 Coding has always been a creative outlet for me, though working in software has sometimes made that easy to forget. Lately, I’m finding my way back to making things for their own sake.
 
-To spending more time doing things we love, {{< hover-card label="with people we love" group="true" >}}
+Here's to spending more time doing things we love, {{< hover-card label="with people we love" group="true" >}}
 
 ![lily-owen](/images/lily-2.jpg)
 
