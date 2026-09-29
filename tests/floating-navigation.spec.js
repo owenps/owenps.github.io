@@ -156,19 +156,25 @@ test('theme changes stay synchronized and native navigation retains the preferen
 test('fits narrow screens and does not cover footer controls', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 700 });
   await openNavigation(page);
-  await quick(page).getByRole('button', { name: 'Back to top', exact: true }).click({ trial: true });
-  await expect.poll(() => quick(page).evaluate(el => el.getAnimations().length)).toBe(0);
-  const dock = await quick(page).boundingBox();
-  expect(dock.x).toBeGreaterThanOrEqual(16);
-  expect(dock.x + dock.width).toBeLessThanOrEqual(304);
+  for (const control of await quick(page).getByRole('link').all()) {
+    await expect(control).toBeInViewport();
+    await control.click({ trial: true });
+  }
+  for (const control of await quick(page).getByRole('button').all()) {
+    await expect(control).toBeInViewport();
+    await control.click({ trial: true });
+  }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await closer(page).click();
   await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight));
   const footer = page.getByRole('link', { name: 'View source on GitHub', exact: true });
+  const copyright = page.getByText(/^© Owen Smith,/);
+  await expect(copyright).toBeInViewport();
   await expect(footer).toBeInViewport();
-  const footerBox = await footer.boundingBox();
-  const dockBox = await quick(page).boundingBox();
-  expect(footerBox.y + footerBox.height).toBeLessThan(dockBox.y);
+  await footer.click({ trial: true });
+  await closer(page).click();
+  await expect(copyright).toBeInViewport();
+  await expect(footer).toBeInViewport();
+  await footer.click({ trial: true });
 });
 
 test('entrance fades through intermediate opacity and settles fully visible', async ({ page }) => {

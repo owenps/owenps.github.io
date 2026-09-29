@@ -4,7 +4,7 @@
   --floating-edge: clamp(16px, 3vw, 24px);
   position: fixed;
   right: max(var(--floating-edge), env(safe-area-inset-right));
-  bottom: max(var(--floating-edge), env(safe-area-inset-bottom));
+  bottom: calc(max(var(--floating-edge), env(safe-area-inset-bottom)) + var(--floating-nav-lift, 0px));
   width: 44px;
   height: 44px;
   max-width: calc(100vw - max(var(--floating-edge), env(safe-area-inset-left)) - max(var(--floating-edge), env(safe-area-inset-right)));
@@ -155,6 +155,12 @@
 /* Leave room to read/use the footer even when the floating control is present. */
 html[data-floating-nav-visible] footer {
   padding-bottom: calc(89px + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 600px) {
+  :root { --floating-nav-lift: 32px; }
+  /* The footer now fits below the raised menu instead of above it. */
+  html[data-floating-nav-visible] footer { padding-bottom: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
