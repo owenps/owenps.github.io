@@ -1,4 +1,4 @@
-<link rel="preload" href="{{ "fonts/InterVariable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/GeistVariable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 {{ if .HasShortcode "signature" }}
 <link rel="stylesheet" href="{{ "css/signature.css" | relURL }}">
 {{ end }}
@@ -12,16 +12,32 @@
 {{ end }}
 <style>
   @font-face {
-    font-family: "Inter";
-    src: url('{{ "fonts/InterVariable.woff2" | relURL }}') format("woff2");
+    font-family: "Geist";
+    src: url('{{ "fonts/GeistVariable.woff2" | relURL }}') format("woff2");
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Inter";
-    src: url('{{ "fonts/InterVariable-Italic.woff2" | relURL }}') format("woff2");
+    font-family: "Geist";
+    src: url('{{ "fonts/GeistVariable-Italic.woff2" | relURL }}') format("woff2");
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Geist Mono";
+    src: url('{{ "fonts/GeistMonoVariable.woff2" | relURL }}') format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Geist Mono";
+    src: url('{{ "fonts/GeistMonoVariable-Italic.woff2" | relURL }}') format("woff2");
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
@@ -33,8 +49,8 @@
   }
 
   :root {
-    --font-main: "Inter", sans-serif;
-    --font-secondary: "Inter", sans-serif;
+    --font-main: "Geist", sans-serif;
+    --font-secondary: "Geist", sans-serif;
     color-scheme: light;
     --background-color: #ffffff;
     --heading-color: #222222;
@@ -83,6 +99,11 @@
   hr,
   blockquote {
     border-color: var(--border-color);
+  }
+
+  pre,
+  code {
+    font-family: "Geist Mono", monospace;
   }
 
   /* Fenced code retains its self-contained Nord syntax palette. */
