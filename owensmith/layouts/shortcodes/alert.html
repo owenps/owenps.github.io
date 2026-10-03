@@ -1,0 +1,15 @@
+{{- $type := lower (default "note" (.Get "type")) -}}
+{{- $icons := dict
+  "note" "M8 7v4 M8 4.5v.01 M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z"
+  "tip" "M6 12h4 M6.5 14h3 M5.5 10.5C5.5 8.5 3.5 8 3.5 5.5a4.5 4.5 0 0 1 9 0c0 2.5-2 3-2 5 M8 8v4"
+  "important" "M8 4v4 M8 10.5v.01 M2 1.5h12v10H7l-5 3v-13Z"
+  "warning" "M8 6v3 M8 11.5v.01 M8 1.5 15 14H1L8 1.5Z"
+  "caution" "M8 4.5v4 M8 11v.01 M5 1h6l4 4v6l-4 4H5l-4-4V5l4-4Z"
+-}}
+{{- if not (isset $icons $type) -}}
+  {{- errorf "alert type must be note, tip, important, warning, or caution; got %q at %s" $type .Position -}}
+{{- end -}}
+<div class="markdown-alert markdown-alert-{{ $type }}" role="note" aria-label="{{ $type | title }}">
+  <p class="markdown-alert-title"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ index $icons $type }}" /></svg>{{ $type | title }}</p>
+  <div class="markdown-alert-body">{{ .Page.RenderString (dict "display" "block") .Inner }}</div>
+</div>

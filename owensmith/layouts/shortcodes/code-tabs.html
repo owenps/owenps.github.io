@@ -1,0 +1,8 @@
+{{- /* Evaluate children before reading the files they register. */ -}}
+{{- $inner := .Inner -}}
+{{- $files := .Scratch.Get "files" -}}
+{{- if not $files -}}
+  {{- errorf "code-tabs requires at least one code-file at %s" .Position -}}
+{{- else -}}
+  {{- partial "code-block.html" (dict "id" (printf "code-tabs-%s-%d" (md5 .Page.RelPermalink) .Ordinal) "files" $files "hideheader" (eq (printf "%v" (.Get "showheader")) "false")) -}}
+{{- end -}}

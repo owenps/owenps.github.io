@@ -1,0 +1,12 @@
+{{- $lineNos := ne (printf "%v" .Options.linenos) "false" -}}
+{{- $options := dict "lineNos" $lineNos "lineNumbersInTable" false "noClasses" false -}}
+{{- $result := transform.HighlightCodeBlock . $options -}}
+{{- $highlighted := $result.Wrapped -}}
+{{- if not (transform.CanHighlight .Type) -}}
+  {{- $highlighted = highlight .Inner "text" $options -}}
+{{- end -}}
+{{- $name := default (default "text" .Type) .Attributes.filename -}}
+{{- $hideHeader := eq (printf "%v" .Attributes.showheader) "false" -}}
+{{- $code := strings.TrimSuffix "\n" .Inner -}}
+{{- $file := dict "name" $name "code" $code "highlighted" $highlighted -}}
+{{- partial "code-block.html" (dict "id" (printf "code-fence-%s-%d" (md5 .Page.RelPermalink) .Ordinal) "files" (slice $file) "hideheader" $hideHeader) -}}

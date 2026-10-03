@@ -1,4 +1,8 @@
 <link rel="preload" href="{{ "fonts/GeistVariable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/cmunrm.woff" | relURL }}" as="font" type="font/woff" crossorigin>
+{{ if .HasShortcode "alert" }}
+<link rel="stylesheet" href="{{ "css/alert.css" | relURL }}">
+{{ end }}
 {{ if .HasShortcode "signature" }}
 <link rel="stylesheet" href="{{ "css/signature.css" | relURL }}">
 {{ end }}
@@ -41,6 +45,42 @@
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Computer Modern Serif";
+    src: url('{{ "fonts/cmunrm.woff" | relURL }}') format("woff");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Computer Modern Serif";
+    src: url('{{ "fonts/cmunbx.woff" | relURL }}') format("woff");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Computer Modern Serif";
+    src: url('{{ "fonts/cmunti.woff" | relURL }}') format("woff");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Computer Modern Serif";
+    src: url('{{ "fonts/cmunbi.woff" | relURL }}') format("woff");
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  main {
+    font-family: "Computer Modern Serif", "Times New Roman", serif;
   }
 
   .blog-prose {
@@ -106,7 +146,6 @@
     font-family: "Geist Mono", monospace;
   }
 
-  /* Fenced code retains its self-contained Nord syntax palette. */
   :not(pre) > code {
     background: var(--surface-color);
     color: var(--heading-color);
@@ -148,6 +187,7 @@
   a[href^="https://"]::after,
   a[href^="mailto:"]::after {
     content: "↗";
+    font-family: "Geist", sans-serif;
     display: inline-block;
     margin-left: 0.5em;
     text-decoration: none;
@@ -211,6 +251,10 @@
 </style>
 <link rel="stylesheet" href="{{ "css/glass.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/header.css" | relURL }}">
+{{ $codeBlockCSS := resources.FromString "css/code-block.css" (readFile "static/css/code-block.css") | fingerprint }}
+<link rel="stylesheet" href="{{ $codeBlockCSS.RelPermalink }}">
+{{ $codeBlockJS := resources.FromString "js/code-block.js" (readFile "static/js/code-block.js") | fingerprint }}
+<script type="module" src="{{ $codeBlockJS.RelPermalink }}"></script>
 {{ $themeToggleCSS := resources.FromString "css/theme-toggle.css" (readFile "static/css/theme-toggle.css") | fingerprint }}
 <link rel="stylesheet" href="{{ $themeToggleCSS.RelPermalink }}">
 <script src="{{ "js/theme-toggle.js" | relURL }}"></script>

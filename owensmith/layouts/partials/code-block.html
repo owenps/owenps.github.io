@@ -1,0 +1,33 @@
+{{- $id := .id -}}
+{{- $multiple := gt (len .files) 1 -}}
+<div class="code-block" id="{{ $id }}" role="group" aria-label="{{ if $multiple }}Code files{{ else }}Code: {{ (index .files 0).name }}{{ end }}" data-code-block{{ if $multiple }} data-multiple{{ end }}>
+  {{- if not .hideheader }}
+  <div class="code-block-header">
+    {{- if $multiple }}
+    <div class="code-tabs" role="tablist" aria-label="Files" hidden>
+      {{- range $i, $file := .files }}
+      <button class="code-tab" id="{{ $id }}-tab-{{ $i }}" type="button" role="tab" aria-selected="{{ eq $i 0 }}" aria-controls="{{ $id }}-panel-{{ $i }}" tabindex="{{ if eq $i 0 }}0{{ else }}-1{{ end }}"><span class="code-tab-label">{{ $file.name }}</span></button>
+      {{- end }}
+    </div>
+    {{- else }}
+    <span class="code-file-name">{{ (index .files 0).name }}</span>
+    {{- end }}
+    <button class="code-copy" type="button" aria-label="Copy code" data-status="idle" hidden>
+      <span class="code-copy-icon" aria-hidden="true">
+        <svg class="code-copy-symbol" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5.25" y="5.25" width="8" height="8" rx="1.75"/><path d="M10.75 5.25V4.5a1.75 1.75 0 0 0-1.75-1.75H4.5A1.75 1.75 0 0 0 2.75 4.5V9a1.75 1.75 0 0 0 1.75 1.75h.75"/></svg>
+        <svg class="code-copy-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg>
+      </span>
+      <span class="code-copy-labels" aria-hidden="true"><span data-status="idle">Copy</span><span data-status="copied">Copied</span><span data-status="failed">Failed</span></span>
+      <span class="code-copy-status" role="status"></span>
+    </button>
+  </div>
+  {{- end }}
+  <div class="code-panels">
+    {{- range $i, $file := .files }}
+    <section class="code-panel" id="{{ $id }}-panel-{{ $i }}" aria-label="{{ $file.name }}" tabindex="0" data-selected="{{ eq $i 0 }}" data-code="{{ $file.code }}">
+      {{- if $multiple }}<div class="code-file-heading">{{ $file.name }}</div>{{ end }}
+      {{- $file.highlighted | replaceRE `<pre tabindex="0"` `<pre` | replaceRE `<span class="ln"([^>]*)>` `<span class="ln" aria-hidden="true"$1>` | safeHTML }}
+    </section>
+    {{- end }}
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{{- if not .Parent -}}
+  {{- errorf "code-file must be inside code-tabs at %s" .Position -}}
+{{- else if ne .Parent.Name "code-tabs" -}}
+  {{- errorf "code-file must be inside code-tabs at %s" .Position -}}
+{{- else -}}
+  {{- $name := .Get "name" -}}
+  {{- if not $name -}}{{- errorf "code-file requires a name at %s" .Position -}}{{- end -}}
+  {{- $language := default "text" (.Get "language") -}}
+  {{- if not (transform.CanHighlight $language) -}}{{- $language = "text" -}}{{- end -}}
+  {{- $code := .Inner | strings.TrimPrefix "\n" | strings.TrimSuffix "\n" -}}
+  {{- $lineNos := ne (printf "%v" (.Parent.Get "linenos")) "false" -}}
+  {{- if isset .Params "linenos" -}}
+    {{- $lineNos = ne (printf "%v" (.Get "linenos")) "false" -}}
+  {{- end -}}
+  {{- $highlighted := highlight $code $language (dict "lineNos" $lineNos "lineNumbersInTable" false "noClasses" false) -}}
+  {{- .Parent.Scratch.Add "files" (slice (dict "name" $name "code" $code "highlighted" $highlighted)) -}}
+{{- end -}}

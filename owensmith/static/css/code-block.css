@@ -1,0 +1,352 @@
+.code-block {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 1.5em 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background:
+    linear-gradient(var(--surface-color), var(--surface-color)) padding-box,
+    linear-gradient(to bottom,
+      color-mix(in srgb, var(--link-color) 45%, var(--border-color)),
+      var(--border-color) 50%,
+      color-mix(in srgb, var(--visited-color) 45%, var(--border-color))) border-box;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 6%), 0 4px 12px rgb(0 0 0 / 4%);
+  font-family: "Geist Mono", monospace;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.code-block *,
+.code-block *::before,
+.code-block *::after {
+  box-sizing: border-box;
+}
+
+.code-block [hidden] {
+  display: none !important;
+}
+
+.code-block .code-block-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.code-block .code-tabs {
+  display: flex;
+  align-self: stretch;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.code-block :is(.code-tab, .code-copy) {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--muted-color);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.code-block .code-tab {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0 12px;
+}
+
+.code-block :is(.code-tab-label, .code-file-name) {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-block .code-tab-label {
+  transition: transform 150ms ease;
+}
+
+.code-block .code-tab:active .code-tab-label {
+  transform: scale(.96);
+}
+
+.code-block .code-tab::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.code-block :is(.code-tab[aria-selected="true"], .code-tab:hover, .code-copy:hover) {
+  color: var(--text-color);
+}
+
+.code-block .code-tab[aria-selected="true"]::after {
+  opacity: 1;
+}
+
+.code-block .code-file-name {
+  flex: 1;
+  min-width: 0;
+  padding: 0 12px;
+  font-size: 12px;
+  color: var(--muted-color);
+}
+
+.code-block .code-copy {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 6px 8px;
+  border-radius: 8px;
+  touch-action: manipulation;
+  transition: transform 150ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.code-block .code-copy:hover {
+  color: var(--heading-color);
+  background: var(--background-color);
+}
+
+.code-block .code-copy:active {
+  transform: scale(.96);
+}
+
+.code-block :is(.code-copy-icon, .code-copy-labels) {
+  display: grid;
+  align-items: center;
+}
+
+.code-block .code-copy-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.code-block .code-copy-icon svg {
+  grid-area: 1 / 1;
+  width: 16px;
+  height: 16px;
+  transition: opacity 150ms ease;
+}
+
+.code-block .code-copy-check,
+.code-block .code-copy[data-status="copied"] .code-copy-symbol {
+  opacity: 0;
+}
+
+.code-block .code-copy[data-status="copied"] .code-copy-check {
+  opacity: 1;
+}
+
+/* Stacked labels reserve the widest status without a layout shift. */
+.code-block .code-copy-labels [data-status] {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.code-block .code-copy:not([data-status]) [data-status="idle"],
+.code-block .code-copy[data-status="idle"] [data-status="idle"],
+.code-block .code-copy[data-status="copied"] [data-status="copied"],
+.code-block .code-copy[data-status="failed"] [data-status="failed"] {
+  visibility: visible;
+}
+
+.code-block .code-copy-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.code-block :focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: -3px;
+}
+
+.code-block .code-panels {
+  position: relative;
+}
+
+.code-block .code-panel {
+  position: static;
+  max-height: 280px;
+  overflow: auto;
+}
+
+.code-block .code-file-heading {
+  margin: 0;
+  padding: 8px 20px;
+  color: var(--muted-color);
+  font: inherit;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.code-block[data-enhanced] .code-file-heading {
+  display: none;
+}
+
+.code-block[data-enhanced][data-multiple] .code-panels {
+  height: 280px;
+}
+
+.code-block[data-enhanced][data-multiple] .code-panel {
+  position: absolute;
+  inset: 0;
+  transition: opacity 200ms ease, filter 200ms ease;
+}
+
+.code-block[data-enhanced][data-multiple] .code-panel[data-selected="false"] {
+  opacity: 0;
+  filter: blur(4px);
+  pointer-events: none;
+  transition-duration: 150ms;
+}
+
+.code-block[data-enhanced][data-multiple] .code-panel[data-selected="true"] {
+  z-index: 1;
+  opacity: 1;
+  filter: none;
+}
+
+.code-block :where(.highlight, pre, code) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  color: inherit;
+  font: inherit;
+  overflow: visible;
+}
+
+.code-block pre {
+  min-width: max-content;
+  padding: 16px 20px;
+  font-size: 14px;
+  line-height: 24px;
+  white-space: pre;
+  text-wrap: nowrap;
+  tab-size: 4;
+}
+
+.code-block pre:has(.ln) {
+  padding-inline: 0;
+}
+
+.code-block pre code {
+  display: block;
+}
+
+.code-block pre span {
+  color: inherit;
+}
+
+.code-block .line {
+  display: flex;
+  min-height: 24px;
+}
+
+.code-block .ln {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  flex: 0 0 44px;
+  width: 44px;
+  margin: 0;
+  padding: 0 12px 0 0;
+  background: var(--surface-color);
+  color: var(--muted-color);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.code-block .ln + .cl {
+  padding-right: 20px;
+}
+
+.code-block .hl {
+  background: color-mix(in srgb, var(--link-color) 10%, transparent);
+}
+
+.code-block .chroma :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx, .nt, .na) {
+  color: light-dark(oklch(0.5 0.14 285), oklch(0.78 0.11 285));
+}
+
+.code-block .chroma :is(.s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss) {
+  color: light-dark(oklch(0.5 0.1 155), oklch(0.8 0.1 155));
+}
+
+.code-block .chroma :is(.c, .ch, .cm, .c1, .cs, .cp, .cpf) {
+  color: var(--muted-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-block :is(.code-tab-label, .code-copy) {
+    transform: none;
+    transition: none;
+  }
+
+  .code-block .code-copy:active {
+    transform: none;
+  }
+
+  .code-block .code-tab:active .code-tab-label {
+    transform: none;
+  }
+
+  .code-block[data-enhanced][data-multiple] .code-panel[data-selected] {
+    filter: none;
+    transition-property: opacity;
+  }
+}
+
+@media (forced-colors: active) {
+  .code-block,
+  .code-block .code-copy {
+    border: 1px solid CanvasText;
+  }
+
+  .code-block .code-block-header {
+    border-bottom-color: CanvasText;
+  }
+
+  .code-block .code-tab[aria-selected="true"]::after {
+    background: Highlight;
+    forced-color-adjust: none;
+  }
+
+  .code-block :focus-visible {
+    outline-color: Highlight;
+  }
+}

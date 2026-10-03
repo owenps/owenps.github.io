@@ -1,0 +1,49 @@
+.markdown-alert {
+  margin-block: 1rem;
+  padding: 0.5rem 1rem;
+  border-left: 0.25rem solid var(--alert-color);
+  color: var(--text-color);
+  overflow-wrap: anywhere;
+}
+
+.markdown-alert-note {
+  --alert-color: light-dark(#0969da, #4493f8);
+}
+
+.markdown-alert-tip {
+  --alert-color: light-dark(#1a7f37, #3fb950);
+}
+
+.markdown-alert-important {
+  --alert-color: light-dark(#8250df, #ab7df8);
+}
+
+.markdown-alert-warning {
+  --alert-color: light-dark(#9a6700, #d29922);
+}
+
+.markdown-alert-caution {
+  --alert-color: light-dark(#d1242f, #f85149);
+}
+
+.markdown-alert > .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  color: var(--alert-color);
+  font-family: var(--font-main);
+  font-weight: 600;
+}
+
+.markdown-alert-title svg {
+  flex-shrink: 0;
+}
+
+.markdown-alert-body > :first-child {
+  margin-top: 0;
+}
+
+.markdown-alert-body > :last-child {
+  margin-bottom: 0;
+}
