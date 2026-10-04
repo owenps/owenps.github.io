@@ -1,0 +1,7 @@
+{{- $name := .Get "name" -}}
+{{- $handle := .Get "handle" -}}
+{{- $id := printf "social-tooltip-%d" .Ordinal -}}
+<a class="social-link" href="{{ .Get "url" }}" aria-label="{{ $name }}" aria-describedby="{{ $id }}">
+  <img class="site-icon" src="{{ printf "images/favicons/%s" (.Get "icon") | relURL }}" alt="" width="24" height="24">
+  <span class="social-tooltip glass-surface" id="{{ $id }}" role="tooltip">{{ default $name $handle }}</span>
+</a>

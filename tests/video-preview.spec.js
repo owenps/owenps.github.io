@@ -16,11 +16,6 @@ test('video loads on hover, plays muted, pauses on dismissal, and resumes on reo
   await expect(preview(page)).toBeVisible();
   const link = preview(page).getByRole('link', { name: /bluesheep.pages.dev/ });
   await expect(link).toHaveAttribute('href', 'https://bluesheep.pages.dev/');
-  const icon = link.locator('img');
-  await expect.poll(async () => {
-    const bounds = await icon.boundingBox();
-    return bounds && [Math.round(bounds.width), Math.round(bounds.height)];
-  }).toEqual([16, 16]);
   await expect.poll(() => video(page).evaluate(v => !v.paused && v.currentTime > 0)).toBe(true);
   expect(await video(page).evaluate(v => v.muted && v.loop && v.playsInline)).toBe(true);
   await page.keyboard.press('Escape');

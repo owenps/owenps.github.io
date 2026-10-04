@@ -1,10 +1,12 @@
 (() => {
   const root = document.documentElement;
   const system = matchMedia("(prefers-color-scheme: dark)");
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const storageKey = "color-theme";
   const validTheme = (value) => value === "light" || value === "dark" ? value : null;
   let preference = null;
   let button;
+  let transition;
 
   try {
     preference = validTheme(localStorage.getItem(storageKey));
@@ -42,11 +44,16 @@
     requestAnimationFrame(() => { button.dataset.ready = ""; });
 
     button.addEventListener("click", () => {
-      preference = root.dataset.theme === "dark" ? "light" : "dark";
+      preference = (preference || root.dataset.theme) === "dark" ? "light" : "dark";
       try {
         localStorage.setItem(storageKey, preference);
       } catch (_) {}
-      applyTheme();
+      transition?.skipTransition();
+      if (document.startViewTransition && !reducedMotion.matches) {
+        transition = document.startViewTransition(applyTheme);
+      } else {
+        applyTheme();
+      }
     });
   });
 })();

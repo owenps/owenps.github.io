@@ -1,6 +1,6 @@
 {{- $id := .id -}}
 {{- $multiple := gt (len .files) 1 -}}
-<div class="code-block" id="{{ $id }}" role="group" aria-label="{{ if $multiple }}Code files{{ else }}Code: {{ (index .files 0).name }}{{ end }}" data-code-block{{ if $multiple }} data-multiple{{ end }}>
+<div class="code-block glass-surface" id="{{ $id }}" role="group" aria-label="{{ if $multiple }}Code files{{ else }}Code: {{ (index .files 0).name }}{{ end }}" data-code-block{{ if $multiple }} data-multiple{{ end }}>
   {{- if not .hideheader }}
   <div class="code-block-header">
     {{- if $multiple }}

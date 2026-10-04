@@ -1,7 +1,14 @@
 <link rel="preload" href="{{ "fonts/GeistVariable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ "fonts/cmunrm.woff" | relURL }}" as="font" type="font/woff" crossorigin>
+{{ if and .IsHome .Params.profileheader }}
+{{ $profileCSS := resources.FromString "css/profile-header.css" (readFile "static/css/profile-header.css") | fingerprint }}
+<link rel="stylesheet" href="{{ $profileCSS.RelPermalink }}">
+{{ end }}
 {{ if .HasShortcode "alert" }}
 <link rel="stylesheet" href="{{ "css/alert.css" | relURL }}">
+{{ end }}
+{{ if .HasShortcode "social-link" }}
+<link rel="stylesheet" href="{{ "css/social-links.css" | relURL }}">
 {{ end }}
 {{ if .HasShortcode "signature" }}
 <link rel="stylesheet" href="{{ "css/signature.css" | relURL }}">
@@ -147,8 +154,13 @@
   }
 
   :not(pre) > code {
-    background: var(--surface-color);
-    color: var(--heading-color);
+    --glass-depth: 18px;
+    display: inline-block;
+    max-width: 100%;
+    font-size: 0.85em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    padding: 1px 6px;
   }
 
   mark {

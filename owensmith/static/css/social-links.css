@@ -1,0 +1,66 @@
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-block: 1em;
+}
+
+.social-links .social-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background: var(--surface-color);
+  text-decoration: none;
+}
+
+.social-link .site-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.social-links .social-link::after {
+  content: none;
+}
+
+.social-link .social-tooltip {
+  --glass-depth: 28px;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.social-link:first-child .social-tooltip {
+  left: 0;
+  transform: none;
+}
+
+.social-link:last-child .social-tooltip {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.social-link:hover .social-tooltip,
+.social-link:focus-visible .social-tooltip {
+  visibility: visible;
+}
