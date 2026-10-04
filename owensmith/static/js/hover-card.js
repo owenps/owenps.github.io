@@ -39,6 +39,7 @@ function close(record = active, restore = false, immediate = false) {
   record.pinned = false;
   record.trigger.setAttribute('aria-expanded', 'false');
   record.observer?.disconnect();
+  for (const video of record.card.querySelectorAll('video')) video.pause();
   if (restore && record.card.contains(document.activeElement)) {
     suppressFocus = true;
     record.trigger.focus({ preventScroll: true });
@@ -177,6 +178,9 @@ function open(record, mode, pointerX) {
   if (active !== record) return;
   record.observer?.observe(record.surface);
   record.observer?.observe(record.body);
+  for (const video of record.card.querySelectorAll('video')) {
+    if (!reducedMotion.matches) video.play().catch(() => {});
+  }
   if (!reducedMotion.matches && record.surface.animate) {
     const animation = record.surface.animate([
       { opacity: 0, transform: `translateY(${record.above ? 6 : -6}px) scale(.88)`, filter: 'blur(4px)' },
@@ -346,6 +350,10 @@ document.addEventListener('scroll', event => {
 }, { capture: true, passive: true });
 reducedMotion.addEventListener('change', () => {
   if (active) {
+    for (const video of active.card.querySelectorAll('video')) {
+      if (reducedMotion.matches) video.pause();
+      else video.play().catch(() => {});
+    }
     active.animation?.cancel();
     active.animation = null;
     place(active, true);
