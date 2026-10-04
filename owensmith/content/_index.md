@@ -8,7 +8,11 @@ profileHeader = true
 
 I'm {{< hover-card label="Owen" width="190" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, this is my hypertext space on the Internet --- welcome, and thank you for visting.
 
-I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I also take on select projects for designing and building websites.
+I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I also take on select projects for {{< hover-card label="designing and building websites" width="360" >}}
+<video src="/videos/bluesheep-preview.mp4" poster="/images/bluesheep-preview.jpg" width="960" height="554" muted loop playsinline preload="none" aria-label="Blue Sheep Films website preview"></video>
+
+{{< site-link url="https://bluesheep.pages.dev/" icon="bluesheep.png" text="bluesheep.pages.dev" >}}
+{{< /hover-card >}}.
 
 Coding has always been a creative outlet for me, though working in software has sometimes made that easy to forget. Lately, I’m finding my way back to making things for their own sake.
 
