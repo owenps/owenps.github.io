@@ -20,7 +20,7 @@ Based in Toronto, Canada.
 
 {{< signature >}}
 
-### Projects
+### Recent Projects
 
 {{< site-link url="https://bluesheep.pages.dev/" icon="bluesheep.png" text="bluesheep.pages.dev" >}}
 
