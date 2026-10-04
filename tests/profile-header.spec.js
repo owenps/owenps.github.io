@@ -15,7 +15,7 @@ test('homepage shows the profile images while preserving bio and navigation', as
   await expect(profile.getByRole('heading')).toHaveCount(0);
   await expect(profile.getByText('@owenps', { exact: true })).toHaveCount(0);
   await expect(page.getByText('Based in Toronto, Canada.', { exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Projects', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Recent Projects', exact: true })).toBeVisible();
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('link', { name: 'Blog', exact: true }).click();
   await expect(page).toHaveURL('/blog/');
   await expect(page.getByRole('region', { name: 'Profile header', exact: true })).toHaveCount(0);

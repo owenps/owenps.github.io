@@ -6,7 +6,7 @@ const socials = [
   ['GitHub', '@owenps', 'https://github.com/owenps/'],
   ['X', '@owenps_', 'https://x.com/owenps_/'],
   ['Ledge', '@owen', 'https://ledge.io/owen'],
-  ['LinkedIn', 'LinkedIn', 'https://www.linkedin.com/in/owenpsmith/'],
+  ['LinkedIn', null, 'https://www.linkedin.com/in/owenpsmith/'],
   ['Letterboxd', '@owenps', 'https://letterboxd.com/owenps/'],
   ['Instagram', '@owen.ps', 'https://www.instagram.com/owen.ps/'],
   ['YouTube', '@ow3nsmith', 'https://www.youtube.com/@ow3nsmith'],
@@ -24,9 +24,14 @@ for (const colorScheme of ['light', 'dark']) {
       const link = navigation.getByRole('link', { name, exact: true });
       const tooltip = link.getByRole('tooltip', { includeHidden: true });
       await expect(link).toHaveAttribute('href', url);
+      await expect.poll(() => link.locator('img').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+      if (tooltipText === null) {
+        await expect(tooltip).toHaveCount(0);
+        await expect(link).not.toHaveAttribute('aria-describedby');
+        continue;
+      }
       await expect(tooltip).toHaveText(tooltipText);
       await expect(tooltip).toBeHidden();
-      await expect.poll(() => link.locator('img').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
       await link.hover();
       await expect(tooltip).toBeVisible();
       const bounds = await tooltip.boundingBox();
