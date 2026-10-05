@@ -29,7 +29,6 @@ Based in Toronto, Canada.
 <nav class="social-links" aria-label="Socials">
 {{< social-link url="https://github.com/owenps/" icon="github.svg" name="GitHub" handle="@owenps" >}}
 {{< social-link url="https://x.com/owenps_/" icon="x.svg" name="X" handle="@owenps_" >}}
-{{< social-link url="https://ledge.io/owen" icon="ledge.jpg" name="Ledge" handle="@owen" >}}
 {{< social-link url="https://www.linkedin.com/in/owenpsmith/" icon="linkedin.svg" name="LinkedIn" >}}
 {{< social-link url="https://letterboxd.com/owenps/" icon="letterboxd.svg" name="Letterboxd" handle="@owenps" >}}
 {{< social-link url="https://www.instagram.com/owen.ps/" icon="instagram.svg" name="Instagram" handle="@owen.ps" >}}

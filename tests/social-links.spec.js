@@ -5,7 +5,6 @@ test.use({ baseURL: 'http://127.0.0.1:4176', javaScriptEnabled: false });
 const socials = [
   ['GitHub', '@owenps', 'https://github.com/owenps/'],
   ['X', '@owenps_', 'https://x.com/owenps_/'],
-  ['Ledge', '@owen', 'https://ledge.io/owen'],
   ['LinkedIn', null, 'https://www.linkedin.com/in/owenpsmith/'],
   ['Letterboxd', '@owenps', 'https://letterboxd.com/owenps/'],
   ['Instagram', '@owen.ps', 'https://www.instagram.com/owen.ps/'],
@@ -19,6 +18,7 @@ for (const colorScheme of ['light', 'dark']) {
     await page.goto('/');
     const navigation = page.getByRole('navigation', { name: 'Socials', exact: true });
     await expect(navigation.getByRole('link')).toHaveCount(socials.length);
+    await expect(page.locator('a[href="https://ledge.io/owen"]')).toHaveCount(0);
 
     for (const [name, tooltipText, url] of socials) {
       const link = navigation.getByRole('link', { name, exact: true });
