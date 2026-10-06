@@ -11,11 +11,11 @@ test('video loads on hover, plays muted, pauses on dismissal, and resumes on reo
   });
   await page.goto('/video-preview/');
   expect(requests).toHaveLength(0);
-  await expect(trigger(page)).toHaveAttribute('href', 'https://bluesheep.pages.dev/');
+  await expect(trigger(page)).toHaveAttribute('href', 'https://bluesheepfilms.com/');
   await trigger(page).hover();
   await expect(preview(page)).toBeVisible();
-  const link = preview(page).getByRole('link', { name: /bluesheep.pages.dev/ });
-  await expect(link).toHaveAttribute('href', 'https://bluesheep.pages.dev/');
+  const link = preview(page).getByRole('link', { name: /bluesheepfilms\.com/ });
+  await expect(link).toHaveAttribute('href', 'https://bluesheepfilms.com/');
   await expect.poll(() => video(page).evaluate(v => !v.paused && v.currentTime > 0)).toBe(true);
   expect(await video(page).evaluate(v => v.muted && v.loop && v.playsInline)).toBe(true);
   await page.keyboard.press('Escape');

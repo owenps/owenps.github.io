@@ -53,6 +53,6 @@ for (const colorScheme of ['light', 'dark']) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     // Other external links retain their existing text.
     await expect(page.getByRole('main').getByRole('link', { name: /Ledge/ }).first()).toBeVisible();
-    await expect(page.getByRole('link', { name: /bluesheep.pages.dev/ })).toBeVisible();
+    await expect(page.getByRole('link', { name: /bluesheepfilms\.com/ })).toBeVisible();
   });
 }
