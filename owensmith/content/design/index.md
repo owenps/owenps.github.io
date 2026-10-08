@@ -17,6 +17,8 @@ description = "Design resources, references, and inspiration."
 
 {{< site-link url="https://60fps.design/" icon="60fps.png" text="60fps.design" >}}
 
+{{< site-link url="https://cargo.site/community" icon="cargo.ico" text="cargo.site/community" >}}
+
 ## UI Components
 
 {{< site-link url="https://lab.xevrion.dev/" icon="xevrion.png" text="lab.xevrion.dev" >}}
