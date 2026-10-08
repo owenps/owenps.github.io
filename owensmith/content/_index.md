@@ -14,7 +14,7 @@ I am currently part of the founding engineering team for {{< site-link url="http
 {{< site-link url="https://bluesheepfilms.com/" icon="bluesheep.png" text="bluesheepfilms.com" >}}
 {{< /hover-card >}}.
 
-Coding has always been my creative outlet, I spend a lot of time tinkering around my own creative process and building tools that optimize development workflows. I thrive in domains with complex domain and business logic.
+Coding has always been my creative outlet, I spend a lot of time tinkering within my own creative process and building tools that optimize development workflows. I excell in domains with complex domain and business logic.
 
 Based in Toronto, Canada.
 
