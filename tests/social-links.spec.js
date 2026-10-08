@@ -7,6 +7,7 @@ const socials = [
   ['X', '@owenps_', 'https://x.com/owenps_/'],
   ['LinkedIn', null, 'https://www.linkedin.com/in/owenpsmith/'],
   ['Letterboxd', '@owenps', 'https://letterboxd.com/owenps/'],
+  ['Chess.com', '0smith', 'https://www.chess.com/member/0smith/stats'],
   ['Instagram', '@owen.ps', 'https://www.instagram.com/owen.ps/'],
   ['YouTube', '@ow3nsmith', 'https://www.youtube.com/@ow3nsmith'],
 ];

@@ -31,6 +31,7 @@ Based in Toronto, Canada.
 {{< social-link url="https://x.com/owenps_/" icon="x.svg" name="X" handle="@owenps_" >}}
 {{< social-link url="https://www.linkedin.com/in/owenpsmith/" icon="linkedin.svg" name="LinkedIn" >}}
 {{< social-link url="https://letterboxd.com/owenps/" icon="letterboxd.svg" name="Letterboxd" handle="@owenps" >}}
+{{< social-link url="https://www.chess.com/member/0smith/stats" icon="chess.svg" name="Chess.com" handle="0smith" >}}
 {{< social-link url="https://www.instagram.com/owen.ps/" icon="instagram.svg" name="Instagram" handle="@owen.ps" >}}
 {{< social-link url="https://www.youtube.com/@ow3nsmith" icon="youtube.svg" name="YouTube" handle="@ow3nsmith" >}}
 </nav>
