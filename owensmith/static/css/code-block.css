@@ -260,6 +260,8 @@
   background: transparent !important;
   color: inherit;
   font: inherit;
+  font-family: "Fira Code", "Geist Mono", monospace;
+  font-variant-ligatures: contextual;
   overflow: visible;
 }
 

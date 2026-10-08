@@ -1,4 +1,6 @@
 {{ partial "floating-nav.html" . }}
+{{ $textSymbolsJS := resources.FromString "js/text-symbols.js" (readFile "static/js/text-symbols.js") | fingerprint }}
+<script type="module" src="{{ $textSymbolsJS.RelPermalink }}"></script>
 <script>
   (function() {
     var annotations = document.querySelectorAll(".annotated-mark");

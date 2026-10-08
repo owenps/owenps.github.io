@@ -6,7 +6,7 @@ aliases = []
 profileHeader = true
 +++
 
-I'm {{< hover-card label="Owen" width="190" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, this is my hypertext space on the Internet --- welcome, and thank you for visting.
+I'm {{< hover-card label="Owen" width="190" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, a engineer with a passion for design and developer tools.
 
 I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I also take on select projects for {{< hover-card label="designing and building websites" width="360" >}}
 <video src="/videos/bluesheep-preview.mp4" poster="/images/bluesheep-preview.jpg" width="960" height="554" muted loop playsinline preload="none" aria-label="Blue Sheep Films website preview"></video>
@@ -14,7 +14,7 @@ I am currently part of the founding engineering team for {{< site-link url="http
 {{< site-link url="https://bluesheepfilms.com/" icon="bluesheep.png" text="bluesheepfilms.com" >}}
 {{< /hover-card >}}.
 
-Coding has always been a creative outlet for me, though working in software has sometimes made that easy to forget. Lately, I’m finding my way back to making things for their own sake.
+Coding has always been my creative outlet, I spend a lot of time tinkering around my own creative process and building tools that optimize development workflows. I thrive in domains with complex domain and business logic.
 
 Based in Toronto, Canada.
 

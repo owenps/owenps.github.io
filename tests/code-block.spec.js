@@ -130,6 +130,46 @@ test('pending copy results cannot overwrite feedback after changing files', asyn
   await expect(example.getByRole('status')).toHaveText('Copied');
 });
 
+test('operator ligatures preserve source when copying and selecting', async ({ page }) => {
+  await mockClipboard(page);
+  await page.goto('/code-operators/');
+  const plain = page.getByRole('group', { name: 'Code: operators.txt', exact: true });
+  await plain.getByRole('button', { name: 'Copy code' }).click();
+  expect(await page.evaluate(() => window.copiedValues)).toEqual(['a -> b\na != b']);
+
+  const rust = page.getByRole('group', { name: 'Code: operators.rs', exact: true });
+  const code = rust.locator('pre code');
+  await code.evaluate(element => {
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    getSelection().removeAllRanges();
+    getSelection().addRange(range);
+  });
+  expect(await page.evaluate(() => getSelection().toString())).toBe('fn differs(a: i32, b: i32) -> bool {\n    a != b\n}');
+
+  const example = files(page);
+  await example.getByRole('button', { name: 'Copy code' }).click();
+  expect(await page.evaluate(() => window.copiedValues.at(-1))).toBe('const differs = a != b;\n// a -> b');
+  await example.getByRole('tab', { name: 'operators.txt', exact: true }).click();
+  await example.getByRole('button', { name: 'Copy code' }).click();
+  expect(await page.evaluate(() => window.copiedValues.at(-1))).toBe('a -> b\na != b');
+});
+
+test('inline operator ligatures preserve selected source', async ({ page }) => {
+  await page.goto('/code-operators/');
+  for (const source of ['a -> b', 'a != b']) {
+    const code = page.locator('p > code').filter({ hasText: source });
+    await expect(code).toHaveText(source);
+    await code.evaluate(element => {
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      getSelection().removeAllRanges();
+      getSelection().addRange(range);
+    });
+    expect(await page.evaluate(() => getSelection().toString())).toBe(source);
+  }
+});
+
 test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
 

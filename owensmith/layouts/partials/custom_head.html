@@ -55,6 +55,14 @@
   }
 
   @font-face {
+    font-family: "Fira Code";
+    src: url('{{ "fonts/FiraCodeVariable.woff2" | relURL }}') format("woff2");
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+  }
+
+  @font-face {
     font-family: "Computer Modern Serif";
     src: url('{{ "fonts/cmunrm.woff" | relURL }}') format("woff");
     font-style: normal;
@@ -149,8 +157,14 @@
   }
 
   pre,
-  code {
-    font-family: "Geist Mono", monospace;
+  code,
+  .operator-symbol {
+    font-family: "Fira Code", "Geist Mono", monospace;
+    font-variant-ligatures: contextual;
+  }
+
+  .operator-symbol {
+    white-space: nowrap;
   }
 
   :not(pre) > code {
