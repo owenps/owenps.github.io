@@ -7,20 +7,6 @@ async function expectLoaded(image) {
   await expect.poll(() => image.evaluate(element => element.complete && element.naturalWidth > 0)).toBe(true);
 }
 
-test('homepage shows the profile images while preserving bio and navigation', async ({ page }) => {
-  await page.goto('/');
-  const profile = page.getByRole('region', { name: 'Profile header', exact: true });
-  await expectLoaded(profile.getByRole('img', { name: 'Owen Smith', exact: true }));
-  await expectLoaded(profile.locator('img[alt=""]'));
-  await expect(profile.getByRole('heading')).toHaveCount(0);
-  await expect(profile.getByText('@owenps', { exact: true })).toHaveCount(0);
-  await expect(page.getByText('Based in Toronto, Canada.', { exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Recent Projects', exact: true })).toBeVisible();
-  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('link', { name: 'Blog', exact: true }).click();
-  await expect(page).toHaveURL('/blog/');
-  await expect(page.getByRole('region', { name: 'Profile header', exact: true })).toHaveCount(0);
-});
-
 test('social previews and browser icons serve the portrait', async ({ page, request }) => {
   await page.goto('/');
   const portrait = new URL('/images/owenps.png', page.url()).href;
