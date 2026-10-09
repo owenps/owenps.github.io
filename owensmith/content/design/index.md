@@ -23,6 +23,8 @@ description = "Design resources, references, and inspiration."
 
 {{< site-link url="https://base-ui.com/" icon="base-ui.svg" text="base-ui.com" >}}
 
+{{< site-link url="https://blode.co/icons" icon="blode.svg" text="blode.co/icons" >}}
+
 {{< site-link url="https://lab.xevrion.dev/" icon="xevrion.png" text="lab.xevrion.dev" >}}
 
 {{< site-link url="https://beui.dev/" icon="beui.png" text="beui.dev" >}}
