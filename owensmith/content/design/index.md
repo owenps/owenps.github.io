@@ -21,6 +21,8 @@ description = "Design resources, references, and inspiration."
 
 ## UI Components
 
+{{< site-link url="https://base-ui.com/" icon="base-ui.svg" text="base-ui.com" >}}
+
 {{< site-link url="https://lab.xevrion.dev/" icon="xevrion.png" text="lab.xevrion.dev" >}}
 
 {{< site-link url="https://beui.dev/" icon="beui.png" text="beui.dev" >}}
