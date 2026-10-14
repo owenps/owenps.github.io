@@ -8,10 +8,16 @@ profileHeader = true
 
 I'm {{< hover-card label="Owen" width="190" >}}![Owen Smith](/images/owen-smith.jpg){{< /hover-card >}}, an engineer based in Toronto, Canada.
 
-Currently, I am on the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I also take on select projects for {{< hover-card label="designing and building websites" width="360" >}}
+Currently, I am on the founding engineering team for {{< site-link url="https://ledge.io/" icon="ledge.jpg" text="Ledge" >}} building a creator monetization platform. Previously worked on inventory capacity software for {{< site-link url="https://www.amazon.com/" icon="amazon.svg" text="Amazon" >}}. I also take on select projects for {{< hover-card label="designing and building websites" width="360" group="true" >}}
 <video src="/videos/bluesheep-preview.mp4" poster="/images/bluesheep-preview.jpg" width="960" height="554" muted loop playsinline preload="none" aria-label="Blue Sheep Films website preview"></video>
 
 {{< site-link url="https://bluesheepfilms.com/" icon="bluesheep.png" text="bluesheepfilms.com" >}}
+
+---
+
+<video src="/videos/hughmurray-preview.mp4" poster="/images/hughmurray-preview.jpg" width="960" height="548" muted loop playsinline preload="none" aria-label="Hugh Murray website preview"></video>
+
+{{< site-link url="https://hughmurray.life/" icon="hughmurray.svg" text="hughmurray.life" >}}
 {{< /hover-card >}}.
 
 Coding has always been my creative outlet, I spend a lot of time tinkering within my own creative process and building tools that optimize development workflows. I excell in domains with complex domain and business logic.
@@ -22,7 +28,8 @@ I'm more than happy to chat about projects and my experience, say hi!
 
 ### Recent Projects
 
-{{< site-link url="https://bluesheepfilms.com/" icon="bluesheep.png" text="bluesheepfilms.com" >}}
+<div>{{< site-link url="https://hughmurray.life/" icon="hughmurray.svg" text="hughmurray.life" >}}</div>
+<div>{{< site-link url="https://bluesheepfilms.com/" icon="bluesheep.png" text="bluesheepfilms.com" >}}</div>
 
 ### Socials
 
