@@ -19,6 +19,8 @@ description = "Design resources, references, and inspiration."
 
 {{< site-link url="https://cargo.site/community" icon="cargo.ico" text="cargo.site/community" >}}
 
+{{< site-link url="https://neocities.org/browse" icon="neocities.ico" text="neocities.org/browse" >}}
+
 ## UI Components
 
 {{< site-link url="https://base-ui.com/" icon="base-ui.svg" text="base-ui.com" >}}
@@ -38,3 +40,5 @@ description = "Design resources, references, and inspiration."
 ## Portfolios
 
 {{< site-link url="https://system.studio/work/patch" icon="system-studio.png" text="system.studio/work/patch" >}}
+
+{{< site-link url="https://miserabledolly.net/" icon="miserabledolly.png" text="miserabledolly.net" >}}
