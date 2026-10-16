@@ -18,6 +18,12 @@ Currently, I am on the founding engineering team for {{< site-link url="https://
 <video src="/videos/hughmurray-preview.mp4" poster="/images/hughmurray-preview.jpg" width="960" height="548" muted loop playsinline preload="none" aria-label="Hugh Murray website preview"></video>
 
 {{< site-link url="https://hughmurray.life/" icon="hughmurray.svg" text="hughmurray.life" >}}
+
+---
+
+<video src="/videos/johncardillojr-preview.mp4" poster="/images/johncardillojr-preview.jpg" width="960" height="548" muted loop playsinline preload="none" aria-label="John Cardillo Jr. website preview"></video>
+
+{{< site-link url="http://johncardillojr.com/" icon="johncardillojr.png" text="johncardillojr.com" >}}
 {{< /hover-card >}}.
 
 Coding has always been my creative outlet, I spend a lot of time tinkering within my own creative process and building tools that optimize development workflows. I excell in domains with complex domain and business logic.
@@ -28,6 +34,7 @@ I'm more than happy to chat about projects and my experience, say hi!
 
 ### Recent Projects
 
+<div>{{< site-link url="http://johncardillojr.com/" icon="johncardillojr.png" text="johncardillojr.com" >}}</div>
 <div>{{< site-link url="https://hughmurray.life/" icon="hughmurray.svg" text="hughmurray.life" >}}</div>
 <div>{{< site-link url="https://bluesheepfilms.com/" icon="bluesheep.png" text="bluesheepfilms.com" >}}</div>
 

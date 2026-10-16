@@ -37,6 +37,8 @@ description = "Design resources, references, and inspiration."
 
 {{< site-link url="https://www.rareui.com/" icon="rareui.svg" text="rareui.com" >}}
 
+{{< site-link url="https://widget.st/" icon="widget-st.png" text="widget.st" >}}
+
 ## Portfolios
 
 {{< site-link url="https://system.studio/work/patch" icon="system-studio.png" text="system.studio/work/patch" >}}

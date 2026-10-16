@@ -14,7 +14,7 @@ async function expectPageAndAssets(page, request) {
 }
 
 for (const mobile of [false, true]) {
-  test(`homepage groups website previews and lists Hugh Murray (${mobile ? 'touch' : 'desktop'})`, async ({ browser, request }) => {
+  test(`homepage groups website previews and lists recent projects (${mobile ? 'touch' : 'desktop'})`, async ({ browser, request }) => {
     const context = await browser.newContext({
       baseURL: 'http://127.0.0.1:4176',
       viewport: mobile ? { width: 375, height: 812 } : { width: 1280, height: 800 },
@@ -24,14 +24,19 @@ for (const mobile of [false, true]) {
     try {
       const page = await context.newPage();
       await page.goto('/');
-      const project = page.getByRole('link', { name: /^hughmurray\.life/ });
-      await expect(project).toBeVisible();
-      await expect(project).toHaveAttribute('href', 'https://hughmurray.life/');
-      const blueSheep = page.getByRole('link', { name: /^bluesheepfilms\.com/ });
-      await expect(blueSheep).toBeVisible();
-      const hughBounds = await project.boundingBox();
-      const blueSheepBounds = await blueSheep.boundingBox();
-      expect(blueSheepBounds.y).toBeGreaterThanOrEqual(hughBounds.y + hughBounds.height);
+      let previousBounds;
+      for (const [name, url] of [
+        ['johncardillojr.com', 'http://johncardillojr.com/'],
+        ['hughmurray.life', 'https://hughmurray.life/'],
+        ['bluesheepfilms.com', 'https://bluesheepfilms.com/'],
+      ]) {
+        const project = page.getByRole('link', { name: new RegExp(`^${name.replaceAll('.', '\\.')}`) });
+        await expect(project).toBeVisible();
+        await expect(project).toHaveAttribute('href', url);
+        const bounds = await project.boundingBox();
+        if (previousBounds) expect(bounds.y).toBeGreaterThanOrEqual(previousBounds.y + previousBounds.height);
+        previousBounds = bounds;
+      }
 
       const trigger = page.getByRole('button', { name: 'designing and building websites', exact: true });
       if (mobile) await trigger.tap();
@@ -41,6 +46,7 @@ for (const mobile of [false, true]) {
       for (const [label, url, name] of [
         ['Blue Sheep Films website preview', 'https://bluesheepfilms.com/', 'bluesheepfilms.com'],
         ['Hugh Murray website preview', 'https://hughmurray.life/', 'hughmurray.life'],
+        ['John Cardillo Jr. website preview', 'http://johncardillojr.com/', 'johncardillojr.com'],
       ]) {
         const video = preview.getByLabel(label);
         await expect(video).toBeVisible();
