@@ -1,6 +1,8 @@
 import { addHaptics } from "./haptics.js";
 import { hideToast, showToast } from "./toast.js";
 
+const COPY_FEEDBACK_DURATION = 2000;
+
 (() => {
   if (!navigator.clipboard?.writeText) return;
 
@@ -25,7 +27,7 @@ import { hideToast, showToast } from "./toast.js";
       try {
         await navigator.clipboard.writeText(control.dataset.copy);
         control.dataset.copyState = "success";
-        showToast("Copied to clipboard", 2000);
+        showToast("Copied to clipboard", COPY_FEEDBACK_DURATION);
       } catch {
         control.dataset.copyState = "error";
         status.textContent = "Couldn't copy. Select the text to copy it manually.";
@@ -34,7 +36,7 @@ import { hideToast, showToast } from "./toast.js";
         timer = setTimeout(() => {
           delete control.dataset.copyState;
           status.textContent = "";
-        }, control.dataset.copyState === "success" ? 1500 : 4000);
+        }, control.dataset.copyState === "success" ? COPY_FEEDBACK_DURATION : 4000);
       }
     });
   });
