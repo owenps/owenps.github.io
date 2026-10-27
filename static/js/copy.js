@@ -1,3 +1,4 @@
+import { addHaptics } from "./haptics.js";
 import { hideToast, showToast } from "./toast.js";
 
 (() => {
@@ -10,6 +11,7 @@ import { hideToast, showToast } from "./toast.js";
     let pending = false;
 
     button.disabled = false;
+    addHaptics(button);
     const symbols = control.querySelector(".copy-symbols");
     if (symbols) symbols.hidden = false;
     button.addEventListener("click", async () => {

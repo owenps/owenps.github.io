@@ -1,4 +1,5 @@
 import { createGuestbookClient } from "./guestbook-client.js";
+import { addHaptics } from "./haptics.js";
 import { hideToast, showToast } from "./toast.js";
 
 const guestbooks = new Map();
@@ -30,6 +31,8 @@ formViews.forEach((view) => {
   const website = form.elements.namedItem("website");
   const message = form.elements.namedItem("message");
   const submit = form.querySelector('[type="submit"]');
+  const submitText = submit.querySelector("span");
+  addHaptics(submit);
   const status = view.querySelector(".guestbook-form-status");
   let signing = false;
 
@@ -40,7 +43,7 @@ formViews.forEach((view) => {
     signing = true;
     fields.disabled = true;
     form.setAttribute("aria-busy", "true");
-    const signingTimer = setTimeout(() => { submit.textContent = "Signing…"; }, 400);
+    const signingTimer = setTimeout(() => { submitText.textContent = "Signing…"; }, 400);
     status.textContent = "";
     hideToast();
     try {
@@ -56,7 +59,7 @@ formViews.forEach((view) => {
       clearTimeout(signingTimer);
       fields.disabled = false;
       form.removeAttribute("aria-busy");
-      submit.textContent = "Sign";
+      submitText.textContent = "Sign";
       signing = false;
     }
   });

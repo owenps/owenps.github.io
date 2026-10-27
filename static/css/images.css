@@ -19,7 +19,6 @@ content {
   transition: opacity 200ms ease-in-out;
 }
 
-.image-reveal:hover figcaption,
 .image-reveal:focus-within figcaption {
   opacity: 0.75;
 }
@@ -56,8 +55,8 @@ main > :is(.wrap-left, .wrap-right):first-child {
   height: auto;
 }
 
-@media (hover: none) {
-  .image-reveal figcaption {
+@media (hover: hover) {
+  .image-reveal:hover figcaption {
     opacity: 0.75;
   }
 }

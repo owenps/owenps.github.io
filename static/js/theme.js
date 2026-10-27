@@ -31,6 +31,9 @@
 
     applyTheme(preferredTheme());
     toggle.hidden = false;
+    import("./haptics.js").then(({ addHaptics }) => addHaptics(toggle)).catch(() => {
+      // Optional enhancement: theme switching still works if haptics can't load.
+    });
     toggle.addEventListener("click", () => {
       preference = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
       applyTheme(preference);
