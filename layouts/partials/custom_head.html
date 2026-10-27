@@ -1,0 +1,17 @@
+<script src="{{ "js/theme.js" | relURL }}"></script>
+<link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/columns.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/images.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/site-link.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/links.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/copy.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/toast.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/code.css" | relURL }}">
+<script src="{{ "js/copy.js" | relURL }}" type="module"></script>
+{{ if or (.HasShortcode "guestbook-form") (.HasShortcode "guestbook-messages") }}
+<link rel="stylesheet" href="{{ "css/guestbook.css" | relURL }}">
+<script src="{{ "js/guestbook.js" | relURL }}" type="module"></script>
+{{ end }}

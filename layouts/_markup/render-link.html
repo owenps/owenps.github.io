@@ -1,0 +1,8 @@
+{{- $destination := urls.Parse .Destination -}}
+{{- $site := urls.Parse .Page.Site.BaseURL -}}
+{{- $webLink := in (slice "" "http" "https") (lower $destination.Scheme) -}}
+{{- $external := and $webLink $destination.Host (ne (lower $destination.Hostname) (lower $site.Hostname)) -}}
+{{- $hasImage := strings.Contains (string .Text) "<img " -}}
+{{- $showArrow := and $external (not $hasImage) -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if not $hasImage }} class="text-link{{ if $showArrow }} external-link{{ end }}"{{ end }}>{{ if $hasImage }}{{ .Text }}{{ else }}<span class="link-text">{{ .Text }}</span>{{ if $showArrow }}<span class="external-link-arrow" aria-hidden="true">↗</span>{{ end }}{{ end }}</a>
+{{- /* Keep inline links adjacent to surrounding punctuation. */ -}}

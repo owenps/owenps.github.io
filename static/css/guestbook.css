@@ -1,0 +1,126 @@
+.guestbook {
+  clear: both;
+  margin-top: 2rem;
+}
+
+.guestbook-fields {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.guestbook-field {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.guestbook-field input,
+.guestbook-field textarea,
+.guestbook button {
+  box-sizing: border-box;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--text-color) 25%, var(--background-color));
+  border-radius: 4px;
+  background: var(--background-color);
+  color: var(--text-color);
+  font: inherit;
+}
+
+.guestbook-field input,
+.guestbook-field textarea {
+  width: 100%;
+  min-width: 0;
+}
+
+.guestbook-field textarea {
+  resize: vertical;
+}
+
+.guestbook button {
+  justify-self: start;
+  min-height: 36px;
+}
+
+.guestbook-form button[type="submit"] {
+  width: calc(9ch + 1.5rem + 2px);
+}
+
+.guestbook button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--background-color) 94%, var(--text-color));
+}
+
+.guestbook :is(input, textarea, button):focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.guestbook :disabled {
+  cursor: default;
+}
+
+.guestbook-field input:disabled {
+  background: color-mix(in srgb, var(--background-color) 94%, var(--text-color));
+}
+
+.guestbook-muted,
+.guestbook-meta {
+  color: color-mix(in srgb, var(--text-color) 65%, var(--background-color));
+  font-size: 0.75rem;
+}
+
+.guestbook-form-status,
+.guestbook-load-status {
+  overflow-wrap: anywhere;
+}
+
+.guestbook-form-status:empty,
+.guestbook-load-status:empty {
+  margin: 0;
+}
+
+.guestbook-entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guestbook-entry {
+  padding-block: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--text-color) 18%, var(--background-color));
+}
+
+.guestbook-entry:first-child {
+  border-top: 0;
+}
+
+.guestbook-entry header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.guestbook-author {
+  min-width: 0;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.guestbook-meta {
+  white-space: nowrap;
+}
+
+.guestbook-meta time {
+  font: inherit;
+}
+
+.guestbook-message {
+  margin: 0.75rem 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

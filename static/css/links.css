@@ -1,0 +1,29 @@
+.external-link-arrow {
+  display: inline-block;
+  font-size: 0.85em;
+  opacity: 0.65;
+}
+
+.text-link,
+.site-link,
+.text-link:hover,
+.text-link:focus-visible,
+.site-link:hover,
+.site-link:focus-visible {
+  text-decoration: none;
+}
+
+.text-link .link-text,
+.site-link .link-text {
+  text-decoration: underline solid;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--link-color) 60%, var(--background-color));
+  text-underline-offset: 0.2em;
+}
+
+.text-link:hover .link-text,
+.text-link:focus-visible .link-text,
+.site-link:hover .link-text,
+.site-link:focus-visible .link-text {
+  text-decoration-color: currentColor;
+}

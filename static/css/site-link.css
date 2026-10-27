@@ -1,0 +1,14 @@
+.site-link {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.site-link img {
+  align-self: center;
+  margin-inline-end: 0.3em;
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  border-radius: 2px;
+}

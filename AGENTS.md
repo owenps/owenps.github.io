@@ -1,7 +1,11 @@
+## UI Components
+
+- Components are built around a single idea and designed to be composable.
+
 ## Documentation
 
-- Do not add unnessecary content to the `README.md`
+- Avoid unnecessary `docs/` or updates to `README.md`, prefer self explainatory code.
 
 ## Tests
 
-- Tests must verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't.
+- Test driven development is prefered when implementing features but tests should not stay in the repository. They hold very little value for a personal site.

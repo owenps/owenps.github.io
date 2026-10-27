@@ -1,0 +1,28 @@
+.columns {
+  display: flex;
+  gap: 2rem;
+  margin-block: 1.5rem;
+}
+
+.columns > .column {
+  flex: 1;
+  min-width: 0;
+}
+
+.column > :first-child {
+  margin-top: 0;
+}
+
+.column > :last-child {
+  margin-bottom: 0;
+}
+
+.column img {
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .columns {
+    gap: 1rem;
+  }
+}

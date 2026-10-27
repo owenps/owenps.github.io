@@ -1,0 +1,24 @@
+baseURL = 'https://owenps.com/'
+languageCode = 'en-us'
+title = 'owenps'
+theme = 'hugo-bearblog'
+
+[params]
+  favicon = 'images/favicon.png'
+  images = ['images/preview.png']
+
+[markup.highlight]
+  style = 'github'
+  noClasses = false
+  lineNos = false
+  lineNumbersInTable = false
+
+[markup.goldmark.parser]
+  wrapStandAloneImageWithinParagraph = false
+
+[markup.goldmark.parser.attribute]
+  block = true
+
+# Preserve inline shortcode HTML when rendering Markdown inside columns.
+[markup.goldmark.renderer]
+  unsafe = true

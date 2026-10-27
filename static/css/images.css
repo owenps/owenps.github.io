@@ -1,0 +1,69 @@
+content {
+  display: flow-root;
+}
+
+.image-reveal {
+  margin: 1.5rem 0;
+}
+
+.image-reveal img {
+  display: block;
+  height: auto;
+}
+
+.image-reveal figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.image-reveal:hover figcaption,
+.image-reveal:focus-within figcaption {
+  opacity: 0.75;
+}
+
+.image-reveal:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 4px;
+}
+
+.wrap-left,
+.wrap-right {
+  width: 40%;
+  margin: 0 0 1rem;
+}
+
+.wrap-left {
+  float: left;
+  margin-right: 1.5rem;
+}
+
+.wrap-right {
+  float: right;
+  margin-left: 1.5rem;
+}
+
+main > :is(.wrap-left, .wrap-right):first-child {
+  margin-top: 1rem;
+}
+
+.wrap-left img,
+.wrap-right img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (hover: none) {
+  .image-reveal figcaption {
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-reveal figcaption {
+    transition: none;
+  }
+}

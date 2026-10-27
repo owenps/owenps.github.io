@@ -1,0 +1,8 @@
+{{- $url := .Get "url" -}}
+{{- $text := .Get "text" -}}
+{{- $icon := .Get "icon" -}}
+{{- if not (and $url $text $icon) -}}
+  {{- errorf "site-link requires url, text, and icon at %s" .Position -}}
+{{- else -}}
+  <a class="site-link" href="{{ $url }}"><img src="{{ $icon | relURL }}" alt="" width="16" height="16"><span class="link-text">{{ $text }}</span><span class="external-link-arrow" aria-hidden="true">↗</span></a>
+{{- end -}}

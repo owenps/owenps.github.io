@@ -1,0 +1,52 @@
+name: 🎉 Share Your Story
+description: Share how you're using Hugo ʕ•ᴥ•ʔ Bear Blog or give general feedback
+labels: ["showcase", "feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your Hugo ʕ•ᴥ•ʔ Bear Blog story! We love hearing how people are using the theme and what makes it special for them 💝
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: Type of feedback
+      description: What kind of story would you like to share?
+      options:
+        - "📸 Showcase my site"
+        - "💡 Share my experience"
+        - "❤️ General appreciation"
+        - "💭 Other"
+
+  - type: textarea
+    id: story
+    attributes:
+      label: Your Story
+      description: Tell us about your experience with Hugo ʕ•ᴥ•ʔ Bear Blog!
+      placeholder: |
+        I'm using Hugo ʕ•ᴥ•ʔ Bear Blog for...
+        What I particularly love about it is...
+        You can find my site at... (if you'd like to share)
+    validations:
+      required: true
+
+  - type: textarea
+    id: customizations
+    attributes:
+      label: Customizations (optional)
+      description: Did you make any interesting customizations to the theme? Feel free to share!
+      placeholder: |
+        I modified...
+        I added...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots (optional)
+      description: If you'd like to show off your site, you can add screenshots here!
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional thoughts
+      description: Anything else you'd like to share with the community?

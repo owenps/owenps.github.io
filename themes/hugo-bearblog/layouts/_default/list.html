@@ -1,0 +1,44 @@
+{{ define "main" }}
+<content>
+  {{ .Content }}
+  {{ $pages := .Pages }}
+  {{ if and (eq .Kind "section") (eq .Section "blog") }}
+    {{ $pages = where $pages "Params.evergreen" "ne" true }}
+  {{ end }}
+  {{ if .Data.Singular }}
+  <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
+  <small>
+    <a href="{{ "blog" | relURL }}">Remove filter</a>
+  </small>
+  {{ end }}
+  <ul class="blog-posts">
+    {{ range $pages }}
+    <li>
+      {{ if not .Params.evergreen }}
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      {{ end }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>
+      No posts yet
+    </li>
+    {{ end }}
+  </ul>
+  {{ if not .Data.Singular }}
+  <small>
+    <div>
+      {{ range .Site.Taxonomies.tags }}
+      <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>&nbsp;
+      {{ end }}
+    </div>
+  </small>
+  {{ end }}
+</content>
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<h1>{{ .Title }}</h1>
+{{ if not .Params.evergreen }}
+<p>
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}'>
+      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+    </time>
+  </i>
+</p>
+{{ end }}
+{{ end }}{{ end }}
+<content>
+  {{ .Content }}
+</content>
+
+{{- partial "post_footer.html" . -}}
+{{ end }}

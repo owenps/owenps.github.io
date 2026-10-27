@@ -1,0 +1,57 @@
+:root {
+  --code-background: color-mix(in srgb, var(--background-color) 96%, var(--text-color));
+  --code-text: #1f2328;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --code-text: #e6edf3;
+  }
+}
+
+:root[data-theme="dark"] {
+  --code-text: #e6edf3;
+}
+
+:not(pre) > code {
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  background: var(--code-background);
+  color: var(--code-text);
+}
+
+.code-block {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  margin-block: 1.5rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--text-color) 18%, var(--background-color));
+  border-radius: 6px;
+  background: var(--code-background);
+  color: var(--code-text);
+}
+
+.code-block .highlight {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 0;
+}
+
+.code-block pre {
+  box-sizing: border-box;
+  min-width: 100%;
+  width: max-content;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1em;
+  line-height: 1.65;
+  color: inherit;
+  background: transparent;
+  overflow-wrap: normal;
+}
+
+.code-block pre code {
+  padding: 0;
+  border-radius: 0;
+}

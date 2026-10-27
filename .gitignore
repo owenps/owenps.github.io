@@ -1,6 +1,8 @@
-.*.lock
+/public/
+/resources/
+/.hugo_build.lock
+/node_modules/
+/.wrangler/
+/.dev.vars*
+/.env*
 .DS_Store
-public/
-node_modules/
-test-results/
-playwright-report/

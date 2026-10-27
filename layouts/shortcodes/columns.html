@@ -1,0 +1,9 @@
+{{- $divider := printf "<!-- next-column-%d -->" .Ordinal -}}
+{{- $columns := split .Inner $divider -}}
+<div class="columns">
+  {{- range $columns }}
+    <div class="column">
+      {{- $.Page.RenderString (dict "display" "block") . -}}
+    </div>
+  {{- end }}
+</div>

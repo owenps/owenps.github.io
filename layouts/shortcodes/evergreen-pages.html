@@ -1,0 +1,7 @@
+<ul class="blog-posts evergreen-pages">
+  {{- range (where .Page.RegularPages "Params.evergreen" true).ByTitle }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{- else }}
+    <li>No evergreen pages yet</li>
+  {{- end }}
+</ul>

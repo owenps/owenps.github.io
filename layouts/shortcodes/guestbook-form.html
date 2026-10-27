@@ -1,0 +1,21 @@
+<section class="guestbook" data-guestbook-form data-endpoint="{{ "api/guestbook" | relURL }}">
+  <form class="guestbook-form" aria-label="Sign the guestbook">
+    <fieldset class="guestbook-fields" disabled>
+      <div class="guestbook-field">
+        <label for="guestbook-name-{{ .Ordinal }}">Name</label>
+        <input id="guestbook-name-{{ .Ordinal }}" name="name" autocomplete="nickname" placeholder="Your name or alias" maxlength="80" required>
+      </div>
+      <div class="guestbook-field">
+        <label for="guestbook-website-{{ .Ordinal }}">Website <span class="guestbook-muted">(optional)</span></label>
+        <input id="guestbook-website-{{ .Ordinal }}" type="url" name="website" autocomplete="url" placeholder="https://example.com" maxlength="2048">
+      </div>
+      <div class="guestbook-field">
+        <label for="guestbook-message-{{ .Ordinal }}">Message</label>
+        <textarea id="guestbook-message-{{ .Ordinal }}" name="message" rows="5" maxlength="2000" required></textarea>
+      </div>
+      <button type="submit">Sign</button>
+    </fieldset>
+    <p class="guestbook-form-status" role="status"></p>
+  </form>
+  <noscript><p>JavaScript is needed to sign the guestbook.</p></noscript>
+</section>

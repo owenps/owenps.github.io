@@ -1,40 +1,24 @@
 # owenps.com
 
-[![Deploy to GitHub Pages](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml/badge.svg)](https://github.com/owenps/owenps.github.io/actions/workflows/hugo.yml)
+Source for [owenps.com](https://owenps.com).
 
-This is my personal website. Hopefully it is live: https://owenps.github.io
+## Local development
 
-Built with ❤︎ using [Hugo](https://gohugo.io/), an ultra light-weight static site generator. Uses the [hugo-bearblog](https://github.com/janraasch/hugo-bearblog) theme.
-
-## Development
-
-> [!IMPORTANT]  
-> All `hugo` commands must be run from the `owensmith` root directory.
-
-### Quick Start
-
-To host locally for testing run
+Install [Hugo](https://gohugo.io/installation/), then run:
 
 ```sh
-hugo server
+hugo server -D
 ```
 
-Use the `-D` flag to compile with draft pages.
+Open http://localhost:1313.
 
-Which will build a HTTP server running on your local machine. It will auto-build on any local changes you make.
+## Deployment
 
-### Adding New Pages
+Cloudflare Pages settings:
 
-All pages can be found under the `owensmith/content` directory. Blog posts use [page bundles](https://gohugo.io/content-management/page-bundles/) — each post is a folder with an `index.md` inside it.
+- Build root: repository root
+- Build command: `hugo --minify`
+- Output directory: `public`
+- Environment variable (production and preview): `HUGO_VERSION=0.160.1`
 
-Create a new blog post:
-
-```sh
-hugo new blog/my-new-blog/index.md
-```
-
-Images and other assets go in the same folder as the post's `index.md` and are referenced with a relative path:
-
-```markdown
-![alt text](my-image.png)
-```
+For guestbook database setup, see [functions/api/README.md](functions/api/README.md).

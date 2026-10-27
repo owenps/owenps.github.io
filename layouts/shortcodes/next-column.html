@@ -1,0 +1,7 @@
+{{- if not .Parent -}}
+  {{- errorf "next-column must be inside columns at %s" .Position -}}
+{{- else if ne .Parent.Name "columns" -}}
+  {{- errorf "next-column must be directly inside columns at %s" .Position -}}
+{{- else -}}
+  {{- printf "<!-- next-column-%d -->" .Parent.Ordinal | safeHTML -}}
+{{- end -}}
