@@ -19,6 +19,5 @@ Cloudflare Pages settings:
 - Build root: repository root
 - Build command: `hugo --minify`
 - Output directory: `public`
-- Environment variable (production and preview): `HUGO_VERSION=0.160.1`
 
 For guestbook database setup, see [functions/api/README.md](functions/api/README.md).
