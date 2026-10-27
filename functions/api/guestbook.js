@@ -2,7 +2,7 @@ import { GuestbookInputError, validateEntry } from "../../static/js/guestbook-en
 
 const MAX_BODY_BYTES = 16 * 1024;
 const PAGE_SIZE = 20;
-const ENTRY_FIELDS = "id, name, website, message, created_at";
+const ENTRY_FIELDS = "id, name, website, message, created_at, reply, replied_at";
 
 class RequestError extends Error {
   constructor(status, message) {

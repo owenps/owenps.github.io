@@ -112,6 +112,17 @@ document.querySelectorAll("[data-guestbook-messages]").forEach((view) => {
     meta.append(date, document.createTextNode(` / ${entry.id}`));
     header.append(author, meta);
     item.append(header, element("p", "guestbook-message", entry.message));
+    if (entry.reply) {
+      const reply = element("section", "guestbook-reply");
+      reply.setAttribute("aria-label", "Reply from Owen");
+      const replyHeader = element("header");
+      const replyAuthor = element("span", "guestbook-author", "Owen");
+      const replyDate = element("time", "guestbook-meta", dateFormat.format(new Date(entry.replied_at)));
+      replyDate.dateTime = entry.replied_at;
+      replyHeader.append(replyAuthor, replyDate);
+      reply.append(replyHeader, element("p", "guestbook-message", entry.reply));
+      item.append(reply);
+    }
     const next = [...entries.children].find((existing) => Number(existing.dataset.entryId) < entry.id);
     entries.insertBefore(item, next || null);
     rendered.add(entry.id);

@@ -124,3 +124,8 @@
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+
+.guestbook-reply {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
