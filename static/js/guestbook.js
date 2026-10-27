@@ -73,7 +73,6 @@ document.querySelectorAll("[data-guestbook-messages]").forEach((view) => {
   const rendered = new Set();
   const dateFormat = new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "short", year: "numeric" });
   let cursor = null;
-  let loaded = false;
   let loading = false;
 
   function renderEntry(entry) {
@@ -120,12 +119,12 @@ document.querySelectorAll("[data-guestbook-messages]").forEach((view) => {
     loading = true;
     older.disabled = true;
     retry.hidden = true;
-    status.textContent = loaded ? "Loading older messages…" : "Loading messages…";
+    status.textContent = "";
+    entries.setAttribute("aria-busy", "true");
     try {
       const data = await client.list(cursor);
       data.entries.forEach((entry) => renderEntry(entry));
       cursor = data.nextCursor;
-      loaded = true;
       older.hidden = cursor === null;
       status.textContent = entries.children.length ? "" : "No messages yet. Be the first to sign.";
     } catch {
@@ -134,6 +133,7 @@ document.querySelectorAll("[data-guestbook-messages]").forEach((view) => {
     } finally {
       loading = false;
       older.disabled = false;
+      entries.removeAttribute("aria-busy");
     }
   }
 
