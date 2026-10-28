@@ -24,7 +24,7 @@
   box-sizing: border-box;
   padding: 0.6rem 0.75rem;
   border: 1px solid color-mix(in srgb, var(--text-color) 25%, var(--background-color));
-  border-radius: 4px;
+  border-radius: 0;
   background: var(--background-color);
   color: var(--text-color);
   font: inherit;
@@ -34,6 +34,15 @@
 .guestbook-field textarea {
   width: 100%;
   min-width: 0;
+  border-color: transparent;
+  border-bottom-color: color-mix(in srgb, var(--text-color) 62%, var(--background-color));
+  background: color-mix(in srgb, var(--background-color) 97%, var(--text-color));
+}
+
+.guestbook-field input::placeholder,
+.guestbook-field textarea::placeholder {
+  color: color-mix(in srgb, var(--text-color) 75%, var(--background-color));
+  opacity: 1;
 }
 
 .guestbook-field textarea {
@@ -128,4 +137,11 @@
 .guestbook-reply {
   margin-top: 1rem;
   padding-left: 1rem;
+}
+
+@media (forced-colors: active) {
+  .guestbook-field input,
+  .guestbook-field textarea {
+    border: 1px solid CanvasText;
+  }
 }
