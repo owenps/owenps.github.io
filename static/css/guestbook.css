@@ -62,11 +62,6 @@
   background: color-mix(in srgb, var(--background-color) 94%, var(--text-color));
 }
 
-.guestbook :is(input, textarea, button):focus-visible {
-  outline: 2px solid var(--link-color);
-  outline-offset: 2px;
-}
-
 .guestbook :disabled {
   cursor: default;
 }

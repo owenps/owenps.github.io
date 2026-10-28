@@ -1,7 +1,7 @@
 /* Generated from Hugo Chroma github / github-dark styles; scoped to code blocks. */
 
 :root[data-theme="light"] .code-block .chroma .err { color:#f6f8fa;background-color:#82071e }
-:root[data-theme="light"] .code-block .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
+:root[data-theme="light"] .code-block .chroma .lnlinks { text-decoration:none;color:inherit }
 :root[data-theme="light"] .code-block .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 :root[data-theme="light"] .code-block .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
 :root[data-theme="light"] .code-block .chroma .hl { background-color:#dedede }
@@ -73,7 +73,7 @@
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) .code-block .chroma .err { color:#f6f8fa;background-color:#82071e }
-  :root:not([data-theme]) .code-block .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
+  :root:not([data-theme]) .code-block .chroma .lnlinks { text-decoration:none;color:inherit }
   :root:not([data-theme]) .code-block .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
   :root:not([data-theme]) .code-block .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
   :root:not([data-theme]) .code-block .chroma .hl { background-color:#dedede }
@@ -145,7 +145,7 @@
 }
 
 :root[data-theme="dark"] .code-block .chroma .err { color:#f85149 }
-:root[data-theme="dark"] .code-block .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
+:root[data-theme="dark"] .code-block .chroma .lnlinks { text-decoration:none;color:inherit }
 :root[data-theme="dark"] .code-block .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 :root[data-theme="dark"] .code-block .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
 :root[data-theme="dark"] .code-block .chroma .hl { background-color:#6e7681 }
@@ -222,7 +222,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .code-block .chroma .err { color:#f85149 }
-  :root:not([data-theme]) .code-block .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
+  :root:not([data-theme]) .code-block .chroma .lnlinks { text-decoration:none;color:inherit }
   :root:not([data-theme]) .code-block .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
   :root:not([data-theme]) .code-block .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
   :root:not([data-theme]) .code-block .chroma .hl { background-color:#6e7681 }

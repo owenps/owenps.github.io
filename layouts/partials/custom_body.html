@@ -1,0 +1,13 @@
+<div id="link-preview" class="link-preview" role="region" aria-labelledby="link-preview-title" aria-hidden="true" hidden inert></div>
+{{- range .Site.Pages }}
+  {{- if and (not .Draft) (in (slice "home" "page" "section") .Kind) (.OutputFormats.Get "html") }}
+    <template data-preview-page="{{ .RelPermalink }}">
+      <div class="link-preview-heading">
+        <h2 id="link-preview-title">{{ .Title }}</h2>
+      </div>
+      <div class="link-preview-body" tabindex="-1" role="region" aria-label="Page content">
+        <div class="link-preview-content">{{ .Content }}</div>
+      </div>
+    </template>
+  {{- end }}
+{{- end }}

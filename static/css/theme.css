@@ -36,6 +36,17 @@ a:visited {
   color: var(--visited-color);
 }
 
+:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
 .theme-toggle {
   width: 44px;
   height: 44px;
@@ -76,11 +87,6 @@ a:visited {
 .theme-toggle[aria-checked="true"] .theme-toggle-track::before {
   background: var(--dark-surface);
   transform: translateX(12px);
-}
-
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--link-color);
-  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

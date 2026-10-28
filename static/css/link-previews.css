@@ -1,0 +1,82 @@
+.link-preview {
+  --preview-rule: color-mix(in srgb, var(--text-color) 22%, var(--background-color));
+  position: fixed;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  max-height: min(440px, calc(100dvh - 32px));
+  overflow: hidden;
+  border: 1px solid var(--preview-rule);
+  border-radius: 4px;
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 5px 20px #00000012;
+  overflow-wrap: anywhere;
+}
+
+.link-preview:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-preview-heading {
+  flex: none;
+}
+
+.link-preview-heading h2 {
+  margin: 1rem 1rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.link-preview-body {
+  box-sizing: border-box;
+  min-height: 0;
+  max-height: 16rem;
+  padding: 0 1rem 1rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.link-preview-body:focus-visible {
+  outline-offset: -3px;
+}
+
+/* Keep page typography; adapt wide layouts to the card's reading width. */
+.link-preview-content {
+  display: flow-root;
+}
+
+.link-preview-content > :first-child {
+  margin-top: 0;
+}
+
+.link-preview-content > :last-child {
+  margin-bottom: 0;
+}
+
+.link-preview-content .columns {
+  flex-direction: column;
+}
+
+.link-preview-content :is(.wrap-left, .wrap-right) {
+  float: none;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.link-preview-content img {
+  height: auto;
+}
+
+.link-preview-content .image-reveal figcaption {
+  opacity: 0.75;
+}
+
+@media (forced-colors: active) {
+  .link-preview {
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+}
