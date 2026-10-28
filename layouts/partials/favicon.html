@@ -1,5 +1,6 @@
 {{- with .Site.Params.favicon -}}
-<link rel="icon" type="image/png" href="{{ . | relURL }}">
+{{- $hash := crypto.SHA256 (os.ReadFile (path.Join "static" .)) -}}
+<link rel="icon" type="image/png" href="{{ . | relURL }}?v={{ substr $hash 0 12 }}">
 {{- end }}
 <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">

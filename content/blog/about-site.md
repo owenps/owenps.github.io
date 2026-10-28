@@ -20,11 +20,3 @@ I started my own personal site in [2020](https://github.com/owenps/owenps.github
 The font [Lilex](https://lilex.myrt.co). It is built using [Hugo](https://github.com/gohugoio/hugo) with several customizations to the [Bear Blog theme](https://themes.gohugo.io/themes/hugo-bearblog/).
 
 It relies on a single SQLite DB for managing the guestbook.
-
-<!--
-
-I use [Pages CMS]()
-
-It is currently deployed through Cloudflare pages and accesses a single DB which manages the guestbook and my replies.
-
--->
