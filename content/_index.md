@@ -9,8 +9,7 @@ I'm Owen, an engineer / designer, born and based in Toronto, Canada.
 
 I am currently part of the founding engineering team for {{< site-link url="https://ledge.io/" text="Ledge" icon="images/icons/ledge.jpg" >}}. Previously, I worked on inventory capacity software for {{< site-link url="https://www.amazon.science/tag/supply-chain-optimization-technologies" text="Amazon" icon="images/icons/amazon.svg" >}}.
 
-I care deeply about how software *feels*, as both a user and a builder. I excel in domains with complex domain and business logic. On the side, I take on select projects for designing portfolio websites.
-
+I care deeply about how software *feels*. I'm a generalist who excels in domains with complex domain and business logic. On the side, I take on select projects for designing portfolio websites.
 
 You can learn more about this website [here](/blog/about-site).
 
