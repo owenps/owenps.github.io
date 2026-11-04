@@ -1,16 +1,16 @@
 :root {
   --code-background: color-mix(in srgb, var(--background-color) 96%, var(--text-color));
-  --code-text: #1f2328;
+  --code-text: #654735;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --code-text: #e6edf3;
+    --code-text: #d4be98;
   }
 }
 
 :root[data-theme="dark"] {
-  --code-text: #e6edf3;
+  --code-text: #d4be98;
 }
 
 :not(pre) > code {

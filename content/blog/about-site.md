@@ -13,6 +13,8 @@ tags = []
 
 This website is my own hypertext museum on the Internet. The source code is available [here](https://github.com/owenps/owenps.github.io).
 
+I use this website to [collect](/resources) the articles, research papers and videos I encounter on the Internet, along with centralizing some of my thoughts on computer science, the creative process, AI among other things that interest me.
+
 I've always been drawn to making websites. In grade school I would use free website builders like Weebly, Prezi, Wix, Squarespace, etc. to create interactive presentations rather than slideshows.
 
 I started my own personal site in [2020](https://github.com/owenps/owenps.github.io/commit/85603fdfd2cd860e596c538ac690c505604c8bcf). I had be programming for at about 5 years at this point but mostly tinkering around with Python scripts. Since then, the website has seen several overhauls from what you see currently.
