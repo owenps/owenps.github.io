@@ -14,7 +14,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  border-radius: 3px;
+  border-radius: var(--corner-radius);
   background: transparent;
   color: inherit;
   font: inherit;
@@ -94,7 +94,7 @@
   margin: 0;
   padding: 0.5rem;
   border: 1px solid currentColor;
-  border-radius: 3px;
+  border-radius: var(--corner-radius);
   background: var(--background-color);
   font-size: 0.75rem;
   white-space: normal;

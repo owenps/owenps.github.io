@@ -22,3 +22,5 @@ I started my own personal site in [2020](https://github.com/owenps/owenps.github
 The font site-wide is [Lilex](https://lilex.myrt.co). It is built using [Hugo](https://github.com/gohugoio/hugo) with several customizations to the [Bear Blog theme](https://themes.gohugo.io/themes/hugo-bearblog/), heavily inspired by [saasaakunkun.com](https://saasaakunkun.com).
 
 It relies on a single SQLite DB for managing the guestbook.
+
+Collecting resources worth through a simple Apple Shortcut that triggers a GitHub action to automatically fetch the contents and commit the changes.

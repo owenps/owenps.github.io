@@ -13,9 +13,14 @@
   --code-text: #d4be98;
 }
 
+code,
+.highlight,
+.code {
+  border-radius: var(--corner-radius);
+}
+
 :not(pre) > code {
   padding: 0.1em 0.3em;
-  border-radius: 3px;
   background: var(--code-background);
   color: var(--code-text);
 }
@@ -27,7 +32,7 @@
   margin-block: 1.5rem;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--text-color) 18%, var(--background-color));
-  border-radius: 6px;
+  border-radius: var(--corner-radius);
   background: var(--code-background);
   color: var(--code-text);
 }

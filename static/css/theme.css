@@ -1,4 +1,5 @@
 :root {
+  --corner-radius: 2px;
   --dark-surface: #24271d;
   --dark-visited-color: #bac49d;
   --visited-color: var(--dark-surface);
@@ -32,6 +33,14 @@
   --blockquote-color: #ccc;
 }
 
+button,
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select,
+dialog {
+  border-radius: var(--corner-radius);
+}
+
 a:visited {
   color: var(--visited-color);
 }
@@ -47,7 +56,8 @@ a:visited {
   }
 }
 
-.theme-toggle {
+.theme-toggle,
+.focus-toggle {
   min-height: 24px;
   padding: 0;
   border: 0;
@@ -57,7 +67,9 @@ a:visited {
   line-height: 1.5;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.focus-toggle:hover,
+.focus-toggle[aria-pressed="true"] {
   text-decoration: underline;
   text-underline-offset: 3px;
 }

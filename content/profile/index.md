@@ -4,8 +4,6 @@ headless = true
 
 {{< columns >}}
 
-\~\*\~
-
 Engineer / Designer, born and based in Toronto, Canada.
 
 \~\*\~
