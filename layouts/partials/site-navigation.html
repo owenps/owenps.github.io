@@ -1,0 +1,5 @@
+<div class="site-navigation">
+  <section class="site-index-section" aria-label="Works">{{ partial "project-index.html" .page }}</section>
+  <section class="site-index-section" aria-label="Resources">{{ partial "resource-index.html" (dict "page" (.page.Site.GetPage "resources") "prefix" (printf "%s-resources" .prefix)) }}</section>
+  <section class="site-index-section" aria-label="Words">{{ partial "writing-index.html" .page }}</section>
+</div>

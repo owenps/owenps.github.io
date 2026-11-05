@@ -1,10 +1,4 @@
 +++
-title = 'Blog'
-menu = 'main'
+title = 'Words'
+outputs = ['RSS']
 +++
-
-## Evergreen
-
-{{< evergreen-pages >}}
-
-## Posts

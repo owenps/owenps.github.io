@@ -1,0 +1,7 @@
+<dialog class="site-index" id="site-index" aria-labelledby="site-index-title">
+  <header class="site-index-heading">
+    <h2 id="site-index-title">Menu</h2>
+    <button type="button" data-dialog-close autofocus>Close</button>
+  </header>
+  {{ partial "site-navigation.html" (dict "page" . "prefix" "index") }}
+</dialog>

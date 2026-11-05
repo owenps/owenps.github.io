@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.Language.Locale }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{- partial "favicon.html" . -}}
+  <title>{{- block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{- end }}</title>
+  {{- partial "seo_tags.html" . -}}
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+  {{- partial "style.html" . -}}
+  {{- partial "custom_head.html" . -}}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="site-frame">
+    <aside class="site-rail site-rail--split" aria-label="Works and resources">
+      <section class="rail-section" aria-label="Works">
+        {{ partial "project-index.html" . }}
+      </section>
+      <section class="rail-section" aria-label="Resources">
+        {{ partial "resource-index.html" (dict "page" (.Site.GetPage "resources") "prefix" "rail-resources") }}
+      </section>
+      <footer class="site-rail-footer site-colophon">
+        {{ partial "footer.html" . }}
+      </footer>
+    </aside>
+    <main class="reading-pane" id="main-content">
+      <header class="site-mobile-header">
+        <a class="site-home-link" href="{{ "" | relURL }}">owenps</a>
+        <button class="site-index-open" type="button" aria-haspopup="dialog" aria-controls="site-index" aria-expanded="false" data-dialog-open="site-index" hidden>Menu</button>
+        <details class="site-fallback-nav" data-index-fallback>
+          <summary>Menu</summary>
+          {{ partial "site-navigation.html" (dict "page" . "prefix" "fallback") }}
+        </details>
+      </header>
+      <div class="reading-body{{ if .IsHome }} home-content{{ end }}">
+        {{- block "main" . }}{{- end }}
+      </div>
+      <footer class="site-mobile-footer">
+        {{ partial "profile-footer.html" . }}
+      </footer>
+    </main>
+    <aside class="site-rail" aria-label="Words and contact">
+      {{ partial "writing-index.html" . }}
+      <footer class="site-rail-footer">
+        {{ partial "profile-footer.html" . }}
+      </footer>
+    </aside>
+  </div>
+  {{ partial "site-index.html" . }}
+  {{- partial "custom_body.html" . -}}
+</body>
+</html>

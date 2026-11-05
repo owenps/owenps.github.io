@@ -160,7 +160,7 @@ function initializePreviews(card) {
     hideTimer = setTimeout(hide, 180);
   }
 
-  for (const link of document.querySelectorAll("main a[href]")) {
+  for (const link of document.querySelectorAll("main a[href], .site-rail a[href]")) {
     const href = link.getAttribute("href");
     if (!href || href.startsWith("#")) continue;
     const url = new URL(href, location.href);

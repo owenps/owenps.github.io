@@ -22,6 +22,24 @@
   --font-secondary: var(--font-mono);
 }
 
+.reading-body h1 {
+  font-size: 1.5em;
+}
+
+.reading-body > :is(h1, h2):first-child,
+.reading-body > content > :is(h1, h2):first-child {
+  margin: 0 0 1rem;
+}
+
+.reading-body > p time {
+  color: var(--site-muted);
+  font-size: 0.6875rem;
+}
+
+.title h2 {
+  font-size: inherit;
+}
+
 button,
 input,
 select,

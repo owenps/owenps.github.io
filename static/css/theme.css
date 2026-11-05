@@ -48,50 +48,16 @@ a:visited {
 }
 
 .theme-toggle {
-  width: 44px;
-  height: 44px;
+  min-height: 24px;
   padding: 0;
   border: 0;
-  border-radius: 8px;
-  background: transparent;
+  background: none;
+  color: var(--link-color);
+  font-size: 0.6875rem;
+  line-height: 1.5;
 }
 
-.theme-toggle-track {
-  position: relative;
-  display: block;
-  width: 32px;
-  height: 20px;
-  margin: auto;
-  border-radius: 999px;
-  background: var(--dark-surface);
-  transition: background-color 180ms ease-in-out;
-}
-
-.theme-toggle-track::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 1px 3px #0003;
-  transition: transform 180ms ease-in-out, background-color 180ms ease-in-out;
-}
-
-.theme-toggle[aria-checked="true"] .theme-toggle-track {
-  background: #fff;
-}
-
-.theme-toggle[aria-checked="true"] .theme-toggle-track::before {
-  background: var(--dark-surface);
-  transform: translateX(12px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .theme-toggle-track,
-  .theme-toggle-track::before {
-    transition: none;
-  }
+.theme-toggle:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

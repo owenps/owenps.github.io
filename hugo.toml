@@ -1,7 +1,8 @@
 baseURL = 'https://owenps.com/'
 languageCode = 'en-us'
-title = 'owenps'
+title = 'Owen Smith'
 theme = 'hugo-bearblog'
+disableKinds = ['taxonomy', 'term']
 
 [params]
   favicon = 'images/favicon.png'

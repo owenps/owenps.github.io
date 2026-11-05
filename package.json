@@ -6,9 +6,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "hugo --minify",
-    "dev": "hugo --buildDrafts && wrangler pages dev public",
-    "dev:content": "hugo --buildDrafts --watch",
+    "build": "hugo --minify --cleanDestinationDir",
+    "dev": "hugo --buildDrafts --cleanDestinationDir && wrangler pages dev public",
+    "dev:content": "hugo --buildDrafts --watch --cleanDestinationDir",
     "db:migrate:local": "wrangler d1 migrations apply GUESTBOOK_DB --local",
     "db:migrate:remote": "wrangler d1 migrations apply GUESTBOOK_DB --remote"
   },

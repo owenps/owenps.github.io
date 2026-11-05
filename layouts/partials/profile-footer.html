@@ -1,0 +1,10 @@
+<p class="site-name"><a class="site-wordmark" href="{{ "" | relURL }}">{{ .Site.Title }}</a></p>
+{{- with .Site.GetPage "profile" }}
+  {{- with .Content }}
+    <div class="site-profile-copy">{{ . }}</div>
+  {{- end }}
+{{- end }}
+<div class="site-controls">
+  <nav class="site-links" aria-label="Elsewhere">{{ partial "site-links.html" . }}</nav>
+  {{ partial "theme-toggle.html" . }}
+</div>

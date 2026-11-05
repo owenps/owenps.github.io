@@ -1,19 +1,39 @@
 +++
-title = 'Projects'
-menu = 'main'
+title = 'Works'
+headless = true
+
+[[params.projects]]
+name = "bluesheepfilms.com"
+url = "https://bluesheepfilms.com/"
+icon = "images/icons/bluesheep.png"
+year = 2026
+type = "Portfolio"
+
+[[params.projects]]
+name = "hughmurray.life"
+url = "https://hughmurray.life/"
+icon = "images/icons/hughmurray.svg"
+year = 2026
+type = "Portfolio"
+
+[[params.projects]]
+name = "johncardillojr.com"
+url = "https://johncardillojr.com/"
+icon = "images/icons/johncardillojr.png"
+year = 2026
+type = "Portfolio"
+
+[[params.projects]]
+name = "owenps/tdiff"
+url = "https://github.com/owenps/tdiff"
+icon = "images/icons/github.svg"
+year = 2026
+type = "OSS"
+
+[[params.projects]]
+name = "owenps/herdr-prs"
+url = "https://github.com/owenps/herdr-prs"
+icon = "images/icons/github.svg"
+year = 2026
+type = "OSS"
 +++
-
-## Projects
-
-### Tools
-
-{{< site-link url="https://github.com/owenps/tdiff" text="owenps/tdiff" icon="images/icons/github.svg" >}} [2026]
-Local user-agent review surface and CLI + TUI tool for annotating diffs.
-
-### Websites
-
-{{< site-link url="https://bluesheepfilms.com/" text="bluesheepfilms.com" icon="images/icons/bluesheep.png" >}} [2026]<br/>
-
-{{< site-link url="https://hughmurray.life/" text="hughmurray.life" icon="images/icons/hughmurray.svg" >}} [2026]<br/>
-
-{{< site-link url="https://johncardillojr.com/" text="johncardillojr.com" icon="images/icons/johncardillojr.png" >}} [2026]<br/>

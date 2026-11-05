@@ -1,3 +1,14 @@
+{{- $width := printf "%v" (default "" .Attributes.width) -}}
+{{- if $width -}}
+  {{- $valid := false -}}
+  {{- if findRE "^[0-9]+(\\.[0-9]+)?%$" $width -}}
+    {{- $percent := float (strings.TrimSuffix "%" $width) -}}
+    {{- $valid = and (gt $percent 0) (le $percent 100) -}}
+  {{- end -}}
+  {{- if not $valid -}}
+    {{- errorf "Image width must be a percentage greater than 0 and at most 100 at %s (got %q)" .Position $width -}}
+  {{- end -}}
+{{- end -}}
 {{- $classes := split (default "" .Attributes.class) " " -}}
 {{- $reveal := and .PlainText (in $classes "reveal") -}}
 {{- $wrapLeft := in $classes "wrap-left" -}}
@@ -5,12 +16,13 @@
 {{- if and $wrapLeft $wrapRight -}}
   {{- errorf "An image cannot use both wrap-left and wrap-right at %s" .Position -}}
 {{- end -}}
-{{- if and .IsBlock (or $reveal $wrapLeft $wrapRight) -}}
+{{- if and .IsBlock (or $reveal $wrapLeft $wrapRight $width) -}}
   {{- $figureClasses := slice -}}
   {{- if $reveal }}{{ $figureClasses = $figureClasses | append "image-reveal" }}{{ end -}}
   {{- if $wrapLeft }}{{ $figureClasses = $figureClasses | append "wrap-left" }}{{ end -}}
   {{- if $wrapRight }}{{ $figureClasses = $figureClasses | append "wrap-right" }}{{ end -}}
-  <figure class="{{ delimit $figureClasses " " }}"{{ if $reveal }} tabindex="0"{{ end }}>
+  {{- if $width }}{{ $figureClasses = $figureClasses | append "image-sized" }}{{ end -}}
+  <figure class="{{ delimit $figureClasses " " }}"{{ if $width }} style="width: {{ $width | safeCSS }};"{{ end }}>
     <img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}>
     {{- if $reveal }}<figcaption>{{ .PlainText }}</figcaption>{{ end }}
   </figure>

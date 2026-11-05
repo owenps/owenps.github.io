@@ -95,12 +95,10 @@ document.querySelectorAll("[data-guestbook-messages]").forEach((view) => {
       // A missing or invalid website leaves the author as plain text.
     }
     if (authorURL) {
-      const link = element("a", "text-link external-link");
+      const link = element("a", "text-link");
       link.href = authorURL;
       link.rel = "nofollow ugc";
-      const arrow = element("span", "external-link-arrow", "↗");
-      arrow.setAttribute("aria-hidden", "true");
-      link.append(element("span", "link-text", authorName), arrow);
+      link.append(element("span", "link-text", authorName));
       author.append(link);
     } else {
       author.textContent = authorName;

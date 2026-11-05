@@ -1,0 +1,8 @@
+{{- with .page -}}
+  {{- /* The resource page also appears in the main pane and mobile index. */ -}}
+  {{- $content := replaceRE `(\s)id="([^"]+)"` (printf `${1}id="%s-${2}"` $.prefix) .Content -}}
+  {{- $content = replaceRE `href="#([^"]+)"` (printf `href="#%s-${1}"` $.prefix) $content -}}
+  <div class="rail-index resource-index" role="region" aria-label="Resources" tabindex="0">
+    {{ $content | safeHTML }}
+  </div>
+{{- end -}}

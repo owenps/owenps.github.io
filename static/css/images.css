@@ -2,29 +2,26 @@ content {
   display: flow-root;
 }
 
-.image-reveal {
-  margin: 1.5rem 0;
+.image-reveal,
+.image-sized {
+  margin: 1rem 0;
 }
 
-.image-reveal img {
+.image-reveal img,
+.image-sized img {
   display: block;
   height: auto;
+}
+
+.image-sized img {
+  width: 100%;
 }
 
 .image-reveal figcaption {
   margin-top: 0.5rem;
   font-size: 0.75rem;
   line-height: 1.4;
-  opacity: 0;
-  transition: opacity 200ms ease-in-out;
-}
-
-.image-reveal:focus-within figcaption {
   opacity: 0.75;
-}
-
-.image-reveal:focus-visible {
-  outline-offset: 4px;
 }
 
 .wrap-left,
@@ -43,8 +40,13 @@ content {
   margin-left: 1.5rem;
 }
 
-main > :is(.wrap-left, .wrap-right):first-child {
-  margin-top: 1rem;
+.reading-body > figure:first-child,
+content > figure:first-child {
+  margin-top: 0;
+}
+
+.reading-body :is(h2, h3, h4, h5, h6, blockquote) {
+  clear: both;
 }
 
 .wrap-left img,
@@ -52,16 +54,4 @@ main > :is(.wrap-left, .wrap-right):first-child {
   display: block;
   width: 100%;
   height: auto;
-}
-
-@media (hover: hover) {
-  .image-reveal:hover figcaption {
-    opacity: 0.75;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .image-reveal figcaption {
-    transition: none;
-  }
 }

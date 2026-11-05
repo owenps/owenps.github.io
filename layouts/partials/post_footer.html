@@ -1,0 +1,3 @@
+{{- if and (eq .Type "blog") (.Param "enablePostNavigator") -}}
+  {{- partial "post_navigator.html" . -}}
+{{- end -}}

@@ -11,7 +11,10 @@
 
   function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
-    document.querySelector("[data-theme-toggle]")?.setAttribute("aria-checked", String(theme === "dark"));
+    document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
+      toggle.setAttribute("aria-pressed", String(theme === "dark"));
+      toggle.title = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+    });
   }
 
   function preferredTheme() {
@@ -26,22 +29,26 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector("[data-theme-toggle]");
-    if (!toggle) return;
+    const toggles = document.querySelectorAll("[data-theme-toggle]");
+    if (!toggles.length) return;
 
     applyTheme(preferredTheme());
-    toggle.hidden = false;
-    import("./haptics.js").then(({ addHaptics }) => addHaptics(toggle)).catch(() => {
-      // Optional enhancement: theme switching still works if haptics can't load.
+    toggles.forEach((toggle) => {
+      toggle.hidden = false;
+      toggle.addEventListener("click", () => {
+        preference = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        applyTheme(preference);
+        try {
+          localStorage.setItem("theme", preference);
+        } catch {
+          // Retain the choice for this page even if it cannot be persisted.
+        }
+      });
     });
-    toggle.addEventListener("click", () => {
-      preference = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      applyTheme(preference);
-      try {
-        localStorage.setItem("theme", preference);
-      } catch {
-        // Retain the choice for this page even if it cannot be persisted.
-      }
+    import("./haptics.js").then(({ addHaptics }) => {
+      toggles.forEach((toggle) => addHaptics(toggle));
+    }).catch(() => {
+      // Optional enhancement: theme switching still works if haptics can't load.
     });
   });
 })();

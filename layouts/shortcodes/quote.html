@@ -1,0 +1,6 @@
+<blockquote>
+  {{- .Page.RenderString (dict "display" "block") .Inner -}}
+  {{- with .Get "author" -}}
+    <p class="quote-author">—{{ . }}</p>
+  {{- end -}}
+</blockquote>

@@ -1,0 +1,5 @@
+{{- range slice "guestbook" -}}
+  {{- with site.GetPage . -}}
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{- end -}}
+{{- end -}}
