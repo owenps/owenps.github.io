@@ -1,5 +1,5 @@
 +++
-title = "On The Importance of Style"
+title = "On the Importance of Style"
 date = "2026-11-09T16:03:27-05:00"
 draft = false
 
