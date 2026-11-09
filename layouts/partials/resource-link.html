@@ -1,0 +1,6 @@
+{{- $url := urls.Parse .Destination -}}
+{{- $title := .Text -}}
+{{- if eq .PlainText .Destination -}}
+  {{- $title = "Open link" -}}
+{{- end -}}
+<a class="resource-link" href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}><span class="resource-title">{{ $title }}</span><span class="resource-site">{{ strings.TrimPrefix "www." $url.Hostname }}</span></a>

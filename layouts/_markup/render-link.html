@@ -1,3 +1,7 @@
 {{- $hasImage := strings.Contains (string .Text) "<img " -}}
+{{- if and (eq .Page.Path "/resources") (not $hasImage) (findRE `^https?://` .Destination) -}}
+  {{- partial "resource-link.html" . -}}
+{{- else -}}
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if not $hasImage }} class="text-link"{{ end }}>{{ if $hasImage }}{{ .Text }}{{ else }}<span class="link-text">{{ .Text }}</span>{{ end }}</a>
+{{- end -}}
 {{- /* Keep inline links adjacent to surrounding punctuation. */ -}}

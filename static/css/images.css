@@ -2,6 +2,10 @@ content {
   display: flow-root;
 }
 
+:root[data-image-enter] .reading-body img:not(.site-link img, [data-image-ready]) {
+  opacity: 0;
+}
+
 .image-reveal,
 .image-sized {
   margin: 1rem 0;
@@ -43,10 +47,6 @@ content {
 .reading-body > figure:first-child,
 content > figure:first-child {
   margin-top: 0;
-}
-
-.reading-body :is(h2, h3, h4, h5, h6, blockquote) {
-  clear: both;
 }
 
 .wrap-left img,
