@@ -23,4 +23,4 @@ The font site-wide is [Lilex](https://lilex.myrt.co). It is built using [Hugo](h
 
 It relies on a single SQLite DB for managing the guestbook.
 
-Collecting resources worth through a simple Apple Shortcut that triggers a GitHub action to automatically fetch the contents and commit the changes.
+Collecting resources worth through a simple Apple Shortcut that triggers a GitHub action to automatically fetch the contents and commit the changes. I'll probably have Codex / Claude automatically sift through and cluster the resources at some point.
