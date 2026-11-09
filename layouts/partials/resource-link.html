@@ -11,4 +11,4 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
-<a class="resource-link" href="{{ .Destination | safeURL }}"{{ if not $added }}{{ with .Title }} title="{{ . }}"{{ end }}{{ end }}><span class="resource-title">{{ $title }}</span><span class="resource-site">{{ strings.TrimPrefix "www." $url.Hostname }}{{ with $added }} · <time datetime="{{ .Format "2006-01-02" }}">{{ .Format (default "02 Jan, 2006" $.Page.Site.Params.dateFormat) }}</time>{{ end }}</span></a>
+<a class="resource-link" href="{{ .Destination | safeURL }}"{{ if not $added }}{{ with .Title }} title="{{ . }}"{{ end }}{{ end }}><span class="resource-title">{{ $title }}</span><span class="resource-site">{{ with $added }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format (default "02 Jan, 2006" $.Page.Site.Params.dateFormat) }}</time>, {{ end }}{{ strings.TrimPrefix "www." $url.Hostname }}</span></a>
