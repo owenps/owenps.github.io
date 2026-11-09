@@ -10,3 +10,6 @@ menu = 'main'
 - [A collection of collections](https://www.are.na/)
 - [MDN Web Docs](https://developer.mozilla.org/)
 - An idea without a link: make things that feel quieter to use.
+
+
+- [(PDF) The ‘System’ of Automobility](https://www.researchgate.net/publication/258192332_The_'System'_of_Automobility)
