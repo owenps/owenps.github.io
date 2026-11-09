@@ -54,10 +54,15 @@ body {
   font: inherit;
 }
 
+.index-count {
+  color: var(--site-muted);
+  font-size: 0.6875rem;
+  font-weight: 400;
+}
+
 .rail-heading a,
 .site-links a,
 .site-fallback-nav a {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -107,7 +112,6 @@ body {
 
 a.resource-link {
   display: block;
-  color: inherit;
   text-decoration: none;
 }
 
@@ -119,9 +123,11 @@ a.resource-link {
   line-height: 1.5;
 }
 
-.resource-link:is(:hover, :focus-visible) .resource-title {
+.resource-link:is(:hover, :focus-visible) .resource-title,
+.index-link:is(:hover, :focus-visible) .index-title {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
 .index-list {
@@ -137,17 +143,11 @@ a.resource-link {
 a.index-link {
   display: block;
   padding: 5px 0 6px;
-  color: inherit;
   text-decoration: none;
 }
 
 .index-link:hover {
   text-decoration: none;
-}
-
-.index-link:hover .index-title {
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .index-title {
@@ -184,7 +184,6 @@ a.index-link {
 }
 
 .site-wordmark {
-  color: var(--heading-color);
   font-size: var(--font-scale);
   font-weight: 400;
   text-decoration: none;
@@ -207,7 +206,6 @@ a.index-link {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 18px;
-  color: var(--link-color);
 }
 
 .site-name {
@@ -300,7 +298,6 @@ a.index-link {
   padding: 0;
   border: 0;
   background: none;
-  color: var(--link-color);
 }
 
 .site-home-link {
@@ -324,7 +321,6 @@ a.index-link {
   position: static;
   padding: 0;
   border: 0;
-  color: var(--site-muted);
 }
 
 .site-navigation .index-list {
@@ -400,8 +396,9 @@ a.index-link {
 
   .site-mobile-footer {
     display: block;
-    margin-top: auto;
-    padding: 68px 0 0;
+    margin-top: 48px;
+    padding: 8px 0 0;
+    border-top: 1px solid var(--site-rule);
     text-align: left;
   }
 

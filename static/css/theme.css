@@ -41,8 +41,15 @@ dialog {
   border-radius: var(--corner-radius);
 }
 
-a:visited {
-  color: var(--visited-color);
+a,
+a:visited,
+button:enabled,
+summary {
+  color: var(--link-color);
+}
+
+button:disabled {
+  color: var(--site-muted);
 }
 
 :focus-visible {
@@ -62,14 +69,12 @@ a:visited {
   padding: 0;
   border: 0;
   background: none;
-  color: var(--link-color);
   font-size: 0.6875rem;
   line-height: 1.5;
 }
 
-.theme-toggle:hover,
-.focus-toggle:hover,
 .focus-toggle[aria-pressed="true"] {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }

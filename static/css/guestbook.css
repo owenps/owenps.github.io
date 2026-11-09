@@ -26,7 +26,6 @@
   border: 1px solid color-mix(in srgb, var(--text-color) 25%, var(--background-color));
   border-radius: var(--corner-radius);
   background: var(--background-color);
-  color: var(--text-color);
   font: inherit;
 }
 
@@ -34,6 +33,7 @@
 .guestbook-field textarea {
   width: 100%;
   min-width: 0;
+  color: var(--text-color);
   border-color: transparent;
   border-bottom-color: color-mix(in srgb, var(--text-color) 62%, var(--background-color));
   background: color-mix(in srgb, var(--background-color) 97%, var(--text-color));
@@ -58,8 +58,8 @@
   width: calc(9ch + 1.5rem + 2px);
 }
 
-.guestbook button:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--background-color) 94%, var(--text-color));
+.guestbook button:enabled:is(:hover, :focus-visible) {
+  background: color-mix(in srgb, var(--background-color) 94%, var(--link-color));
 }
 
 .guestbook :disabled {

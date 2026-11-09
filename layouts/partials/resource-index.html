@@ -3,7 +3,7 @@
   {{- $content := replaceRE `(\s)id="([^"]+)"` (printf `${1}id="%s-${2}"` $.prefix) .Content -}}
   {{- $content = replaceRE `href="#([^"]+)"` (printf `href="#%s-${1}"` $.prefix) $content -}}
   <div class="rail-index resource-index" role="region" aria-label="Resources" tabindex="0">
-    <h2 id="{{ $.prefix }}-resources">{{ .Title }}</h2>
+    <h2 id="{{ $.prefix }}-resources">{{ .Title }} <span class="index-count">{{ len (findRE `<li(?:\s[^>]*)?>` $content) }}</span></h2>
     {{- with $content }}
       {{ . | safeHTML }}
     {{- else }}

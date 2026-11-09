@@ -16,7 +16,6 @@
   border: 0;
   border-radius: var(--corner-radius);
   background: transparent;
-  color: inherit;
   font: inherit;
   text-align: inherit;
   cursor: pointer;
@@ -35,7 +34,7 @@
 .copy-button:enabled .copy-text {
   text-decoration: underline dotted;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in srgb, var(--text-color) 60%, var(--background-color));
+  text-decoration-color: color-mix(in srgb, var(--link-color) 60%, var(--background-color));
   text-underline-offset: 0.2em;
 }
 
@@ -49,7 +48,7 @@
   flex: 0 0 14px;
   width: 14px;
   height: 14px;
-  color: color-mix(in srgb, var(--text-color) 60%, var(--background-color));
+  color: color-mix(in srgb, var(--link-color) 60%, var(--background-color));
 }
 
 .copy-symbols[hidden] {

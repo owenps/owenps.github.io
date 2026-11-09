@@ -1,13 +1,15 @@
-<h2 class="rail-heading">Works</h2>
+{{- $projects := slice -}}
+{{- with .Site.GetPage "projects" -}}
+  {{- $projects = .Params.projects | default (slice) -}}
+{{- end -}}
+<h2 class="rail-heading">Works <span class="index-count">{{ len $projects }}</span></h2>
 <nav class="rail-index" aria-label="Selected works">
   <ul class="index-list">
-    {{- with .Site.GetPage "projects" }}
-      {{- range .Params.projects }}
-        <li><a class="index-link" href="{{ .url }}">
-          <span class="index-title">{{ .name }}</span>
-          <span class="index-note">{{ .year }}, {{ .type }}{{ with .description }}<br>{{ . | markdownify }}{{ end }}</span>
-        </a></li>
-      {{- end }}
+    {{- range $projects }}
+      <li><a class="index-link" href="{{ .url }}">
+        <span class="index-title">{{ .name }}</span>
+        <span class="index-note">{{ .year }}, {{ .type }}{{ with .description }}<br>{{ . | markdownify }}{{ end }}</span>
+      </a></li>
     {{- end }}
   </ul>
 </nav>

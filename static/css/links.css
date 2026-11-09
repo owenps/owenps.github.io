@@ -21,3 +21,23 @@
 .site-link:focus-visible .link-text {
   text-decoration-color: currentColor;
 }
+
+a:any-link :is(strong, b, code) {
+  color: inherit;
+}
+
+:is(
+  .rail-heading a,
+  .site-wordmark,
+  .site-home-link,
+  .site-links a,
+  .site-index-open,
+  .site-index-heading button,
+  .theme-toggle,
+  .focus-toggle,
+  summary
+):is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}

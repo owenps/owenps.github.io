@@ -1,7 +1,7 @@
-{{- $words := where .Site.RegularPages "Section" "blog" -}}
+{{- $words := where (where .Site.RegularPages "Section" "blog") "Draft" false -}}
 {{- $pages := (where $words "Params.evergreen" true).ByTitle -}}
 {{- $posts := (where $words "Params.evergreen" "ne" true).ByDate.Reverse -}}
-<h2 class="rail-heading">Words</h2>
+<h2 class="rail-heading">Words <span class="index-count">{{ add (len $pages) (len $posts) }}</span></h2>
 <nav class="rail-index" aria-label="Words">
   <ul class="index-list">
     {{- range $pages }}
