@@ -3,4 +3,12 @@
 {{- if eq .PlainText .Destination -}}
   {{- $title = "Open link" -}}
 {{- end -}}
-<a class="resource-link" href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}><span class="resource-title">{{ $title }}</span><span class="resource-site">{{ strings.TrimPrefix "www." $url.Hostname }}</span></a>
+{{- $added := false -}}
+{{- if findRE `^\d{4}-\d{2}-\d{2}$` .Title -}}
+  {{- with try (time.AsTime .Title) -}}
+    {{- if not .Err -}}
+      {{- $added = .Value -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<a class="resource-link" href="{{ .Destination | safeURL }}"{{ if not $added }}{{ with .Title }} title="{{ . }}"{{ end }}{{ end }}><span class="resource-title">{{ $title }}</span><span class="resource-site">{{ strings.TrimPrefix "www." $url.Hostname }}{{ with $added }} · <time datetime="{{ .Format "2006-01-02" }}">{{ .Format (default "02 Jan, 2006" $.Page.Site.Params.dateFormat) }}</time>{{ end }}</span></a>

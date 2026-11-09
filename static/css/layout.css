@@ -134,7 +134,7 @@ a.resource-link {
   border-bottom: 1px solid var(--site-rule);
 }
 
-.index-link {
+a.index-link {
   display: block;
   padding: 5px 0 6px;
   color: inherit;
@@ -163,7 +163,8 @@ a.resource-link {
   line-height: 1.5;
 }
 
-.index-note time {
+.index-note time,
+.resource-site time {
   font: inherit;
 }
 
