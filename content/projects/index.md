@@ -24,15 +24,8 @@ year = 2026
 type = "Portfolio"
 
 [[params.projects]]
-name = "owenps/tdiff"
-url = "https://github.com/owenps/tdiff"
-icon = "images/icons/github.svg"
-year = 2026
-type = "OSS"
-
-[[params.projects]]
-name = "owenps/herdr-prs"
-url = "https://github.com/owenps/herdr-prs"
+name = "github.com/owenps"
+url = "https://github.com/owenps/"
 icon = "images/icons/github.svg"
 year = 2026
 type = "OSS"
