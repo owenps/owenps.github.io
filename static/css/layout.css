@@ -101,6 +101,10 @@ body {
   overflow-wrap: anywhere;
 }
 
+.resource-index > ul > li > p {
+  margin: 0;
+}
+
 a.resource-link {
   display: block;
   color: inherit;
