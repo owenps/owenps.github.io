@@ -11,7 +11,7 @@ draft = false
 tags = []
 +++
 
-I had written a programming style guide about a year ago for [Ledge](ledge.io). Here are a particular excerpt that I wish to keep.
+An excerpt from a programming style guide I wrote about a year ago for [Ledge](ledge.io).
 
 > Another word for style is design.
 >
