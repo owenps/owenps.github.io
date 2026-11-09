@@ -7,3 +7,6 @@ menu = 'main'
 
 
 - [Stephen Wolfram: A New Kind of Science](https://www.wolframscience.com/nks/ "2026-11-09")
+
+
+- [socratic-tutor — janestreet/agent_skills](https://www.skills.sh/janestreet/agent_skills/socratic-tutor "2026-11-09")
