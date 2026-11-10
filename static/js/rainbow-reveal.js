@@ -77,7 +77,7 @@ if (!reducedMotion.matches && typeof Element.prototype.animate === "function") {
   if (pane.classList.contains("home-content")) {
     reveal(document, ".site-rail .rail-index");
   } else {
-    reveal(pane, ".resource-index, .project-list, .blog-posts",
+    reveal(pane, ".resource-index, .project-list, content:has(> .blog-posts)",
       ".resource-link, .project-list > p, .blog-posts > li:has(a)");
   }
 
