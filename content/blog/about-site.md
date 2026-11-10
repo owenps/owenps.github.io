@@ -11,7 +11,7 @@ evergreen = true
 tags = []
 +++
 
-This website is my own hypertext museum on the Internet. The source code is available [here](https://github.com/owenps/owenps.github.io).
+This website is my own hypertext museum on the Internet. The source code is publicly available [here](https://github.com/owenps/owenps.github.io).
 
 I use this website to [collect](/resources) the articles, research papers and videos I encounter on the Internet, along with centralizing some of my thoughts on computer science, the creative process, AI among other things that interest me.
 
@@ -23,4 +23,4 @@ The font site-wide is [Lilex](https://lilex.myrt.co). It is built using [Hugo](h
 
 It relies on a single SQLite DB for managing the guestbook.
 
-Collecting resources worth through a simple Apple Shortcut that triggers a GitHub action to fetch the contents and commit the changes. I'll probably have Codex / Claude sift through and cluster and organize the resources at some point.
+I collect resources through a simple Apple Shortcut that parses the url title and commits the changes to git. I'll probably have Codex / Claude sift through and cluster and organize the resources at some point.
