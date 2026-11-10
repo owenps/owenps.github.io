@@ -6,6 +6,10 @@
 <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/columns.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
+{{ if .IsHome }}
+<link rel="stylesheet" href="{{ "css/rainbow-reveal.css" | relURL }}">
+<script src="{{ "js/rainbow-reveal.js" | relURL }}" type="module"></script>
+{{ end }}
 <link rel="stylesheet" href="{{ "css/images.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/site-link.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/links.css" | relURL }}">

@@ -1,0 +1,18 @@
+.rainbow-reveal-row {
+  position: relative;
+  isolation: isolate;
+}
+
+.rainbow-cascade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--reveal-color);
+}
+
+@media (prefers-reduced-motion: reduce), print {
+  .rainbow-cascade {
+    display: none;
+  }
+}
