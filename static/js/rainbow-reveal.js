@@ -17,12 +17,12 @@ if (!reducedMotion.matches && typeof Element.prototype.animate === "function") {
     for (const row of active.keys()) finish(row);
   }
 
-  function reveal(root, selector = ".rail-index") {
+  function reveal(root, selector = ".rail-index", rowSelector = ".index-link, .resource-link") {
     if (reducedMotion.matches) return;
 
     for (const [section, group] of [...root.querySelectorAll(selector)].entries()) {
       const bounds = group.getBoundingClientRect();
-      const rows = [...group.querySelectorAll(".index-link, .resource-link")].filter((row) => {
+      const rows = [...group.querySelectorAll(rowSelector)].filter((row) => {
         const rect = row.getBoundingClientRect();
         return rect.width && rect.height && getComputedStyle(row).visibility === "visible"
           && rect.bottom > Math.max(bounds.top, 0)
@@ -73,7 +73,13 @@ if (!reducedMotion.matches && typeof Element.prototype.animate === "function") {
     if (row) finish(row);
   });
 
-  reveal(document, ".site-rail .rail-index");
+  const pane = document.querySelector(".reading-body");
+  if (pane.classList.contains("home-content")) {
+    reveal(document, ".site-rail .rail-index");
+  } else {
+    reveal(pane, ".resource-index, .project-list, .blog-posts",
+      ".resource-link, .project-list > p, .blog-posts > li:has(a)");
+  }
 
   const dialog = document.getElementById("site-index");
   if (dialog) {

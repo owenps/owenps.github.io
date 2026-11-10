@@ -1,4 +1,9 @@
 +++
 title = 'Words'
-outputs = ['RSS']
+outputs = ['HTML', 'RSS']
+rainbow = true
 +++
+
+## Words
+
+{{< evergreen-pages >}}

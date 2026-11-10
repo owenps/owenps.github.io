@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/columns.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
-{{ if .IsHome }}
+{{ if or .IsHome .Params.rainbow }}
 <link rel="stylesheet" href="{{ "css/rainbow-reveal.css" | relURL }}">
 <script src="{{ "js/rainbow-reveal.js" | relURL }}" type="module"></script>
 {{ end }}

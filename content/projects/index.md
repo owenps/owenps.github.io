@@ -1,6 +1,6 @@
 +++
 title = 'Works'
-headless = true
+rainbow = true
 
 [[params.projects]]
 name = "bluesheepfilms.com"
@@ -30,3 +30,7 @@ icon = "images/icons/github.svg"
 year = 2026
 type = "OSS"
 +++
+
+## Works
+
+{{< project-list >}}

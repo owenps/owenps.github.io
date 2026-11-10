@@ -4,12 +4,14 @@
   {{- $types = $types | append .type -}}
 {{- end -}}
 {{- $headings := dict "Tool" "Tools" "Website" "Websites" -}}
+<div class="project-list">
 {{- range uniq $types -}}
   {{- $projects := where $page.Params.projects "type" . -}}
   {{- with $projects }}
     <h3>{{ index $headings (index . 0).type | default (index . 0).type }}</h3>
     {{- range . }}
-      <p>{{ partial "site-link.html" (dict "url" .url "text" .name "icon" .icon) }} [{{ .year }}]{{ with .description }}<br>{{ $page.RenderString . }}{{ end }}</p>
+      <p>{{ partial "site-link.html" (dict "url" .url "text" .name "icon" .icon) }}<span class="index-note">{{ .year }}{{ with .description }}<br>{{ $page.RenderString . }}{{ end }}</span></p>
     {{- end }}
   {{- end -}}
 {{- end -}}
+</div>

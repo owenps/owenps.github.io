@@ -79,12 +79,15 @@ body {
   scrollbar-width: thin;
 }
 
-.resource-index :is(h2, h3, h4) {
+.resource-index :is(h2, h3, h4),
+.project-list > h3,
+.reading-body > content:has(> .project-list, > .blog-posts) > h2 {
   margin-block: 14px;
   font: inherit;
 }
 
-.resource-index > h2:first-child {
+.resource-index > h2:first-child,
+.reading-body > content:has(> .project-list, > .blog-posts) > h2:first-child {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -94,20 +97,55 @@ body {
   background: var(--background-color);
 }
 
-.resource-index > ul {
+.resource-index > ul,
+.reading-body > content > .blog-posts {
   margin-block: 0;
   padding: 0;
   list-style: none;
 }
 
-.resource-index > ul > li {
+.resource-index > ul > li,
+.project-list > p,
+.reading-body > content > .blog-posts > li {
   padding-block: 6px;
   border-bottom: 1px solid var(--site-rule);
   overflow-wrap: anywhere;
 }
 
-.resource-index > ul > li > p {
+.resource-index > ul > li > p,
+.project-list > p {
   margin: 0;
+}
+
+.project-list .site-link:not(:hover, :focus-visible) .link-text {
+  text-decoration: none;
+}
+
+.reading-body > content > .blog-posts > li {
+  flex-direction: column;
+}
+
+.reading-body > content > .blog-posts > li > a {
+  order: -1;
+  text-decoration: none;
+}
+
+.reading-body > content > .blog-posts > li > a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.reading-body > content > .blog-posts > li > span:not(.rainbow-cascade) {
+  flex: initial;
+  margin-top: 2px;
+  color: var(--site-muted);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+}
+
+.reading-body > content > .blog-posts > li > span > i {
+  font-style: normal;
 }
 
 a.resource-link {
