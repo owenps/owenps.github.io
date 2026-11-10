@@ -46,6 +46,12 @@ body {
   min-height: 0;
 }
 
+.words-view {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
 .rail-heading {
   flex: none;
   margin: 0;
@@ -379,7 +385,27 @@ a.index-link {
   transform: none;
 }
 
-@media not (max-width: 900px) {
+@media screen and (min-width: 901px) {
+  .site-frame {
+    height: 100svh;
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .reading-pane {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .site-profile {
+    min-height: 0;
+    max-height: 45svh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+
   :root[data-focus="true"] .site-rail > :not(footer) {
     visibility: hidden;
   }

@@ -45,8 +45,18 @@
       </footer>
     </main>
     <aside class="site-rail" aria-label="Words and contact">
-      {{ partial "writing-index.html" . }}
-      <footer class="site-rail-footer">
+      <section class="rail-section words-view" aria-label="Words" data-word-reader>
+        {{ partial "writing-index.html" . }}
+        <section class="word-reader" id="word-reader" role="region" aria-labelledby="word-reader-title" hidden inert>
+          <header class="word-reader-controls">
+            <button type="button" data-reader-close>Close</button>
+            <button type="button" data-reader-back hidden>Back</button>
+            <a data-reader-full aria-label="Open full page">Open</a>
+          </header>
+          <div class="word-reader-page"></div>
+        </section>
+      </section>
+      <footer class="site-rail-footer site-profile" aria-label="Profile">
         {{ partial "profile-footer.html" . }}
       </footer>
     </aside>

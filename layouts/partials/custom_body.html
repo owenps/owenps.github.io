@@ -1,7 +1,7 @@
 <div id="link-preview" class="link-preview" role="region" aria-labelledby="link-preview-title" aria-hidden="true" hidden inert></div>
 {{- range .Site.Pages }}
   {{- if and (not .Draft) (in (slice "home" "page" "section") .Kind) (.OutputFormats.Get "html") }}
-    <template data-preview-page="{{ .RelPermalink }}">
+    <template data-preview-page="{{ .RelPermalink }}"{{ if and (eq .Kind "page") (eq .Section "blog") (not (.HasShortcode "guestbook-form")) (not (.HasShortcode "guestbook-messages")) }} data-reader-article{{ end }}>
       <div class="link-preview-heading">
         <h2 id="link-preview-title">{{ .Title }}</h2>
       </div>

@@ -1,14 +1,14 @@
+import { pageFragment, previewTarget, previewTemplate } from "./preview-content.js";
+
 const card = document.getElementById("link-preview");
 if (card) initializePreviews(card);
 
 function initializePreviews(card) {
-  const pageKey = (url) => url.pathname.replace(/\/+$/, "") || "/";
-  const pages = new Map([...document.querySelectorAll("template[data-preview-page]")]
-    .map((template) => [pageKey(new URL(template.dataset.previewPage, location.href)), template]));
+  const documentTemplate = previewTemplate(location.href);
   const canHover = matchMedia("(hover: hover) and (pointer: fine)");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   let activeLink = null;
-  let currentPage = null;
+  let currentTemplate = null;
   let restoringFocus = false;
   let showTimer;
   let hideTimer;
@@ -94,59 +94,15 @@ function initializePreviews(card) {
     body.tabIndex = body.scrollHeight > body.clientHeight ? 0 : -1;
   }
 
-  function pageFragment(template) {
-    const fragment = template.content.cloneNode(true);
-    const content = fragment.querySelector(".link-preview-content");
-    const destination = new URL(template.dataset.previewPage, location.href);
-    // Trusted site content, without scripts or a second instance of live widgets.
-    content.querySelectorAll("script, style, link, iframe, object, embed, form, noscript, [data-guestbook-form], [data-guestbook-messages]")
-      .forEach((node) => node.remove());
-    content.querySelectorAll("[data-copy]").forEach((node) => {
-      node.replaceWith(document.createTextNode(node.dataset.copy));
-    });
-    content.querySelectorAll("button, input, textarea, select").forEach((node) => node.remove());
-    const first = content.firstElementChild;
-    if (first?.matches("h1, h2") && first.textContent.trim() === fragment.querySelector(".link-preview-heading h2").textContent.trim()) {
-      first.remove();
-    }
-    while (content.lastElementChild?.matches("hr, br, p:empty")) content.lastElementChild.remove();
-
-    const ids = new Map();
-    content.querySelectorAll("[id]").forEach((node) => {
-      const id = `${card.id}-content-${node.id}`;
-      ids.set(node.id, id);
-      node.id = id;
-    });
-    content.querySelectorAll("*").forEach((node) => {
-      for (const attribute of [...node.attributes]) {
-        if (attribute.name.startsWith("on") || attribute.name === "autofocus") node.removeAttribute(attribute.name);
-      }
-      for (const attribute of ["href", "src", "poster"]) {
-        const value = node.getAttribute(attribute);
-        if (!value) continue;
-        if (attribute === "href" && value.startsWith("#") && ids.has(value.slice(1))) {
-          node.setAttribute(attribute, `#${ids.get(value.slice(1))}`);
-        } else {
-          node.setAttribute(attribute, new URL(value, destination).href);
-        }
-      }
-      for (const attribute of ["aria-labelledby", "aria-describedby", "aria-controls", "for", "headers"]) {
-        const value = node.getAttribute(attribute);
-        if (value) node.setAttribute(attribute, value.split(/\s+/).map((id) => ids.get(id) ?? id).join(" "));
-      }
-    });
-    return fragment;
-  }
-
-  function show(link, key) {
+  function show(link, template) {
     clearTimers();
     if (activeLink === link) return;
     closeLink(activeLink);
     activeLink = link;
     // Keep the current DOM and scroll position on re-entry to the same page.
-    if (currentPage !== key) {
-      card.replaceChildren(pageFragment(pages.get(key)));
-      currentPage = key;
+    if (currentTemplate !== template) {
+      card.replaceChildren(pageFragment(template, card.id));
+      currentTemplate = template;
     }
     link.setAttribute("aria-expanded", "true");
     link.setAttribute("aria-details", card.id);
@@ -163,9 +119,9 @@ function initializePreviews(card) {
   for (const link of document.querySelectorAll("main a[href], .site-rail a[href]")) {
     const href = link.getAttribute("href");
     if (!href || href.startsWith("#")) continue;
-    const url = new URL(href, location.href);
-    const key = pageKey(url);
-    if (url.origin !== location.origin || !pages.has(key) || key === pageKey(new URL(location.href))) continue;
+    if (link.matches("[data-word-reader] .index-list a")) continue;
+    const template = previewTemplate(link.href);
+    if (!template || template === documentTemplate) continue;
     link.dataset.linkPreview = "";
     link.setAttribute("aria-controls", card.id);
     link.setAttribute("aria-expanded", "false");
@@ -173,11 +129,11 @@ function initializePreviews(card) {
     link.addEventListener("pointerenter", (event) => {
       if (!canHover.matches || event.pointerType === "touch" || card.contains(document.activeElement)) return;
       clearTimers();
-      showTimer = setTimeout(() => show(link, key), 250);
+      showTimer = setTimeout(() => show(link, template), 250);
     });
     link.addEventListener("pointerleave", scheduleHide);
     link.addEventListener("focus", () => {
-      if (!restoringFocus && link.matches(":focus-visible")) show(link, key);
+      if (!restoringFocus && link.matches(":focus-visible")) show(link, template);
     });
     link.addEventListener("keydown", (event) => {
       if (event.key === "ArrowDown" && activeLink === link) {
@@ -211,17 +167,24 @@ function initializePreviews(card) {
     }
   });
   card.addEventListener("click", (event) => {
-    const link = event.target.closest('a[href^="#link-preview-content-"]');
-    if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
-    const target = document.getElementById(link.getAttribute("href").slice(1));
+    const link = event.target.closest("a[href]");
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey
+      || event.altKey || event.shiftKey || link.hasAttribute("download")
+      || (link.target && link.target !== "_self")) return;
+    const url = new URL(link.href);
+    if (previewTemplate(url) !== currentTemplate || !url.hash
+      || url.search !== new URL(currentTemplate.dataset.previewPage, location.href).search) return;
+    const target = previewTarget(card, url.hash, card.id);
     if (!target) return;
     event.preventDefault();
     const body = card.querySelector(".link-preview-body");
     body.scrollTop += target.getBoundingClientRect().top - body.getBoundingClientRect().top;
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") hide();
-  });
+    if (event.defaultPrevented || event.key !== "Escape" || !activeLink) return;
+    event.preventDefault();
+    hide();
+  }, true);
   document.addEventListener("pointerdown", (event) => {
     if (!card.contains(event.target) && !event.target.closest("[data-link-preview]")) hide();
   });
