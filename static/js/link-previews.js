@@ -155,7 +155,7 @@ function initializePreviews(card) {
   });
   card.addEventListener("keydown", (event) => {
     if (event.key !== "Tab" || !activeLink) return;
-    const stops = [...card.querySelectorAll("a[href], summary, [tabindex]")]
+    const stops = [...card.querySelectorAll("a[href], button:not(:disabled), summary, [tabindex]")]
       .filter((node) => node.tabIndex >= 0 && node.getClientRects().length);
     const body = card.querySelector(".link-preview-body");
     if (event.shiftKey && (event.target === body || event.target === stops[0])) {

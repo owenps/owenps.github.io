@@ -1,3 +1,5 @@
+import { initializeCopyControls } from "./copy.js";
+
 const pageKey = (href) => new URL(href, location.href).pathname.replace(/\/+$/, "") || "/";
 const pages = new Map([...document.querySelectorAll("template[data-preview-page]")]
   .map((template) => [pageKey(template.dataset.previewPage), template]));
@@ -28,9 +30,13 @@ export function pageFragment(template, prefix) {
   content.querySelectorAll("script, style, link, iframe, object, embed, form, noscript, [data-guestbook-form], [data-guestbook-messages]")
     .forEach((node) => node.remove());
   content.querySelectorAll("[data-copy]").forEach((node) => {
-    node.replaceWith(document.createTextNode(node.dataset.copy));
+    if (!node.matches(".code-block > .code-copy")) {
+      node.replaceWith(document.createTextNode(node.dataset.copy));
+    }
   });
-  content.querySelectorAll("button, input, textarea, select").forEach((node) => node.remove());
+  content.querySelectorAll("button, input, textarea, select").forEach((node) => {
+    if (!node.matches(".code-block > .code-copy[data-copy] > button.copy-button")) node.remove();
+  });
   const first = content.firstElementChild;
   if (first?.matches("h1, h2") && first.textContent.trim() === heading.textContent.trim()) first.remove();
   while (content.lastElementChild?.matches("hr, br, p:empty")) content.lastElementChild.remove();
@@ -54,5 +60,6 @@ export function pageFragment(template, prefix) {
       if (value) node.setAttribute(attribute, value.split(/\s+/).map((id) => ids.get(id) ?? id).join(" "));
     }
   });
+  initializeCopyControls(content);
   return fragment;
 }

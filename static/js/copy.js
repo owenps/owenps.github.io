@@ -2,13 +2,17 @@ import { addHaptics } from "./haptics.js";
 import { hideToast, showToast } from "./toast.js";
 
 const COPY_FEEDBACK_DURATION = 2000;
+const initialized = new WeakSet();
 
-(() => {
+export function initializeCopyControls(root = document) {
   if (!navigator.clipboard?.writeText) return;
 
-  document.querySelectorAll("[data-copy]").forEach((control) => {
+  root.querySelectorAll("[data-copy]").forEach((control) => {
+    if (initialized.has(control)) return;
     const button = control.querySelector(".copy-button");
     const status = control.querySelector(".copy-status");
+    if (!button || !status) return;
+    initialized.add(control);
     let timer;
     let pending = false;
 
@@ -40,4 +44,6 @@ const COPY_FEEDBACK_DURATION = 2000;
       }
     });
   });
-})();
+}
+
+initializeCopyControls();
