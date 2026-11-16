@@ -13,3 +13,5 @@ rainbow = true
 - [socratic-tutor — janestreet/agent_skills](https://www.skills.sh/janestreet/agent_skills/socratic-tutor "2026-11-09")
 
 - [CQRS](https://martinfowler.com/bliki/CQRS.html "2026-11-12")
+
+- [You Might Not Need an Effect – React](https://react.dev/learn/you-might-not-need-an-effect "2026-11-16")
