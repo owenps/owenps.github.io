@@ -15,3 +15,5 @@ rainbow = true
 - [CQRS](https://martinfowler.com/bliki/CQRS.html "2026-11-12")
 
 - [You Might Not Need an Effect – React](https://react.dev/learn/you-might-not-need-an-effect "2026-11-16")
+
+- [Digital Experience Studio | AUGE Experience](https://auge-xp.com/ "2026-11-17")
