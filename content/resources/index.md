@@ -21,3 +21,5 @@ rainbow = true
 - [~Template P953](https://594995-a.cargo.site/ "2026-11-17")
 
 - [Appllama/appllama-skills: A builder, not just a researcher. Agent skills that turn top-grossing app patterns into native-quality mobile screens.](https://github.com/Appllama/appllama-skills "2026-11-23")
+
+- [To code well, avoid blunders](https://www.seangoedecke.com/to-code-well-avoid-blunders/ "2026-11-23")
