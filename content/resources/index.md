@@ -23,3 +23,5 @@ rainbow = true
 - [Appllama/appllama-skills: A builder, not just a researcher. Agent skills that turn top-grossing app patterns into native-quality mobile screens.](https://github.com/Appllama/appllama-skills "2026-11-23")
 
 - [To code well, avoid blunders](https://www.seangoedecke.com/to-code-well-avoid-blunders/ "2026-11-23")
+
+- [Build the Workshop Before the Software Factory — Armin Ronacher, Earendil - YouTube](https://www.youtube.com/watch?v=JNexz3Tbiu8 "2026-11-25")
